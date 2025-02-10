@@ -5,6 +5,7 @@ ja:
         first_name: "お名前(全角)"
         last_name: "お名前(全角)"
         last_name_kana: "お名前カナ(全角)"
+        first_name_kana: "お名前カナ(全角)"
         nickname: "ニックネーム"
         phone_number: "電話番号"
         region_id: "お住まいの地域"
