@@ -41,13 +41,19 @@
 .nav__logout{
   display: inline-block;
   padding: 0.4em 1.6em;
-  font-size: 0.8em;
-  color: #87CEFA;
+  margin-top: 20px;
+  font-size: 1em;
+  color: #acac5e;
   text-decoration: none;
   user-select: none;
+  border: 5px #d6b9a0 solid;
+  border-radius: 100vh;
+  transition: 0.4s ease;
 }
+
 .nav__logout:hover{
-  opacity: 0.5;
+  color: #fff;
+  background: #90d9bd;
 }
 
 /* フォーム周り */
