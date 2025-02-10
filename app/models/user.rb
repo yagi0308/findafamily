@@ -4,17 +4,16 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  validates :first_name, presence: true, format: { with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/ }
-  validates :last_name, presence: true, format: { with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/ }
-  validates :last_name_kana, presence: true, format: { with: /\A[ァ-ヶー－]+\z/ }
-  validates :first_name_kana, presence: true, format: { with: /\A[ァ-ヶー－]+\z/ }
+  validates :first_name, presence: true, format: { with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/, allow_blank: true }
+  validates :last_name, presence: true, format: { with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/, allow_blank: true }
+  validates :last_name_kana, presence: true, format: { with: /\A[ァ-ヶー－]+\z/, allow_blank: true }
+  validates :last_name_kana, presence: true, format: { with: /\A[ァ-ヶー－]+\z/, allow_blank: true }
   validates :nickname, presence: true
-  validates :email, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
-  validates :password, length: { minimum: 6 }, format: { with: /\A(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]+\z/ },
-                       confirmation: true
-  validates :phone_number, presence: true, format: { with: /\A\d{10,11}\z/ }
-  validates :birthdate, presence: true
-  validates :region_id, presence: true, numericality: { only_integer: true }
+  validates :email, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP, allow_blank: true }
+  validates :password, format: { with: /\A(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]+\z/, allow_blank: true }, confirmation: true
+  validates :phone_number, presence: true, format: { with: /\A\d{10,11}\z/, allow_blank: true }
+  validates :region_id, presence: { message: 'を入力してください' },
+                        numericality: { only_integer: true, greater_than: 1, message: 'を入力してください' }
   validates :introduction, length: { maximum: 500 }
 
   has_one_attached :profile_image

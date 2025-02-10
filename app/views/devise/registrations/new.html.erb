@@ -77,7 +77,6 @@
       <div class="form-group">
         <div class='form-text-wrap'>
           <label class="form-text">生年月日</label>
-          <span class="indispensable">必須</span>
         </div>
         <div class='input-birth-wrap'>
           <%= f.date_select :birthdate, { use_month_numbers: true, prompt: '--', start_year: 1930, end_year: (Time.now.year - 5), date_separator: '' }, { class: 'select-birth', id:"birthdate" } %>
@@ -110,7 +109,6 @@
       <div class="form-group">
         <div class='form-text-wrap'>
           <label class="form-text">自己紹介</label>
-          <span class="indispensable">必須</span>
         </div>
         <%= f.text_area :introduction, class:"input-default wide-text-area", id:"introduction", placeholder:"自己紹介を入力してください" %>
         <p class='info-text'>※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。</p>
