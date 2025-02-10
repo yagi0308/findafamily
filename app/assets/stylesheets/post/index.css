@@ -1,0 +1,10 @@
+/* ログインページ */
+.login__link {
+  font-size: 23px;
+  text-decoration: underline;
+}
+
+.page-title {
+  font-size: 23px;
+  margin-bottom: 28px;
+}
