@@ -27,11 +27,12 @@ Things you may want to cover:
 | Column             | Type       |  Options           |
 |--------------------|----------  |--------------------|
 | title	             | string	    |  null: false	      |  タイトル
+| animal_image    	 | string		  |  null: false        |  動物の写真（ActiveStorage）
 | category           | integer    |  null: false	      |  カテゴリー（迷子・保護・譲渡）
 | animal_type	       | string	    |  null: false	      |  動物の種類（犬・猫・鳥など）
 | age	               | string	    |	                    |  年齢（例: 3ヶ月、2歳など）
 | gender	           | integer    |	                    |  性別（オス・メス・不明）
-| personality	       | text		    |                     |  性格（例: 人懐っこい、臆病など）
+| personality	       | text		    |  null: false        |  性格（例: 人懐っこい、臆病など）
 | description	       | text	      |  null: false	      |  詳細情報
 | user_id	           | references |  foreign_key: true	|  投稿者（Userとの関連）
 

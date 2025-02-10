@@ -21,6 +21,8 @@ class User < ApplicationRecord
   has_one_attached :profile_image
   validate :acceptable_image
 
+  has_many :posts, dependent: :destroy
+
   private
 
   def acceptable_image
