@@ -24,6 +24,9 @@
 
 .posts-sell-title {
   font-size: 25px;
+  background-color: #efb0d2;
+  border: 3px solid #d6b9a0;
+  border-radius: 30px;
   font-weight: bold;
   text-align: center;
 }
@@ -113,7 +116,7 @@
 .sell-btn {
   background: #e292be;
   border: 3px solid #d6b9a0;
-  color: #fff;
+  color: #ffffff;
   width: 100%;
   height: 50px;
   font-size: 20px;

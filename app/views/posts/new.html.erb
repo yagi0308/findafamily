@@ -18,7 +18,7 @@
         <span class="indispensable">必須</span>
       </div>
       <div class="click-upload">
-        <%= f.file_field :image, id:"post-image" %>
+        <%= f.file_field :animal_image, id:"post-image" %>
       </div>
     </div>
     </div>
@@ -30,7 +30,7 @@
         🐈‍⬛タイトル
         <span class="indispensable">必須</span>
       </div>
-      <%= f.text_area :title, class:"posts-text", id:"title", placeholder:"(例:飼い犬が迷子になってしまいました、猫を保護しましたなど)", maxlength:"40" %>
+      <%= f.text_area :title, class:"posts-text", id:"title", placeholder:"(例:飼い犬が迷子になってしまいました、猫を保護しましたなど)", maxlength:"100" %>
       <%# タイトル %>
 
        <%# 動物のカテゴリー %>
@@ -55,13 +55,14 @@
         <div class="weight-bold-text">
           🐈‍⬛年齢を教えてください
         </div>
-        <%= f.text_area :age, class:"posts-text", id:"age", placeholder:"(例:3ヶ月、2歳、不明など)", maxlength:"40" %>
+        <%= f.text_area :age, class:"posts-text", id:"age", placeholder:"(例:3ヶ月、2歳、不明など)" %>
        <%# 動物の年齢 %>
 
 
        <%# 動物の性別 %>
       <div class="weight-bold-text">
           🐈‍⬛性別を教えてください
+          <span class="indispensable">必須</span>
         </div>
         <%= f.collection_select(:gender_id, Gender.all, :id, :name, {}, {class:"select-box", id:"gender"}) %>
       <%# 動物の性別 %>
@@ -73,6 +74,14 @@
       </div>
       <%= f.text_area :personality, class:"posts-text", id:"personality", placeholder:"(例:人馴れしていません、人懐っこいですなど)", maxlength:"100" %>
       <%# 動物の性格 %>
+
+      <%# 場所 %>
+      <div class="weight-bold-text">
+        🐈‍⬛保護や譲渡の場所を教えてください
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :address, class:"posts-text", id:"address", placeholder:"(例:東京都板橋区〜)", maxlength:"100" %>
+      <%# 場所 %>
 
       <%# 動物の詳細 %>
       <div class="weight-bold-text">

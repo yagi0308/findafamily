@@ -9,6 +9,7 @@ class CreatePosts < ActiveRecord::Migration[7.1]
       t.integer :gender_id,       null: false
       t.text    :personality,     null: false
       t.text    :description,     null: false
+      t.string  :address,         null: false
       t.references :user,         null: false, foreign_key: true
       t.timestamps
     end

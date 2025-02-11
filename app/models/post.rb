@@ -1,12 +1,13 @@
 class Post < ApplicationRecord
   with_options presence: true do
-    validates :title
-    validates :category_id
-    validates :animal_type
-    validates :gender_id
-    validates :personality
-    validates :description
+    validates :title, length: { maximum: 99 }
+    validates :category_id, numericality: { only_integer: true, greater_than: 1, message: 'を入力してください' }
+    validates :animal_type, length: { maximum: 39 }
+    validates :gender_id, numericality: { only_integer: true, greater_than: 1, message: 'を入力してください' }
+    validates :personality, length: { maximum: 99 }
+    validates :description, length: { maximum: 1999 }
     validates :user
+    validates :address, length: { maximum: 99 }
   end
 
   has_one_attached :animal_image
@@ -17,7 +18,10 @@ class Post < ApplicationRecord
   private
 
   def acceptable_image
-    return unless animal_image.attached?
+    unless animal_image.attached?
+      errors.add(:animal_image, 'を添付してください')
+      return
+    end
 
     errors.add(:animal_image, 'is too big') unless animal_image.byte_size <= 2.megabyte
 

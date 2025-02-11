@@ -34,6 +34,7 @@ Things you may want to cover:
 | gender	           | integer    |	                    |  性別（オス・メス・不明）
 | personality	       | text		    |  null: false        |  性格（例: 人懐っこい、臆病など）
 | description	       | text	      |  null: false	      |  詳細情報
+|	address            | string	    |  null: false	      |  保護した場所や譲渡の場所
 | user_id	           | references |  foreign_key: true	|  投稿者（Userとの関連）
 
 
