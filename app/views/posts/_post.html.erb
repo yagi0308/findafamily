@@ -1,0 +1,8 @@
+    <div class="card">
+      <%= link_to (image_tag post.animal_image, class: :card__img), root_path(post) %>
+      <div class="card__body">
+        <%= link_to post.title, root_path(post), class: :card__title %>
+        <%= link_to post.address, root_path(post), class: :card__address %>
+        <%= link_to "by #{post.user.nickname}", root_path(post.user), class: :card__user %>
+      </div>
+    </div>

@@ -9,3 +9,12 @@ ja:
         nickname: "ニックネーム"
         phone_number: "電話番号"
         region_id: "お住まいの地域"
+      post:
+        title: "タイトル"
+        animal_type: "種類"
+        personality: "性格"
+        description: "その他の詳細"
+        gender_id: "性別"
+        category_id: "カテゴリー"
+        address: "保護や譲渡の場所"
+        animal_image: "写真"
