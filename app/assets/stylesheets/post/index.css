@@ -1,3 +1,4 @@
+/* ボタン */
 .login__link {
   font-size: 23px;
   text-decoration: underline;
@@ -6,4 +7,37 @@
 .page-title {
   font-size: 23px;
   margin-bottom: 28px;
+}
+
+/* 投稿表示 */
+.card {
+  width: calc((100% - 50px) / 4);
+  margin-bottom: 40px;
+}
+.card__img {
+  margin-bottom: 16px;
+}
+.card__title {
+  display: block;
+  font-size: 20px;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.card__address {
+  display: block;
+  font-size: 15px;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.card__summary {
+  font-size: 16px;
+}
+.card__user {
+  display: block;
+  font-size: 15px;
+  color: #999;
+  text-align: right;
+  text-decoration: underline;
 }
