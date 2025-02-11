@@ -1,0 +1,225 @@
+
+.post-show {
+  font-family: "Source Sans Pro", Helvetica, Arial, "æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“", "YuGothic", "ãƒ¡ã‚¤ãƒªã‚ª", "Meiryo", sans-serif;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-width: 500px;
+}
+
+.post-box {
+  width: 70vw;
+  min-width: 1200px;
+  padding: 10vh 15vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.post-box>.name {
+  text-align: center;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.post-box-img {
+  height: 150vh;
+  width: 60vw;
+  min-height: 500px;
+  background-color: rgb(205, 202, 202);
+  object-fit: contain;
+}
+
+.post-price-box {
+  margin: 25px 0px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.post-price-box>.item-price {
+  font-size: 4vh;
+  font-weight: bold;
+}
+
+.post-price-box>.item-postage {
+  font-size: 16px;
+}
+
+.edit-delete-buttons {
+  display: flex;
+  justify-content: space-evenly; /* ボタン間のスペースを均等に分ける */
+  align-items: center;
+  margin-top: 20px;
+}
+
+.post-red-btn, .post-destroy {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 2vh 5vw;
+  margin: 0 5px; /* ボタン間のスペースを調整 */
+}
+
+.post-red-btn {
+  background-color: #ed4816;
+  border: 3px solid #8f4c11;
+  border-radius: 100vh;
+  color: #FFF;
+}
+
+.post-destroy {
+  background-color: rgb(214, 158, 158);
+  border: 3px solid #8a4c15;
+  border-radius: 100vh;
+  color: rgb(107, 30, 30);
+}
+
+
+.detail-table {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  width: 90%;
+  font-size: 20px;
+}
+
+.detail-item {
+  width: 20%;
+  background-color: #eee;
+  border: 1px solid #dedede;
+  font-size: 14px;
+  text-align: center;
+}
+
+.detail-value {
+  width: 80%;
+  padding: 20px;
+  border: 1px solid #dedede;
+  font-size: 14px;
+}
+
+.option {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.favorite-btn {
+  border-radius: 40px;
+  width: 15vw;
+  min-width: 200px;
+  color: rgb(243, 128, 79);
+  border: 2px solid #ffb340;
+  border-radius: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.favorite-star-icon {
+  margin-right: 5px;
+}
+
+.report-btn {
+  border-radius: 40px;
+  width: 15vw;
+  min-width: 200px;
+
+  padding: 1vh 0;
+  color: black;
+  border: 2px solid #2d2d2d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.report-flag-icon {
+  margin-right: 5px;
+}
+
+.comment-box {
+  width: 40vw;
+  background-color: #fff;
+  text-align: center;
+  margin: 5vh 0;
+  position: absolute;  /* 絶対位置を指定 */
+  left: 50%;  /* 左側から50%の位置に */
+  transform: translateX(-50%);  /* 幅の50%分だけ左に移動させて中央に */
+}
+
+.comment-text {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  border: solid 2px #dedede;
+  resize: none;
+}
+
+.comment-warn {
+  padding: 10px;
+  font-size: 14px;
+  margin: 10px 0px;
+  text-align: center;
+}
+
+.comment-btn {
+  line-height: 48px;
+  background-color: #60bfc2;
+  border: 3px solid #036265;
+  color: #fff;
+  width: 50%;
+  min-width: 150px;
+  font-size: 20px;
+  border-radius: 100px;
+  margin-bottom: 2vh;
+}
+
+.comment-flag {
+  display: flex;
+  justify-content: center;
+}
+
+.comment-flag-icon {
+  margin: 10px 5px 0 0;
+}
+
+.links {
+  display: flex;
+  justify-content: space-between;
+  width: 50vw;
+
+}
+
+.change-item-btn {
+  font-size: 30px;
+  text-decoration: none;
+  color: #75b0b2;
+}
+
+.another-item {
+  display: block;
+  margin: 30px 0px 8px;
+  color: #3CCACE;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 23px;
+}
+
+.item-box-img {
+  width: 50vw;
+  height: auto;
+  max-width: 80%;
+  max-height: 60vh;
+  background-color: rgb(205, 202, 202);
+  object-fit: contain;
+  display: block;
+  margin: 30px auto;
+}
+
+.title_name {
+  font-size: 30px;
+  color: #000000;
+  border-bottom: 10px solid #f1501f;
+}

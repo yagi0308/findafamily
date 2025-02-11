@@ -13,5 +13,7 @@ class CreatePosts < ActiveRecord::Migration[7.1]
       t.references :user,         null: false, foreign_key: true
       t.timestamps
     end
+
+    change_column_null :posts, :animal_image, true
   end
 end

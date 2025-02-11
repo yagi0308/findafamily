@@ -1,7 +1,7 @@
 /* ボタン */
 .login__link {
   font-size: 23px;
-  text-decoration: underline;
+  border-bottom: 5px solid #f1501f;
 }
 
 .page-title {
