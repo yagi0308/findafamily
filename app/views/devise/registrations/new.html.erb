@@ -105,6 +105,9 @@
         </div>
         <%= f.file_field :profile_image, class:"input-default", id:"profile-image" %>
       </div>
+      <% if @user.profile_image.attached? %>
+      <%= image_tag @user.profile_image, class: "profile-image" %>
+      <% end %>
 
       <div class="form-group">
         <div class='form-text-wrap'>

@@ -6,7 +6,7 @@
   <div class="posts-sell-main">
     <h2 class="posts-sell-title">🐈‍⬛動物について教えてください🐩</h2>
 
-     <%= form_with model: @post, local: true do |f| %>
+     <%= form_with model: @post, local: true, do |f| %>
      <%= render 'shared/error_messages', model: @post %>
 
 
@@ -18,11 +18,14 @@
         <span class="indispensable">必須</span>
       </div>
       <div class="click-upload">
-        <%= f.file_field :animal_image, id:"post-image" %>
+        <%= f.file_field :animal_image, id:"animal-image" %>
       </div>
+      <% if @post.animal_image.attached? %>
+      <%= image_tag @post.animal_image, class: "animal-image" %>
+      <% end %>
     </div>
     </div>
-    <%# /画像 %>
+    <%# /動物の写真 %>
 
      <%# タイトル %>
     <div class="new-posts">
