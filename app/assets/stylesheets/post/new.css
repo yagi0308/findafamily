@@ -10,10 +10,6 @@
   min-width: 500px;
 }
 
-.posts-sell-header {
-  padding: 5vh 0;
-  text-align: center;
-}
 
 .posts-sell-main {
   background-color: #FFF;
@@ -24,12 +20,11 @@
 
 .posts-sell-title {
   font-size: 25px;
-  background-color: #efb0d2;
-  border: 3px solid #d6b9a0;
-  border-radius: 30px;
+  border-bottom: 10px solid #f1501f;
   font-weight: bold;
   text-align: center;
 }
+
 
 /* 共通 */
 .indispensable {
@@ -115,17 +110,19 @@
 
 .sell-btn {
   background: #e292be;
-  border: 3px solid #d6b9a0;
+  border: 3px solid #ab06bd88;
+  border-radius: 100vh;
   color: #ffffff;
   width: 100%;
   height: 50px;
-  font-size: 20px;
+  font-size: 25px;
   margin-bottom: 4vh;
 }
 
 .back-btn {
   background: #aaa;
-  border: 1px solid #aaa;
+  border: 3px solid #258280;
+  border-radius: 100vh;
   color: #fff;
   padding: 15px 35%;
   text-decoration: none;

@@ -14,6 +14,8 @@ class Post < ApplicationRecord
   validate :acceptable_image
 
   belongs_to :user
+  belongs_to :gender
+  has_one :adoption
 
   private
 

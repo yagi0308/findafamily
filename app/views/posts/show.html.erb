@@ -1,0 +1,87 @@
+ <%= render "shared/fourth-header" %>
+
+<div class="post-show">
+  <div class="post-box">
+    <h2 class="title_name">
+      <%= @post.title %>
+    </h2>
+    <div class="post-img-content">
+      <%= link_to image_tag @post.animal_image, class: "item-box-img" %>
+
+      <% if @post.adoption.present? %>
+        <div class="found-home">
+          <span>🏠 里親さんが決まりました！</span>
+        </div>
+      <% end %>
+
+      <div class="post-explain-box">
+      </div>
+
+      <table class="detail-table">
+        <tbody>
+          <tr>
+            <th class="detail-post">投稿者</th>
+            <td class="detail-value"><%= @post.user.nickname %></td>
+          </tr>
+          <tr>
+            <th class="detail-post">タイトル</th>
+            <td class="detail-value"><%= @post.title %></td>
+          </tr>
+          <tr>
+            <th class="detail-post">カテゴリー</th>
+            <td class="detail-value"><%= @post.category_id %></td>
+          </tr>
+          <tr>
+            <th class="detail-post">種類</th>
+            <td class="detail-value"><%= @post.animal_type %></td>
+          </tr>
+          <tr>
+            <th class="detail-post">年齢</th>
+            <td class="detail-value"><%= @post.age %></td>
+          </tr>
+
+          <tr>
+            <th class="detail-post">性別</th>
+            <td class="detail-value"><%= @post.gender_id %></td>
+          </tr>
+
+          <tr>
+            <th class="detail-post">性格</th>
+            <td class="detail-value"><%= @post.personality %></td>
+          </tr>
+
+          <tr>
+            <th class="detail-post">保護や譲渡の場所</th>
+            <td class="detail-value"><%= @post.address %></td>
+          </tr>
+
+          <tr>
+            <th class="detail-post">詳細情報</th>
+            <td class="detail-value"><%= @post.description %></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <% if user_signed_in? %>
+        <% unless @post.adoption.present? %>
+          <% if current_user == @post.user %>
+            <div class="edit-delete-buttons">
+              <%= link_to "投稿を編集する", root_path(@post), method: :get, class: "post-red-btn" %>
+              <%= link_to "削除する", post_path(@post), method: :delete, class: "post-destroy" %>
+            </div>
+          <% end %>
+        <% end %>
+      <% end %>
+
+  <div class="comment-box">
+    <form>
+      <textarea class="comment-text"></textarea>
+      <p class="comment-warn">
+      相手のことを考え丁寧なコメントを心がけましょう。
+      </p>
+      <button type="submit" class="comment-btn">
+        <span>コメントする<span>
+      </button>
+    </form>
+  </div>
+</div>
