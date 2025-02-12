@@ -102,29 +102,33 @@
 
 /* 下部ボタン */
 .sell-btn-contents {
-  width: 50%;
+  width: 40%;
   padding-top: 50px;
   margin-left: 130px;
   text-align: center;
 }
 
 .sell-btn {
-  background: #e292be;
-  border: 3px solid #ab06bd88;
+  background: #efa360;
+  border: 3px solid #ac4006a3;
   border-radius: 100vh;
   color: #ffffff;
   width: 100%;
-  height: 50px;
+  height: 70px;
   font-size: 25px;
   margin-bottom: 4vh;
 }
 
 .back-btn {
   background: #aaa;
-  border: 3px solid #258280;
+  border: 3px solid #5bb4b2;
   border-radius: 100vh;
   color: #fff;
+  padding: 0;
   padding: 15px 35%;
   text-decoration: none;
+  font-size: 15px;
 }
+
+
 

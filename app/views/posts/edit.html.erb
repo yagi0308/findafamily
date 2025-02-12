@@ -1,0 +1,107 @@
+<div class="posts-sell-contents">
+
+  <%= render "shared/third-header" %>
+
+  <div class="posts-sell-main">
+    <h2 class="posts-sell-title">🐈‍⬛動物について教えてください🐩</h2>
+
+     <%= form_with model: @post, local: true do |f| %>
+     <%= render 'shared/error_messages', model: @post %>
+
+
+    <%# 動物の写真 %>
+    <div class="img-upload">
+      <div class="upload-container">
+      <div class="weight-bold-text">
+        🐈‍⬛写真を添付してください
+        <span class="indispensable">必須</span>
+      </div>
+      <div class="click-upload">
+        <%= f.file_field :animal_image, id:"animal-image" %>
+      </div>
+      <% if @post.animal_image.attached? %>
+      <%= image_tag @post.animal_image, class: "animal-image" %>
+      <% end %>
+    </div>
+    </div>
+    <%# /動物の写真 %>
+
+     <%# タイトル %>
+    <div class="new-posts">
+      <div class="weight-bold-text">
+        🐈‍⬛タイトル
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :title, class:"posts-text", id:"title", placeholder:"(例:飼い犬が迷子になってしまいました、猫を保護しましたなど)", maxlength:"100" %>
+      <%# タイトル %>
+
+       <%# 動物のカテゴリー %>
+      <div class="posts-explain">
+        <div class="weight-bold-text">
+          🐈‍⬛カテゴリーを選んでください
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"category"}) %>
+      </div>
+      <%# 動物のカテゴリー %>
+
+      <%# 動物の種類 %>
+        <div class="weight-bold-text">
+          🐈‍⬛種類を教えてください
+          <span class="indispensable">必須</span>
+        </div>
+         <%= f.text_area :animal_type, class:"posts-text", id:"animal_type", placeholder:"(例:猫、犬、鳥など)", maxlength:"40" %>
+        <%# 動物の種類 %>
+
+        <%# 動物の年齢 %>
+        <div class="weight-bold-text">
+          🐈‍⬛年齢を教えてください
+        </div>
+        <%= f.text_area :age, class:"posts-text", id:"age", placeholder:"(例:3ヶ月、2歳、不明など)" %>
+       <%# 動物の年齢 %>
+
+
+       <%# 動物の性別 %>
+      <div class="weight-bold-text">
+          🐈‍⬛性別を教えてください
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:gender_id, Gender.all, :id, :name, {}, {class:"select-box", id:"gender"}) %>
+      <%# 動物の性別 %>
+
+      <%# 動物の性格 %>
+      <div class="weight-bold-text">
+        🐈‍⬛性格を教えてください
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :personality, class:"posts-text", id:"personality", placeholder:"(例:人馴れしていません、人懐っこいですなど)", maxlength:"100" %>
+      <%# 動物の性格 %>
+
+      <%# 場所 %>
+      <div class="weight-bold-text">
+        🐈‍⬛保護や譲渡の場所を教えてください
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :address, class:"posts-text", id:"address", placeholder:"(例:東京都板橋区〜)", maxlength:"100" %>
+      <%# 場所 %>
+
+      <%# 動物の詳細 %>
+      <div class="weight-bold-text">
+        🐈‍⬛その他の詳細を入力してください
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :description, class:"content-text", id:"description", placeholder:"(例:昨日の夜、脱走してしまいました。三毛猫とサビ猫のMIXです。首輪はしていません。外に出たことがない為、すごく心配しています。東京都板橋区⚪︎⚪︎あたりで見かけた方はご連絡いただけますと幸いです。)
+
+(例:ペットのゴールデンレトリバーが赤ちゃんを産みました！5匹いてとても可愛いです。里親さんを探しています。ご希望の方はご連絡ください！)", maxlength:"2000" %>
+      <%# 動物の性格 %>
+
+
+    <%# 下部ボタン %>
+    <div class="sell-btn-contents">
+      <%= f.submit "変更する" ,class:"sell-btn" %>
+      <%=link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
+    <%# /下部ボタン %>
+    </div>
+      <% end %>
+</div>

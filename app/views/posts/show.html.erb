@@ -29,7 +29,7 @@
           </tr>
           <tr>
             <th class="detail-post">カテゴリー</th>
-            <td class="detail-value"><%= @post.category_id %></td>
+            <td class="detail-value"><%= @post.category.name %></td>
           </tr>
           <tr>
             <th class="detail-post">種類</th>
@@ -42,7 +42,7 @@
 
           <tr>
             <th class="detail-post">性別</th>
-            <td class="detail-value"><%= @post.gender_id %></td>
+            <td class="detail-value"><%= @post.gender.name %></td>
           </tr>
 
           <tr>
@@ -66,8 +66,9 @@
         <% unless @post.adoption.present? %>
           <% if current_user == @post.user %>
             <div class="edit-delete-buttons">
-              <%= link_to "投稿を編集する", root_path(@post), method: :get, class: "post-red-btn" %>
+              <%= link_to "投稿を編集する", edit_post_path(@post), method: :get, class: "post-red-btn" %>
               <%= link_to "削除する", post_path(@post), method: :delete, class: "post-destroy" %>
+              <%=link_to 'もどる', root_path, class:"back-second-btn" %>
             </div>
           <% end %>
         <% end %>
