@@ -285,11 +285,33 @@
 .show-back-btn {
   width: 100% !important;
   height: 100px;
-  margin-left: auto; /* 右に寄せる */
-  margin-right: 70px; /* 右側の余白をゼロに */
+  margin-left: auto;
+  margin-right: 70px;
   text-align: center;
-  background: #aaa;     /* 背景色 */
-  border: 3px solid #5bb4b2; /* 枠線 */
-  border-radius: 100vh; /* 丸い角 */
-  color: #fff;          /* 文字色 */
+  background: #aaa;
+  border: 3px solid #5bb4b2;
+  border-radius: 100vh; 
+  color: #fff;
+}
+
+.found-home {
+  font-size: 30px;
+  font-weight: bold;
+  background-color: rgb(99, 105, 219);
+  color: #ecf161; 
+  border-radius: 20px;
+  text-align: center;
+  padding: 10px;
+}
+
+.back-to-top-btn {
+  display: inline-block;
+  margin-top: 10px;
+  margin-left: 230px;
+  padding: 10px 20px;
+  font-size: 20px;
+  background-color: #3498db;
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
 }

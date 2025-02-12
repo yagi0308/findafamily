@@ -1,6 +1,6 @@
  <%= render "shared/fourth-header" %>
 
-<div class="post-show">
+  <div class="post-show">
   <div class="post-box">
     <h2 class="title_name">
       <%= @post.title %>
@@ -10,7 +10,7 @@
 
       <% if @post.adoption.present? %>
         <div class="found-home">
-          <span>🏠 お家が見つかりました！</span>
+          <span>💕家族が見つかりました💕</span>
         </div>
       <% end %>
 
@@ -61,6 +61,8 @@
           </tr>
         </tbody>
       </table>
+
+          <%= link_to 'TOPページに戻る', root_path, class: "back-to-top-btn" %>
 
       <% if user_signed_in? %>
         <% unless @post.adoption.present? %>

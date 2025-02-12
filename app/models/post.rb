@@ -17,7 +17,6 @@ class Post < ApplicationRecord
   has_one_attached :animal_image
   validate :acceptable_image
   belongs_to :user
-  has_one :adoption
   has_many :comments, dependent: :destroy
 
   private
