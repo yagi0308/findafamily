@@ -6,15 +6,17 @@ class Post < ApplicationRecord
     validates :gender_id, numericality: { only_integer: true, greater_than: 1, message: 'を入力してください' }
     validates :personality, length: { maximum: 99 }
     validates :description, length: { maximum: 1999 }
-    validates :user
+    validates :user, presence: true
     validates :address, length: { maximum: 99 }
   end
 
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to_active_hash :category
+  belongs_to_active_hash :gender
+
   has_one_attached :animal_image
   validate :acceptable_image
-
   belongs_to :user
-  belongs_to :gender
   has_one :adoption
 
   private

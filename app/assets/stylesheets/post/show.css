@@ -62,20 +62,38 @@
   margin: 0 5px; /* ボタン間のスペースを調整 */
 }
 
+.post-red-btn,
+.post-destroy,
+.back-second-btn {
+  width: 200px; /* 任意の幅 */
+  height: 70px; /* 任意の高さ */
+  display: inline-flex; /* インライン要素で中央揃え */
+  justify-content: center; /* 水平方向中央揃え */
+  align-items: center; /* 垂直方向中央揃え */
+  text-align: center; /* テキスト中央揃え */
+  font-size: 18px; /* フォントサイズ統一 */
+  border-radius: 100vh;
+  white-space: nowrap; /* テキストを改行させない */
+  padding: 0 10px; /* 左右の余白を適度に */
+}
+
 .post-red-btn {
   background-color: #ed4816;
   border: 3px solid #8f4c11;
-  border-radius: 100vh;
   color: #FFF;
 }
 
 .post-destroy {
   background-color: rgb(214, 158, 158);
   border: 3px solid #8a4c15;
-  border-radius: 100vh;
   color: rgb(107, 30, 30);
 }
 
+.back-second-btn {
+  background: #6ec47b;
+  border: 3px solid #e7b33a;
+  color: #fff;
+}
 
 .detail-table {
   margin-top: 50px;
@@ -169,7 +187,8 @@
   background-color: #60bfc2;
   border: 3px solid #036265;
   color: #fff;
-  width: 50%;
+  width: 40%;
+  height: 70px;
   min-width: 150px;
   font-size: 20px;
   border-radius: 100px;
