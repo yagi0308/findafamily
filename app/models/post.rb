@@ -18,6 +18,7 @@ class Post < ApplicationRecord
   validate :acceptable_image
   belongs_to :user
   has_one :adoption
+  has_many :comments, dependent: :destroy
 
   private
 
