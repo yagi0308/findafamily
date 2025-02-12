@@ -60,6 +60,7 @@ Things you may want to cover:
 | user_id	           | references	 | null: false, foreign_key: true	| コメント投稿者（Usersテーブルと関連）
 | post_id	           | references	 | null: false, foreign_key: true	| 対象の投稿（Postsテーブルと関連）
 | content	           | text        | null: false	                  | コメント本文
+| comment_image    	 | string		   |                                | 画像（ActiveStorage）
 
 
 ## follows table

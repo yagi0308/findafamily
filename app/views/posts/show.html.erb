@@ -75,14 +75,34 @@
       <% end %>
 
   <div class="comment-box">
-    <form>
-      <textarea class="comment-text"></textarea>
-      <p class="comment-warn">
-      相手のことを考え丁寧なコメントを心がけましょう。
-      </p>
-      <button type="submit" class="comment-btn">
-        <span>コメントする<span>
-      </button>
-    </form>
-  </div>
+    <% if user_signed_in? && current_user != @post.user %> 
+    <%= form_with model: [@post, @comment], local: true do |f| %>
+
+      <div class="field">
+        <%= f.label :content, "コメント", class: "comment-container" %><br />
+        <ul class="comments_lists">
+    <% @comments.each do |comment| %>
+      <li class="comments_list">
+        <%= comment.content %>
+        <% if comment.comment_image.attached? %>
+          <%= image_tag comment.comment_image, class: "comment_image" %>
+        <% end %>
+        <%= link_to "（#{comment.user.nickname}）", user_path(comment.user), class: :comment_user %>
+      </li>
+    <% end %>
+     </ul>
+        <%= f.text_area :content, class: "comment-text" %>
+        <p class="comment-warn">
+          相手のことを考え丁寧なコメントを心がけましょう。
+        </p>
+      </div>
+      <div class="click-upload">
+        <%= f.file_field :comment_image, id: "comment-image" %>
+      </div>
+      <div class="actions">
+        <%= f.submit "送信する", class: "comment-btn" %>
+        <%=link_to 'TOPにもどる', root_path, class:"comment-btn back-btn" %>
+      </div>
+    <% end %>
+  <% end %>
 </div>

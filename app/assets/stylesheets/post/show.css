@@ -156,15 +156,19 @@
 .report-flag-icon {
   margin-right: 5px;
 }
+.comment-box label {
+  display: block;
+  margin-bottom: 2px;
+}
 
 .comment-box {
   width: 40vw;
   background-color: #fff;
   text-align: center;
-  margin: 5vh 0;
-  position: absolute;  /* 絶対位置を指定 */
-  left: 50%;  /* 左側から50%の位置に */
-  transform: translateX(-50%);  /* 幅の50%分だけ左に移動させて中央に */
+  margin: 0 5vh;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%); 
 }
 
 .comment-text {
@@ -173,17 +177,25 @@
   padding: 10px;
   border: solid 2px #dedede;
   resize: none;
+  margin-top: 10px;
 }
 
 .comment-warn {
   padding: 10px;
-  font-size: 14px;
-  margin: 10px 0px;
+  font-size: 15px;
+  margin: 5px 0px;
   text-align: center;
 }
 
+.comment-container {
+  font-size: 20px;
+  font-weight: bold;
+  border-bottom: 10px solid #68cff1;
+}
+
 .comment-btn {
-  line-height: 48px;
+  display: inline-block;
+  line-height: 65px;
   background-color: #60bfc2;
   border: 3px solid #036265;
   color: #fff;
@@ -193,6 +205,25 @@
   font-size: 20px;
   border-radius: 100px;
   margin-bottom: 2vh;
+}
+
+/* TOPにもどるボタン */
+.back-btn {
+  background-color: #d17660d4;  /* 異なる背景色 */
+}
+
+.form__btn{
+  display: inline-block;
+  padding: 0.4em 1.6em;
+  font-size: 1em;
+  color: #fff;
+  text-decoration: none;
+  user-select: none;
+  background: #95dce3;
+  border: 3px #c6d5a4 solid;
+  border-radius: 3px;
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 2px 0 rgba(0, 0, 0, 0.12);
+  transition: 0.2s ease;
 }
 
 .comment-flag {
@@ -241,4 +272,24 @@
   font-size: 30px;
   color: #000000;
   border-bottom: 10px solid #f1501f;
+}
+
+.comment_image {
+  max-width: 300px;
+  max-height: 300px;
+  width: auto;
+  height: auto;
+  border-radius: 8px;
+}
+
+.show-back-btn {
+  width: 100% !important;
+  height: 100px;
+  margin-left: auto; /* 右に寄せる */
+  margin-right: 70px; /* 右側の余白をゼロに */
+  text-align: center;
+  background: #aaa;     /* 背景色 */
+  border: 3px solid #5bb4b2; /* 枠線 */
+  border-radius: 100vh; /* 丸い角 */
+  color: #fff;          /* 文字色 */
 }

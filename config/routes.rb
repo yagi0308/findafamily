@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   get 'posts/index'
    root to: "posts#index"
    resources :posts, only: [:new, :create, :show, :edit, :update, :destroy] do
+    resources :comments, only: :create
+   end
+   resources :users, only: [:show] 
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -11,5 +15,4 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-end
 end

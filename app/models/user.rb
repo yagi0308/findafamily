@@ -22,6 +22,7 @@ class User < ApplicationRecord
   validate :acceptable_image
 
   has_many :posts, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   private
 
