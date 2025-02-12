@@ -20,7 +20,7 @@
         <%= f.file_field :animal_image, id:"animal-image" %>
       </div>
       <% if @post.animal_image.attached? %>
-      <%= image_tag @post.animal_image, class: "animal-image" %>
+      <%= image_tag @post.animal_image, class: "animal_image" %>
       <% end %>
     </div>
     </div>
