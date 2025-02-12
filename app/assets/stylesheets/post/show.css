@@ -65,16 +65,16 @@
 .post-red-btn,
 .post-destroy,
 .back-second-btn {
-  width: 200px; /* 任意の幅 */
-  height: 70px; /* 任意の高さ */
-  display: inline-flex; /* インライン要素で中央揃え */
-  justify-content: center; /* 水平方向中央揃え */
-  align-items: center; /* 垂直方向中央揃え */
-  text-align: center; /* テキスト中央揃え */
-  font-size: 18px; /* フォントサイズ統一 */
+  width: 200px;
+  height: 70px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 18px;
   border-radius: 100vh;
-  white-space: nowrap; /* テキストを改行させない */
-  padding: 0 10px; /* 左右の余白を適度に */
+  white-space: nowrap;
+  padding: 0 10px;
 }
 
 .post-red-btn {

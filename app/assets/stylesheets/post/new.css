@@ -60,6 +60,7 @@
   justify-content: space-between;
   flex-wrap: wrap;
   padding: 2vh 0;
+  width: 50px;
 }
 
 .click-upload {
@@ -71,6 +72,7 @@
 .click-upload>p {
   margin-bottom: 15px;
 }
+
 
 .posts-text {
   width: 100%;
@@ -102,21 +104,33 @@
 
 /* 下部ボタン */
 .sell-btn-contents {
-  width: 40%;
+  display: flex;
+  justify-content: flex-start !important; 
+  gap: 20px;
+  width: 80% !important;
   padding-top: 50px;
-  margin-left: 130px;
+  margin-left: auto; /* 右に寄せる */
+  margin-right: 70px; /* 右側の余白をゼロに */
   text-align: center;
 }
 
-.sell-btn {
+.sell-btn,
+.back-btn {
   background: #efa360;
   border: 3px solid #ac4006a3;
   border-radius: 100vh;
   color: #ffffff;
-  width: 100%;
   height: 70px;
   font-size: 25px;
   margin-bottom: 4vh;
+  text-align: center; 
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+}
+
+.sell-btn {
+  width: 48%;
 }
 
 .back-btn {
@@ -125,10 +139,5 @@
   border-radius: 100vh;
   color: #fff;
   padding: 0;
-  padding: 15px 35%;
-  text-decoration: none;
-  font-size: 15px;
+  width: 48%;
 }
-
-
-

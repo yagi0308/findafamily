@@ -1,0 +1,39 @@
+.sell-btn-contents {
+  display: flex;
+  justify-content: flex-start !important; 
+  gap: 20px;
+  width: 80% !important;
+  padding-top: 50px;
+  margin-left: auto; /* 右に寄せる */
+  margin-right: 70px; /* 右側の余白をゼロに */
+  text-align: center;
+}
+
+.sell-btn,
+.adoption-btn {
+  border-radius: 100vh;
+  color: #ffffff;
+  height: 70px;
+  margin-bottom: 4vh;
+  text-align: center; 
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+}
+
+.sell-btn {
+  width: 48%;
+  background: #7fd6ba !important;
+  border: 3px solid #22ac06a3 !important;
+  font-size: 20px !important;
+}
+
+.adoption-btn {
+  background: #e98d8d;
+  border: 3px solid #83c9ff;
+  border-radius: 100vh;
+  color: #ffffff;
+  padding: 0;
+  width: 48%;
+  font-size: 17px;
+}
