@@ -6,7 +6,7 @@ class Post < ApplicationRecord
     validates :gender_id, numericality: { only_integer: true, greater_than: 1, message: 'を入力してください' }
     validates :personality, length: { maximum: 99 }
     validates :description, length: { maximum: 1999 }
-    validates :user, presence: true
+    validates :user
     validates :address, length: { maximum: 99 }
   end
 
@@ -17,7 +17,6 @@ class Post < ApplicationRecord
   has_one_attached :animal_image
   validate :acceptable_image
   belongs_to :user
-  has_one :adoption
   has_many :comments, dependent: :destroy
 
   private

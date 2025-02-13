@@ -1,6 +1,6 @@
 <div class="posts-sell-contents">
 
-  <%= render "shared/third-header" %>
+  <%= render "shared/third_header" %>
 
   <div class="posts-sell-main">
     <h2 class="posts-sell-title">🐈‍⬛動物について教えてください🐩</h2>
@@ -99,9 +99,11 @@
     <%# 下部ボタン %>
     <div class="sell-btn-contents">
       <%= f.submit "変更する" , class:"sell-btn" %>
-      <%=link_to 'お家が見つかりました！', root_path, class:"adoption-btn" %>
-    </div>
-    <%# /下部ボタン %>
-    </div>
+      <% if user_signed_in? && current_user == @post.user && @post.adoption.nil? %>
+      <%=link_to '家族が見つかりました！', update_adoption_post_path(@post), method: :get, class:"adoption-btn" %>
       <% end %>
+    </div>
+    <%# 下部ボタン %>
+     <% end %>
+  </div>
 </div>

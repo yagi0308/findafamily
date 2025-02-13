@@ -1,5 +1,6 @@
 /* ボタン */
 .login__link {
+  margin-left: 15px;
   font-size: 23px;
   border-bottom: 5px solid #f1501f;
 }
@@ -40,4 +41,14 @@
   color: #999;
   text-align: right;
   text-decoration: underline;
+}
+
+.found-home-second{
+  font-size: 18px;
+  font-weight: bold;
+  background-color: rgb(99, 105, 219);
+  color: #ecf161; 
+  border-radius: 20px;
+  text-align: center;
+  padding: 10px;
 }

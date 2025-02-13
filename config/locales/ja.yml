@@ -18,3 +18,12 @@ ja:
         category_id: "カテゴリー"
         address: "保護や譲渡の場所"
         animal_image: "写真"
+      item:
+        item_image: "商品画像"
+        name: "商品名"
+        description: "商品詳細"
+        price: "販売価格"
+        item_category_id: "カテゴリー"
+        shipping_fee_id: "配送料の負担"
+        shipping_days_id: "発送までの日数"
+

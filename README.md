@@ -28,10 +28,10 @@ Things you may want to cover:
 |--------------------|----------  |--------------------|
 | title	             | string	    |  null: false	      |  タイトル
 | animal_image    	 | string		  |  null: false        |  動物の写真（ActiveStorage）
-| category           | integer    |  null: false	      |  カテゴリー（迷子・保護・譲渡）
+| category_id        | integer    |  null: false	      |  カテゴリー（迷子・保護・譲渡）
 | animal_type	       | string	    |  null: false	      |  動物の種類（犬・猫・鳥など）
 | age	               | string	    |	                    |  年齢（例: 3ヶ月、2歳など）
-| gender	           | integer    |	                    |  性別（オス・メス・不明）
+| gender_id	         | integer    |	                    |  性別（オス・メス・不明）
 | personality	       | text		    |  null: false        |  性格（例: 人懐っこい、臆病など）
 | description	       | text	      |  null: false	      |  詳細情報
 |	address            | string	    |  null: false	      |  保護した場所や譲渡の場所
@@ -81,10 +81,12 @@ Things you may want to cover:
 | name               | string    | null: false                        |
 | description        | text      | null: false                        |
 | price              | integer   | null: false                        |
-| items_category_id  | references| null: false, foreign_key: true     |
-| shipping_fee       | integer   | null: false                        |
-| shipping_days      | integer   | null: false                        |
+| category_id        | integer   | null: false, foreign_key: true     |
+| shipping_fee_id    | integer   | null: false                        |
+| shipping_days_id   | integer   | null: false                        |
+| items_image        | string    | null: false                        |
 | user_id            | references| null: false, foreign_key: true     |
+
 
 ## purchases（購入記録） table
 | Column             | Type       | Options                            |

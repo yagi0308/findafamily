@@ -1,11 +1,16 @@
 Rails.application.routes.draw do
   devise_for :users
-  get 'posts/index'
-   root to: "posts#index"
-   resources :posts, only: [:new, :create, :show, :edit, :update, :destroy] do
-    resources :comments, only: :create
-   end
-   resources :users, only: [:show] 
+  root to: "posts#index"
+
+  resources :posts, only: [:new, :create, :show, :edit, :update, :destroy] do
+    member do
+      get 'update_adoption'
+    end
+    resources :comments, only: :create  
+  end
+
+  resources :items, only: [:index, :new, :create, :show]
+  resources :users, only: [:show]
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -15,4 +20,4 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-end
+  end

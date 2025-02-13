@@ -1,0 +1,69 @@
+<%= render "shared/five_header" %>
+
+  <div class="post-show">
+  <div class="post-box">
+    <h2 class="title_name">
+      <%= @item.name %>
+    </h2>
+    <div class="post-img-content">
+      <%= link_to image_tag @item.item_image, class: "item-box-img" %>
+
+          <%# if item.order.present? %>
+          <div class='sold-out'>
+            <span>Sold Out!!</span>
+          </div>
+          <%# end %>
+
+      <div class="post-explain-box">
+      </div>
+
+      <table class="detail-table">
+        <tbody>
+          <tr>
+            <th class="detail-post">商品名</th>
+            <td class="detail-value"><%= @item.name %></td>
+          </tr>
+
+          <tr>
+            <th class="detail-post">商品詳細</th>
+            <td class="detail-value"><%= @item.description %></td>
+          </tr>
+
+            <th class="detail-post">カテゴリー</th>
+            <td class="detail-value"><%= @item.item_category.name %></td>
+          </tr>
+          <tr>
+            <th class="detail-post">配送料の負担</th>
+            <td class="detail-value"><%= @item.shipping_fee.name %></td>
+          </tr>
+          <tr>
+            <th class="detail-post">発送日数</th>
+            <td class="detail-value"><%= @item.shipping_days.name %></td>
+          </tr>
+
+          <tr>
+            <th class="detail-post">販売価格</th>
+            <td class="detail-value"><%= @item.price %></td>
+          </tr>
+        </tbody>
+      </table>
+
+
+      <% if user_signed_in? %>
+        <%# unless @item.adoption.present? %>
+          <% if current_user == @item.user %>
+            <div class="edit-delete-buttons">
+              <%= link_to "投稿を編集する", root_path, method: :get, class: "post-red-btn" %>
+              <%= link_to "削除する", root_path, data: { turbo_method: :delete }, class: "post-destroy" %>
+              <%=link_to 'もどる', root_path, class:"back-second-btn" %>
+            </div>
+          <% end %>
+        <% end %>
+      <%# end %>
+
+      <div class="actions">
+        <%=link_to 'TOPにもどる', root_path, class:"comment-btn back-btn" %>
+      </div>
+      </div>
+    </div>
+</div>

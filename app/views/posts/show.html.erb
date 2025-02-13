@@ -1,6 +1,6 @@
- <%= render "shared/fourth-header" %>
+ <%= render "shared/fourth_header" %>
 
-<div class="post-show">
+  <div class="post-show">
   <div class="post-box">
     <h2 class="title_name">
       <%= @post.title %>
@@ -10,7 +10,7 @@
 
       <% if @post.adoption.present? %>
         <div class="found-home">
-          <span>🏠 お家が見つかりました！</span>
+          <span>💕家族が見つかりました💕</span>
         </div>
       <% end %>
 
@@ -62,6 +62,13 @@
         </tbody>
       </table>
 
+      <% if @post.adoption.present? %>
+          <%= link_to 'TOPページに戻る', root_path, class: "back-to-top-btn" %>
+          <%= link_to "削除する", post_path(@post), data: { turbo_method: :delete }, class: "back-to-top-btn delete-btn" %>
+
+          <% end %>
+
+
       <% if user_signed_in? %>
         <% unless @post.adoption.present? %>
           <% if current_user == @post.user %>
@@ -75,22 +82,24 @@
       <% end %>
 
   <div class="comment-box">
-    <% if user_signed_in? && current_user != @post.user %> 
+    <% if user_signed_in? && current_user != @post.user && @post.adoption.blank? %> 
     <%= form_with model: [@post, @comment], local: true do |f| %>
 
       <div class="field">
-        <%= f.label :content, "コメント", class: "comment-container" %><br />
-        <ul class="comments_lists">
+        <%= f.label :content, "[ コメント ]", class: "comment-container" %><br />
+        <div class="comments_lists">
     <% @comments.each do |comment| %>
-      <li class="comments_list">
-        <%= comment.content %>
+      <div class="comments_list">
         <% if comment.comment_image.attached? %>
           <%= image_tag comment.comment_image, class: "comment_image" %>
         <% end %>
+        <div class="comment-content">
+         <%= comment.content %>
         <%= link_to "（#{comment.user.nickname}）", user_path(comment.user), class: :comment_user %>
-      </li>
+        </div>
+        </div>
     <% end %>
-     </ul>
+     </div>
         <%= f.text_area :content, class: "comment-text" %>
         <p class="comment-warn">
           相手のことを考え丁寧なコメントを心がけましょう。

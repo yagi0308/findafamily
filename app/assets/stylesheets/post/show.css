@@ -100,6 +100,7 @@
   margin-bottom: 50px;
   width: 90%;
   font-size: 20px;
+  text-align: center
 }
 
 .detail-item {
@@ -165,7 +166,7 @@
   width: 40vw;
   background-color: #fff;
   text-align: center;
-  margin: 0 5vh;
+  margin-left: 30px;
   position: absolute;
   left: 50%;
   transform: translateX(-50%); 
@@ -183,14 +184,14 @@
 .comment-warn {
   padding: 10px;
   font-size: 15px;
-  margin: 5px 0px;
+  margin-right: 60px;
   text-align: center;
 }
 
 .comment-container {
   font-size: 20px;
   font-weight: bold;
-  border-bottom: 10px solid #68cff1;
+  margin-right: 30px;
 }
 
 .comment-btn {
@@ -210,6 +211,7 @@
 /* TOPにもどるボタン */
 .back-btn {
   background-color: #d17660d4;  /* 異なる背景色 */
+  margin-left: 50px;
 }
 
 .form__btn{
@@ -275,8 +277,8 @@
 }
 
 .comment_image {
-  max-width: 300px;
-  max-height: 300px;
+  max-width: 200px;
+  max-height: 200px;
   width: auto;
   height: auto;
   border-radius: 8px;
@@ -285,11 +287,43 @@
 .show-back-btn {
   width: 100% !important;
   height: 100px;
-  margin-left: auto; /* 右に寄せる */
-  margin-right: 70px; /* 右側の余白をゼロに */
+  margin-left: auto;
+  margin-right: 70px;
   text-align: center;
-  background: #aaa;     /* 背景色 */
-  border: 3px solid #5bb4b2; /* 枠線 */
-  border-radius: 100vh; /* 丸い角 */
-  color: #fff;          /* 文字色 */
+  background: #aaa;
+  border: 3px solid #5bb4b2;
+  border-radius: 100vh; 
+  color: #fff;
 }
+
+.found-home {
+  font-size: 30px;
+  font-weight: bold;
+  background-color: rgb(99, 105, 219);
+  color: #ecf161; 
+  border-radius: 20px;
+  text-align: center;
+  padding: 10px;
+}
+
+.back-to-top-btn,
+.delete-btn {
+  display: inline-block;
+  margin-top: 10px;
+  margin-left: 150px;
+  padding: 10px 20px;
+  font-size: 20px;
+  background-color: #3498db;
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+}
+
+.back-to-top-btn.delete-btn {
+  background-color: #dfae4c;
+  padding: 10px 50px;
+  margin-left: 65px;
+
+}
+
+
