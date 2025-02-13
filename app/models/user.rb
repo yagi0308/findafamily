@@ -25,6 +25,9 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :items, dependent: :destroy
 
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to_active_hash :region
+
   private
 
   def acceptable_image

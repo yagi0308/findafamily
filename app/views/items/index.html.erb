@@ -5,7 +5,7 @@
     <% if user_signed_in? %>
       <div class="greeting">
         <h2 class="page-title">こんにちは
-        <%= link_to "#{current_user.nickname} さん", root_path(current_user), class: :login__link%></h2>
+        <%= link_to "#{current_user.nickname} さん", user_path(current_user), class: :login__link%></h2>
         <p>こちらでは動物に関する様々なアイテムを購入いただけます</p>
         <p>お好みのアイテムをお選びください</p>
       </div>

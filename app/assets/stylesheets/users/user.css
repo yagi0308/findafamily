@@ -1,0 +1,113 @@
+
+/* ユーザーページ */
+
+.page-heading {
+  text-align: center;
+  margin-top: 50px;
+  padding-bottom: 5px;
+  border-bottom: 10px solid #e35e5e;
+  display: inline-block;
+  margin-left: 400px;
+}
+
+.page-second-heading {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 100px;
+  border-bottom: 10px solid #e35e5e;
+  display: inline-block;
+  margin-left: 640px;
+
+}
+
+.user__wrapper{
+  min-height: calc(100vh - 500px);
+  margin-left: 500px;
+  margin-top: 80px;
+}
+
+.table{
+  border-collapse: collapse;
+  margin-bottom: 32px;
+  width: 50%;
+}
+.table__col1{
+  text-align: center;
+  font-weight: bold;
+  background: #decece;
+  border-collapse: collapse;
+  border: 1px solid #d9c3c3;
+  width: 20px;
+  padding: 8px;
+}
+.table__col2{
+  text-align: center;
+  border: 1px solid #d5b2b2;
+  border-collapse: collapse;
+  width: 20px;
+  padding: 16px 8px;
+}
+.user__card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  max-width: 900px; 
+  margin: 0 auto;
+}
+/* フッター */
+
+.footer {
+  background-color: #999;
+  padding: 10px 0;
+}
+.copyright {
+  text-align: center;
+  color: #fff;
+  font-size: 10px;
+}
+
+/* タブレット対応 */
+@media (max-width: 1024px) {
+  .inner {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .page-heading {
+    font-size: 24px;
+  }
+  .card {
+    width: 48%;
+    margin-bottom: 40px;
+  }
+  .prototype_image{
+    width: 60%;
+  }
+}
+
+ /* スマホ表示 */
+@media (max-width: 599px) {
+  .logo {
+    width: 120px;
+  }
+  .page-heading {
+    font-size: 20px;
+  }
+  .card {
+    width: 100%;
+    margin-bottom: 60px;
+  }
+  .card__title {
+    font-size: 18px;
+  }
+  .card__summary {
+    font-size: 14px;
+  }
+  .prototype_image{
+    width: 100%;
+  }
+  .table{
+    width: 100%;
+  }
+}
