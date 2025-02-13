@@ -5,7 +5,7 @@
     <% if user_signed_in? %>
       <div class="greeting">
         <h2 class="page-title">こんにちは
-        <%= link_to "#{current_user.nickname} さん", root_path(current_user), class: :login__link%></h2>
+        <%= link_to "#{current_user.nickname} さん", user_path(current_user), class: :login__link%></h2>
       </div>
     <% end %>
     <div class="card__wrapper">

@@ -3,10 +3,16 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def show
+    @user = User.find(params[:id])
+  rescue ActiveRecord::RecordNotFound
+    redirect_to root_path
+  end
+
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to @user, notice: 'ユーザーが作成されました'
+      redirect_to @user
     else
       render :new
     end
@@ -14,8 +20,9 @@ class UsersController < ApplicationController
 
   private
 
-  def user_params
-    params.require(:user).permit(:nickname, :last_name, :first_name, :last_name_kana, :first_name_kana,
-                                 :birthdate, :phone_number, :region_id, :introduction, :profile_image)
+  def set_post
+    @user = User.find(params[:id])
+  rescue ActiveRecord::RecordNotFound
+    redirect_to root_path
   end
 end
