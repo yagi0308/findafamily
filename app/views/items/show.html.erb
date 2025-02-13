@@ -8,9 +8,9 @@
     <div class="post-img-content">
       <%= link_to image_tag @item.item_image, class: "item-box-img" %>
 
-          <%# if item.order.present? %>
+          <%# if item.purchases.present? %>
           <div class='sold-out'>
-            <span>Sold Out!!</span>
+            <span>完売しました</span>
           </div>
           <%# end %>
 
@@ -43,27 +43,24 @@
 
           <tr>
             <th class="detail-post">販売価格</th>
-            <td class="detail-value"><%= @item.price %></td>
+            <td class="detail-value"><%= @item.price %>円</td>
           </tr>
         </tbody>
       </table>
 
 
       <% if user_signed_in? %>
-        <%# unless @item.adoption.present? %>
+        <%# unless @item.purchases.present? %>
           <% if current_user == @item.user %>
             <div class="edit-delete-buttons">
-              <%= link_to "投稿を編集する", root_path, method: :get, class: "post-red-btn" %>
-              <%= link_to "削除する", root_path, data: { turbo_method: :delete }, class: "post-destroy" %>
-              <%=link_to 'もどる', root_path, class:"back-second-btn" %>
+              <%= link_to "編集する", edit_item_path(@item), method: :get, class: "post-red-btn" %>
+              <%= link_to "削除する", item_path(@item), data: { turbo_method: :delete }, class: "post-destroy" %>
+              <%=link_to 'もどる', items_path, class:"back-second-btn" %>
             </div>
           <% end %>
         <% end %>
       <%# end %>
 
-      <div class="actions">
-        <%=link_to 'TOPにもどる', root_path, class:"comment-btn back-btn" %>
-      </div>
       </div>
     </div>
 </div>
