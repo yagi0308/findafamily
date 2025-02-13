@@ -1,14 +1,14 @@
     <div class="card">
       <%= link_to (image_tag item.item_image, class: :card__img), item_path(item) %>
 
-      <%# if post.adoption.present? %>
+      <%# if post.purchases.present? %>
         <div class="found-home-second">
-          <span>💕家族が見つかりました💕</span>
+          <span>完売しました</span>
         </div>
       <%# end %>
 
       <div class="card__body">
         <%= link_to item.name, item_path(item), class: :card__title %>
-        <%= link_to item.item_category_id, item_path(item), class: :card__address %>
+        <%= link_to item.item_category.name, item_path(item), class: :card__address %>
       </div>
     </div>

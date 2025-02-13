@@ -1,0 +1,122 @@
+<div class="posts-sell-contents">
+
+  <%= render "shared/third_header" %>
+
+  <div class="posts-sell-main">
+    <h2 class="posts-sell-title">商品を登録してください</h2>
+
+     <%= form_with model: @item, local: true do |f| %>
+     <%= render 'shared/error_messages', model: @item %>
+
+     <div class="items-description">
+
+    <%# 商品の写真 %>
+    <div class="img-upload">
+      <div class="upload-container">
+      <div class="weight-bold-text">
+        写真を添付してください
+        <span class="indispensable">必須</span>
+      </div>
+      <div class="click-upload">
+        <%= f.file_field :item_image, id:"item_image" %>
+      </div>
+      <% if @item.persisted? && @item.item_image.attached? %>
+      <%= image_tag @item.item_image, class: "item_image" %>
+      <% end %>
+    </div>
+    </div>
+    <%# /商品の写真 %>
+
+     <%# 商品名 %>
+    <div class="new-posts">
+      <div class="weight-bold-text">
+        商品名
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :name, class:"posts-text", id:"name", placeholder:"(商品名を入力してください)", maxlength:"100" %>
+      <%# 商品名 %>
+
+       <%# 商品詳細 %>
+      <div class="posts-explain">
+        <div class="weight-bold-text">
+          商品詳細
+          <span class="indispensable">必須</span>
+        </div>
+         <%= f.text_area :description, class:"posts-text", id:"description", placeholder:"(商品の詳細を入力してください)", maxlength:"100" %>
+      </div>
+      <%# 商品詳細 %>
+
+       <%# 商品カテゴリー %>
+      <div class="weight-bold-text">
+          カテゴリー
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:item_category_id, ItemCategory.all, :id, :name, {}, {class:"select-box", id:"item_category"}) %>
+      <%# 商品カテゴリー %>
+    </div>
+
+    <%# 配送について %>
+    <div class="items-detail">
+      <div class="form">
+        <div class="weight-bold-text">
+          配送料の負担
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:shipping_fee_id, ShippingFee.all, :id, :name, {}, {class:"select-box", id:"shipping_fee"}) %>
+        <div class="weight-bold-text">
+          発送までの日数
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:shipping_days_id, ShippingDays.all, :id, :name, {}, {class:"select-box", id:"shipping_days"}) %>
+      </div>
+    </div>
+    </div>
+    <%# /配送について %>
+
+
+    <%# 販売価格 %>
+    <div class="sell-price">
+      <div class="weight-bold-text question-text">
+        <span>販売価格</span>
+      </div>
+      <div>
+        <div class="price-content">
+          <div class="price-text">
+            <span>価格</span>
+            <span class="indispensable">必須</span>
+          </div>
+          <span class="sell-yen">¥</span>
+          <%= f.text_field :price, class:"price-input", id:"price", placeholder:"例）300" %>
+        </div>
+        <div class="price-content">
+          <span>販売手数料 (10%)</span>
+          <span>
+            <span id='add-tax-price'></span>円
+          </span>
+        </div>
+        <div class="price-content">
+          <span>販売利益</span>
+          <span>
+            <span id='profit'></span>円
+          </span>
+        </div>
+      </div>
+    </div>
+    <%# /販売価格 %>
+
+    <%# 下部ボタン %>
+    <div class="sell-btn-contents">
+      <%= f.submit "出品する" ,class:"sell-btn" %>
+      <%=link_to 'もどる', items_path, class:"go-back-btn" %>
+    </div>
+    <%# /下部ボタン %>
+    </div>
+      <% end %>
+
+         <%# if @item.purchases.present? %>
+          <%= link_to 'TOPページに戻る', root_path, class: "back-to-top-btn" %>
+          <%= link_to "削除する", root_path, data: { turbo_method: :delete }, class: "back-to-top-btn delete-btn" %>
+          <%# end %>
+
+
+</div>
