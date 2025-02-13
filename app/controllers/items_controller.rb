@@ -22,6 +22,12 @@ class ItemsController < ApplicationController
 
   private
 
+  def set_post
+    @item = Item.find(params[:id])
+  rescue ActiveRecord::RecordNotFound
+    redirect_to root_path
+  end
+
   def item_params
     params.require(:item).permit(:item_image, :name, :description, :price, :age, :item_category_id, :shipping_fee_id,
                                  :shipping_days_id).merge(user_id: current_user.id)

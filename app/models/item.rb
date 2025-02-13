@@ -3,12 +3,12 @@ class Item < ApplicationRecord
   validate :acceptable_image
 
   with_options presence: true do
-    validates :name
-    validates :description
+    validates :name, length: { maximum: 99 }
+    validates :description, length: { maximum: 99 }
     validates :price
-    validates :item_category_id
-    validates :shipping_fee_id
-    validates :shipping_days_id
+    validates :item_category_id, numericality: { only_integer: true, greater_than: 1, message: 'を入力してください' }
+    validates :shipping_fee_id, numericality: { only_integer: true, greater_than: 1, message: 'を入力してください' }
+    validates :shipping_days_id, numericality: { only_integer: true, greater_than: 1, message: 'を入力してください' }
     validates :user
   end
 
