@@ -4,8 +4,8 @@
   gap: 20px;
   width: 80% !important;
   padding-top: 50px;
-  margin-left: auto; /* 右に寄せる */
-  margin-right: 70px; /* 右側の余白をゼロに */
+  margin-left: auto;
+  margin-right: 60px;
   text-align: center;
 }
 
