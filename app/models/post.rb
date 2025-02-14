@@ -6,7 +6,7 @@ class Post < ApplicationRecord
     validates :gender_id, numericality: { only_integer: true, greater_than: 1, message: 'を入力してください' }
     validates :personality, length: { maximum: 99 }
     validates :description, length: { maximum: 1999 }
-    validates :user
+    validates :user, presence: true
     validates :address, length: { maximum: 99 }
   end
 
@@ -18,6 +18,12 @@ class Post < ApplicationRecord
   validate :acceptable_image
   belongs_to :user
   has_many :comments, dependent: :destroy
+  has_many :favorites, dependent: :destroy
+  has_many :favorited_users, through: :favorites, source: :user
+
+  def favorited_by?(user)
+    favorites.where(user_id: user.id).exists?
+  end
 
   private
 

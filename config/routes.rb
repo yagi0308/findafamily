@@ -7,9 +7,12 @@ Rails.application.routes.draw do
       get 'update_adoption'
     end
     resources :comments, only: :create  
+    resources :favorites, only: [:create, :destroy]
   end
 
-  resources :items, only: [:index, :new, :create, :show, :edit, :update, :destroy] 
+  resources :items, only: [:index, :new, :create, :show, :edit, :update, :destroy] do
+    resources :favorites, only: [:create, :destroy]
+  end
   resources :users, only: [:show]
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
