@@ -67,11 +67,18 @@ ul {
 }
 
 /* 投稿アイテム */
+
+.search-results {
+  margin-left: 20px;
+  font-size: 25px;
+}
+
 .list {
   width: 15%;
   margin-bottom: 50px;
   margin-left: 20px;
 }
+
 
 .input-box {
   margin-left: 10px;
@@ -79,4 +86,11 @@ ul {
 
 .text-box {
   margin-left: 90px;
+}
+
+.no-results {
+  font-size: 30px;
+  margin: 20px 0;
+  text-align: center;
+  color: brown;
 }

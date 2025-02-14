@@ -47,6 +47,7 @@ class ItemsController < ApplicationController
   def search
     @q = Item.ransack(params[:q])
     @items = @q.result(distinct: true)
+    render :index
   end
 
   private

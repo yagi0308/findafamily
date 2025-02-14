@@ -3,7 +3,7 @@ class PostsController < ApplicationController
 
   def index
     @q = Post.ransack(params[:q])
-    @posts = @q.result(distinct: true)
+    @posts = Post.all
   end
 
   def new
@@ -48,7 +48,9 @@ class PostsController < ApplicationController
 
   def search
     @q = Post.ransack(params[:q])
-    @posts = @q.result
+    @search_results = @q.result(distinct: true) if params[:q].present?
+    @posts = Post.all
+    render :index
   end
 
   private
