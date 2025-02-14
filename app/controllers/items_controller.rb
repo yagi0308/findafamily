@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   def index
-    @items = Item.all
+    @q = Item.ransack(params[:q])
+    @items = @q.result(distinct: true)
   end
 
   def show
@@ -41,6 +42,12 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @item.destroy
     redirect_to items_path
+  end
+
+  def search
+    @q = Item.ransack(params[:q])
+    @items = @q.result(distinct: true)
+    render :index
   end
 
   private

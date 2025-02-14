@@ -5,15 +5,75 @@
     <% if user_signed_in? %>
       <div class="greeting">
         <h2 class="page-title">こんにちは
-        <%= link_to "#{current_user.nickname} さん", user_path(current_user), class: :login__link%></h2>
+        <%= link_to "#{current_user.nickname} さん", user_path(current_user), class: :login__link %></h2>
       </div>
     <% end %>
+    
+    <!-- 通常の投稿を上部にのみ表示 -->
     <div class="card__wrapper">
       <%= render partial: 'post', collection: @posts, as: :post %>
     </div>
-    </div>
-   </main>
+  </div>
+</main>
 
-        <footer class="footer">
-      <p class="copyright">Copyright © Find a family All rights reserved.</p>
-    </footer>
+<!-- 検索フォームの表示 -->
+<div class="search-page">
+  <h3> 🐈‍⬛ 検索ページ 🔍</h3>
+</div>
+
+<div class='item-contents' id="detailed-search-result-wrapper">
+  <%= search_form_for @q, url: search_posts_path, html: { id: "detailed-search-form" } do |f| %>
+    <div class="search-field">
+      <%= f.label :title_cont, '【 キーワードから探す 】 ' %>
+      <%= f.text_field :title_cont, class: 'input-box', placeholder: 'キーワードから探す', value: params[:q]&.dig(:title_cont) %>
+    </div>
+
+    <div class="search-field">
+      <%= f.label :category_id_in, '【 カテゴリー 】' %><p>
+      <%= f.collection_check_boxes :category_id_in, Category.where.not(name: '---'), :id, :name %></p>
+    </div>
+
+    <div class="search-field">
+      <%= f.label :animal_type_cont, '【 動物の種類 】' %>
+      <%= f.text_field :animal_type_cont, placeholder: '種類', value: params[:q]&.dig(:animal_type_cont) %>
+    </div>
+
+    <div class="search-field">
+      <%= f.label :gender_id_in, '【 性別 】' %><p>
+      <%= f.collection_check_boxes :gender_id_in, Gender.where.not(name: '---'), :id, :name %></p>
+    </div>
+
+    <div class="search-field">
+      <%= f.label :address_cont, '【 保護や譲渡の場所 】' %>
+      <%= f.text_field :address_cont, placeholder: '保護や譲渡の場所', value: params[:q]&.dig(:address_cont) %>
+    </div>
+
+    <div class="search-field">
+      <%= f.submit '検索' %>
+    </div>
+  <% end %>
+</div>
+
+<!-- 検索結果があれば表示 -->
+<% if @search_results.present? %>
+  <div class="search-results">
+    <h3>検索結果</h3>
+  </div>
+    <ul>
+      <% @search_results.each do |post| %>
+        <li class="list">
+          <div class="posted-content">
+            <%= link_to (image_tag post.animal_image, class: :card__img), post_path(post) %>
+            <%= post.title %><p>
+            <span class="text-box">【<%= post.address %>】</span>
+          </div>
+        </li>
+      <% end %>
+      <% else %>
+        <p class="no-results">該当する投稿はありませんでした</p>
+    </ul>
+<% end %>
+
+<footer class="footer">
+  <p class="copyright">Copyright © Find a family All rights reserved.</p>
+</footer>

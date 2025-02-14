@@ -1,0 +1,96 @@
+
+
+/* 検索ページのタイトル */
+.search-page {
+  text-align:left;
+  margin-left: 20px;
+}
+
+.search-page h3 {
+  font-size: 24px; /* 文字サイズアップ */
+  font-weight: bold; /* 太字 */
+  color: #333; /* ダークグレーで視認性アップ */
+  padding: 10px 0; /* 上下に余白 */
+  border-bottom: 5px solid #ff9800; /* 下線を追加して見出し感を出す */
+  display: inline-block; /* 線の長さを文字に合わせる */
+}
+
+/* 検索フォームの枠 */
+#detailed-search-form {
+  background: #f9f9f9; /* 背景を薄いグレーに */
+  padding: 20px;
+  border-radius: 8px; /* 角丸 */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 影をつける */
+  margin-left: 20px;
+}
+
+/* 検索フィールド */
+.search-field {
+  margin-bottom: 15px;
+}
+
+/* 検索ボタン */
+.search-field input[type="submit"] {
+  background: #ff9800;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  height: 30px;
+  width: 100px;
+  font-size: 10x;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 20px;
+}
+
+.search-field input[type="submit"]:hover {
+  background: #e68900;
+}
+
+/* フッターの固定 */
+.footer {
+  bottom: 0;
+  width: 100%;
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+}
+
+/* 投稿リストの横並び */
+ul {
+  display: flex; 
+  flex-wrap: wrap;
+  gap: 50px;
+  padding: 0;
+  list-style-type: none;
+}
+
+/* 投稿アイテム */
+
+.search-results {
+  margin-left: 20px;
+  font-size: 25px;
+}
+
+.list {
+  width: 15%;
+  margin-bottom: 50px;
+  margin-left: 20px;
+}
+
+
+.input-box {
+  margin-left: 10px;
+}
+
+.text-box {
+  margin-left: 90px;
+}
+
+.no-results {
+  font-size: 30px;
+  margin: 20px 0;
+  text-align: center;
+  color: brown;
+}
