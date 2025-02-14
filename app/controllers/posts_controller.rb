@@ -48,7 +48,7 @@ class PostsController < ApplicationController
 
   def search
     @q = Post.ransack(params[:q])
-    @posts = @q.result(distinct: true)
+    @posts = @q.result
   end
 
   private

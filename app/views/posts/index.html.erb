@@ -20,30 +20,30 @@
    </div>
 
    <div class='item-contents' id="detailed-search-result-wrapper">
-   <%= search_form_for @q, url: posts_path, html: { id: "detailed-search-form" } do |f| %>
+   <%= search_form_for @q, url: search_posts_path, html: { id: "detailed-search-form" } do |f| %>
    <div class="search-field">
-   <%= f.label :title_cont, 'キーワードから探す' %>
+   <%= f.label :title_cont, '【 キーワードから探す 】 ' %>
    <%= f.text_field :title_cont, class: 'input-box', placeholder: 'キーワードから探す', value: params[:q]&.dig(:title_cont) %>
    </div>
 
 
    <div class="search-field">
-   <%= f.label :category_id_in, 'カテゴリ' %>
-   <%= f.collection_check_boxes :category_id_in, Category.where.not(name: '---'), :id, :name %>
+   <%= f.label :category_id_in, '【 カテゴリー 】' %><p>
+   <%= f.collection_check_boxes :category_id_in, Category.where.not(name: '---'), :id, :name %></p>
    </div>
 
    <div class="search-field">
-   <%= f.label :animal_type_cont, '動物の種類' %>
+   <%= f.label :animal_type_cont, '【 動物の種類 】' %>
    <%= f.text_field :animal_type_cont, placeholder: '種類', value: params[:q]&.dig(:animal_type_cont) %>
    </div>
 
    <div class="search-field">
-   <%= f.label :gender_id_in, '性別' %>
-   <%= f.collection_check_boxes :gender_id_in, Gender.where.not(name: '---'), :id, :name %>
+   <%= f.label :gender_id_in, '【 性別 】' %><p>
+   <%= f.collection_check_boxes :gender_id_in, Gender.where.not(name: '---'), :id, :name %></p>
    </div>
 
    <div class="search-field">
-   <%= f.label :address_cont, '保護や譲渡の場所' %>
+   <%= f.label :address_cont, '【 保護や譲渡の場所 】' %>
    <%= f.text_field :address_cont, placeholder: '保護や譲渡の場所', value: params[:q]&.dig(:address_cont) %>
    </div>
 
@@ -53,16 +53,14 @@
    <% end %>
    </div>
 
-
  <ul>
-  <% if @posts.any? %>
+    <% if @posts.any? %>
     <% @posts.each do |post| %>
       <li class="list">
         <div class="posted-content">
-          <%= image_tag post.animal_image %>
-          <%= post.title %><br>
-          <%= post.address %>
-          <%#= link_to '詳細', post_path(post.id) %>
+          <%= link_to (image_tag post.animal_image, class: :card__img), post_path(post) %>
+          <%= post.title %><p>
+          <span class="text-box">【<%= post.address %>】</span>
         </div>
       </li>
     <% end %>
