@@ -8,4 +8,8 @@ class Gender < ActiveHash::Base
 
   include ActiveHash::Associations
   has_many :posts
+
+  def self.ransackable_attributes(auth_object = nil)
+    %w[id name]
+  end
 end

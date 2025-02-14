@@ -50,3 +50,13 @@
   text-align: center;
   padding: 10px;
 }
+
+.footer {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333; /* 任意の背景色 */
+  color: rgb(195, 187, 187); /* 任意の文字色 */
+  text-align: center;
+  padding: 10px 0;
+}

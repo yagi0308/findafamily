@@ -13,7 +13,64 @@
     </div>
     </div>
    </main>
+   
 
-        <footer class="footer">
-      <p class="copyright">Copyright © Find a family All rights reserved.</p>
-    </footer>
+   <div class="search-page">
+  <h3> 🐈‍⬛ 検索ページ 🔍</h3>
+   </div>
+
+   <div class='item-contents' id="detailed-search-result-wrapper">
+   <%= search_form_for @q, url: posts_path, html: { id: "detailed-search-form" } do |f| %>
+   <div class="search-field">
+   <%= f.label :title_cont, 'キーワードから探す' %>
+   <%= f.text_field :title_cont, class: 'input-box', placeholder: 'キーワードから探す', value: params[:q]&.dig(:title_cont) %>
+   </div>
+
+
+   <div class="search-field">
+   <%= f.label :category_id_in, 'カテゴリ' %>
+   <%= f.collection_check_boxes :category_id_in, Category.where.not(name: '---'), :id, :name %>
+   </div>
+
+   <div class="search-field">
+   <%= f.label :animal_type_cont, '動物の種類' %>
+   <%= f.text_field :animal_type_cont, placeholder: '種類', value: params[:q]&.dig(:animal_type_cont) %>
+   </div>
+
+   <div class="search-field">
+   <%= f.label :gender_id_in, '性別' %>
+   <%= f.collection_check_boxes :gender_id_in, Gender.where.not(name: '---'), :id, :name %>
+   </div>
+
+   <div class="search-field">
+   <%= f.label :address_cont, '保護や譲渡の場所' %>
+   <%= f.text_field :address_cont, placeholder: '保護や譲渡の場所', value: params[:q]&.dig(:address_cont) %>
+   </div>
+
+   <div class="search-field">
+   <%= f.submit '検索' %>
+   </div>
+   <% end %>
+   </div>
+
+
+ <ul>
+  <% if @posts.any? %>
+    <% @posts.each do |post| %>
+      <li class="list">
+        <div class="posted-content">
+          <%= image_tag post.animal_image %>
+          <%= post.title %><br>
+          <%= post.address %>
+          <%#= link_to '詳細', post_path(post.id) %>
+        </div>
+      </li>
+    <% end %>
+  <% else %>
+    <p>該当する投稿はありませんでした。</p>
+  <% end %>
+</ul>
+
+   <footer class="footer">
+  <p class="copyright">Copyright © Find a family All rights reserved.</p>
+   </footer>

@@ -2,7 +2,8 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy, :update_adoption]
 
   def index
-    @posts = Post.all
+    @q = Post.ransack(params[:q])
+    @posts = @q.result(distinct: true)
   end
 
   def new
@@ -43,6 +44,11 @@ class PostsController < ApplicationController
   def destroy
     @post.destroy
     redirect_to root_path
+  end
+
+  def search
+    @q = Post.ransack(params[:q])
+    @posts = @q.result(distinct: true)
   end
 
   private
