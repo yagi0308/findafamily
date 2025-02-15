@@ -43,6 +43,9 @@ class ItemsController < ApplicationController
     redirect_to items_path
   end
 
+  def favorite
+  end
+
   private
 
   def set_post

@@ -327,7 +327,7 @@
 }
 
 /* お気に入りボタン */
-.post_favorites {
+.favorite-btn {
   display: inline-block;
   padding: 5px 10px;
   background-color: rgb(184, 209, 230);
@@ -338,6 +338,7 @@
   font-size: 20px;
 }
 
-.post_favorites.active {
+.favorite-btn.active {
   background-color: rgb(234, 56, 86);
 }
+

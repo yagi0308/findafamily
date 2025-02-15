@@ -6,17 +6,9 @@
       <%= @post.title %>
     </h2>
 
-<div id="favorite-btn<%= @post.id %>" data-controller="favorite">
-  <% if user_signed_in? && @post.favorited_by?(current_user) %>
-    <%= link_to "お気に入り済み", post_favorite_path(@post), method: :delete,
-          data: { action: "click->favorite#toggle", turbo_method: :delete },
-          class: "post_favorites active" %>
-  <% else %>
-    <%= link_to "お気に入りする", post_favorite_path(@post), method: :post,
-          data: { action: "click->favorite#toggle", turbo_method: :post },
-          class: "post_favorites" %>
-  <% end %>
-</div>
+  <div id="favorite-btn<%= @post.id %>">
+  <%= render partial: "posts/favorite", locals: { post: @post } %>
+  </div>
 
     <div class="post-img-content">
       <%= link_to image_tag @post.animal_image, class: "item-box-img" %>

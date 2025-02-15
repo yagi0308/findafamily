@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy, :update_adoption]
+  before_action :set_post, only: [:show, :edit, :update, :destroy, :update_adoption, :favorite]
 
   def index
     @posts = Post.all
@@ -44,6 +44,9 @@ class PostsController < ApplicationController
   def destroy
     @post.destroy
     redirect_to root_path
+  end
+
+  def favorite
   end
 
   private
