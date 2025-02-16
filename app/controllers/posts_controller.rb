@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy, :update_adoption, :favorite]
 
   def index
+    @q = Post.ransack(params[:q])
     @posts = Post.all
   end
 
@@ -46,7 +47,12 @@ class PostsController < ApplicationController
     redirect_to root_path
   end
 
-  def favorite
+
+  def search
+    @q = Post.ransack(params[:q])
+    @search_results = @q.result(distinct: true) if params[:q].present?
+    @posts = Post.all
+    render :index
   end
 
   private

@@ -6,16 +6,22 @@ Rails.application.routes.draw do
     member do
       get 'update_adoption'
     end
+    collection do
+      get 'search'
+    end
     resources :comments, only: :create
     resource :favorites, only: [:create, :destroy]
   end
 
   resources :items, only: [:index, :new, :create, :show, :edit, :update, :destroy] do
+    collection do
+      get 'search'
+    end
+    resources :comments, only: :create  
     resource :favorites, only: [:create, :destroy]
   end
-  
-  resources :users, only: [:show] do
-  end
+
+  resources :users, only: [:show]
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -25,4 +31,4 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-  end
+end

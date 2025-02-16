@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   def index
-    @items = Item.all
+    @q = Item.ransack(params[:q])
+    @items = @q.result(distinct: true)
   end
 
   def show
@@ -14,7 +15,7 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save
-      redirect_to @item
+      redirect_to root_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -43,7 +44,10 @@ class ItemsController < ApplicationController
     redirect_to items_path
   end
 
-  def favorite
+  def search
+    @q = Item.ransack(params[:q])
+    @items = @q.result(distinct: true)
+    render :index
   end
 
   private
