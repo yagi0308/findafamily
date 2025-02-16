@@ -6,16 +6,19 @@ Rails.application.routes.draw do
     member do
       get 'update_adoption'
     end
-    resources :comments, only: :create  
     collection do
       get 'search'
     end
+    resources :comments, only: :create
+    resource :favorites, only: [:create, :destroy]
   end
 
   resources :items, only: [:index, :new, :create, :show, :edit, :update, :destroy] do
     collection do
       get 'search'
     end
+    resources :comments, only: :create  
+    resource :favorites, only: [:create, :destroy]
   end
 
   resources :users, only: [:show]
