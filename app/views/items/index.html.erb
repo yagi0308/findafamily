@@ -5,7 +5,7 @@
     <% if user_signed_in? %>
       <div class="greeting">
         <h2 class="page-title">こんにちは
-        <%= link_to "#{current_user.nickname} さん", root_path(current_user), class: :login__link%></h2>
+        <%= link_to "#{current_user.nickname} さん", user_path(current_user), class: :login__link%></h2>
         <p>こちらでは動物に関する様々なアイテムを購入いただけます</p>
         <p>お好みのアイテムをお選びください</p>
       </div>
@@ -15,6 +15,64 @@
     </div>
     </div>
   </main>
+
+   <div class="search-page">
+  <h3> 🐈‍⬛ 検索ページ 🔍</h3>
+   </div>
+
+   <div class='item-contents' id="detailed-search-result-wrapper">
+   <%= search_form_for @q, url: search_items_path, html: { id: "detailed-search-form" } do |f| %>
+   <div class="search-field">
+   <%= f.label :title_cont, '【 キーワードから探す 】' %>
+   <%= f.text_field :title_cont, class: 'input-box', placeholder: 'キーワードから探す', value: params[:q]&.dig(:title_cont) %>
+   </div>
+
+
+   <div class="search-field">
+   <%= f.label :name_in, '【 商品名 】' %>
+   <%= f.text_field :name_cont, class: 'input-box', placeholder: '商品名', value: params[:q]&.dig(:name_cont) %>
+   </div>
+
+   <div class="search-field">
+   <%= f.label :item_category_cont, '【 カテゴリー 】' %><p>
+   <%= f.collection_check_boxes :item_category_id_in, ItemCategory.where.not(name: '---'), :id, :name %></p>
+   </div>
+
+  <div class="search-field">
+   <%= f.label :address_cont, '【 発送までの日数 】' %><p>
+   <%= f.collection_check_boxes :shipping_days_id_in, ShippingDays.where.not(name: '---'), :id, :name %></p>
+   </div>
+
+   <div class="search-field">
+      <%= f.label :price_gteq, '【 価格 】'%>
+      <br>
+      <%= f.number_field :price_gteq %> 円以上
+      <br>
+      <%= f.number_field :price_lteq %> 円以下
+   </div>
+
+   <div class="search-field">
+   <%= f.submit '検索' %>
+   </div>
+   <% end %>
+   </div>
+
+
+ <ul>
+  <% if @items.any? %>
+    <% @items.each do |item| %>
+      <li class="list">
+        <div class="posted-content">
+          <%= link_to (image_tag item.item_image, class: :card__img), item_path(item) %>
+          <%= item.name %><br>
+          <%= item.price %>
+        </div>
+      </li>
+    <% end %>
+  <% else %>
+    <p>該当する商品はありませんでした。</p>
+  <% end %>
+</ul>
 
         <footer class="footer">
       <p class="copyright">Copyright © Find a family All rights reserved.</p>

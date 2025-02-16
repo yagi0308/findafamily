@@ -9,7 +9,11 @@ class Item < ApplicationRecord
     validates :item_category_id, numericality: { only_integer: true, greater_than: 1, message: 'を入力してください' }
     validates :shipping_fee_id, numericality: { only_integer: true, greater_than: 1, message: 'を入力してください' }
     validates :shipping_days_id, numericality: { only_integer: true, greater_than: 1, message: 'を入力してください' }
-    validates :user
+    validates :user, presence: true
+  end
+
+  def self.ransackable_attributes(auth_object = nil)
+    %w[name item_category_id price shipping_days_id]
   end
 
   extend ActiveHash::Associations::ActiveRecordExtensions
@@ -27,11 +31,11 @@ class Item < ApplicationRecord
       return
     end
 
-    errors.add(:item_image, 'is too big') unless item_image.byte_size <= 2.megabyte
+    errors.add(:item_image, 'は2MB以下でなければなりません') unless item_image.byte_size <= 2.megabyte
 
     acceptable_types = ['image/jpeg', 'image/png']
     return if acceptable_types.include?(item_image.content_type)
 
-    errors.add(:item_image, 'must be a JPEG or PNG')
+    errors.add(:item_image, 'はJPEGまたはPNG形式である必要があります')
   end
 end

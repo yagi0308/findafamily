@@ -11,7 +11,7 @@
               <%= link_to "投稿する", new_item_path, class: :nav__link %>
                <%# end %>
 
-             <%= link_to "もどる", request.referer || root_path, class: :nav__link %>
+             <%= link_to "もどる", root_path, class: :nav__link %>
               <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete }, class: :nav__auth %>
             </div>
           <% else %>

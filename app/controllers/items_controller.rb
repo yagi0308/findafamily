@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   def index
-    @items = Item.all
+    @q = Item.ransack(params[:q])
+    @items = @q.result(distinct: true)
   end
 
   def show
@@ -18,6 +19,35 @@ class ItemsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def edit
+    @item = Item.find(params[:id])
+  end
+
+  def update
+    @item = Item.find(params[:id])
+    if @item.update(post_params)
+      redirect_to @item
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def update_purchases
+    @item = Item.find(params[:id])
+  end
+
+  def destroy
+    @item = Item.find(params[:id])
+    @item.destroy
+    redirect_to items_path
+  end
+
+  def search
+    @q = Item.ransack(params[:q])
+    @items = @q.result(distinct: true)
+    render :index
   end
 
   private
