@@ -1,13 +1,14 @@
-/* ボタン */
+/* こんにちは */
+.page-title {
+  font-size: 23px;
+  margin-bottom: 28px;
+}
+
+/* 〜さん */
 .login__link {
   margin-left: 15px;
   font-size: 23px;
   border-bottom: 5px solid #f1501f;
-}
-
-.page-title {
-  font-size: 23px;
-  margin-bottom: 28px;
 }
 
 /* 投稿表示 */
@@ -29,10 +30,6 @@
   margin-bottom: 8px;
   font-weight: bold;
 }
-
-.card__summary {
-  font-size: 16px;
-}
 .card__user {
   display: block;
   font-size: 15px;
@@ -41,6 +38,7 @@
   text-decoration: underline;
 }
 
+/* 家族が見つかりました */
 .found-home-second{
   font-size: 18px;
   font-weight: bold;
@@ -51,12 +49,14 @@
   padding: 10px;
 }
 
+
+/* フッター */
 .footer {
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: #333; /* 任意の背景色 */
-  color: rgb(195, 187, 187); /* 任意の文字色 */
+  background-color: #333;
+  color: rgb(195, 187, 187);
   text-align: center;
   padding: 10px 0;
 }
