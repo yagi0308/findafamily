@@ -22,6 +22,7 @@ class Item < ApplicationRecord
   belongs_to_active_hash :shipping_days
 
   belongs_to :user
+  has_one :purchase
 
   private
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_02_13_020637) do
+ActiveRecord::Schema[7.1].define(version: 2025_02_17_000518) do
   create_table "active_storage_attachments", charset: "utf8mb3", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -39,6 +39,19 @@ ActiveRecord::Schema[7.1].define(version: 2025_02_13_020637) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "addresses", charset: "utf8mb3", force: :cascade do |t|
+    t.string "postal_code", null: false
+    t.integer "prefecture_id", null: false
+    t.string "city", null: false
+    t.string "street", null: false
+    t.string "building"
+    t.string "home_phone_number", null: false
+    t.bigint "purchase_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["purchase_id"], name: "index_addresses_on_purchase_id"
+  end
+
   create_table "comments", charset: "utf8mb3", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "post_id", null: false
@@ -47,6 +60,17 @@ ActiveRecord::Schema[7.1].define(version: 2025_02_13_020637) do
     t.datetime "updated_at", null: false
     t.index ["post_id"], name: "index_comments_on_post_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "favorites", charset: "utf8mb3", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "post_id"
+    t.bigint "item_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_favorites_on_item_id"
+    t.index ["post_id"], name: "index_favorites_on_post_id"
+    t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
   create_table "items", charset: "utf8mb3", force: :cascade do |t|
@@ -80,6 +104,15 @@ ActiveRecord::Schema[7.1].define(version: 2025_02_13_020637) do
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
+  create_table "purchases", charset: "utf8mb3", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "item_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_purchases_on_item_id"
+    t.index ["user_id"], name: "index_purchases_on_user_id"
+  end
+
   create_table "users", charset: "utf8mb3", force: :cascade do |t|
     t.string "first_name", null: false
     t.string "last_name", null: false
@@ -104,8 +137,14 @@ ActiveRecord::Schema[7.1].define(version: 2025_02_13_020637) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "addresses", "purchases"
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
+  add_foreign_key "favorites", "items"
+  add_foreign_key "favorites", "posts"
+  add_foreign_key "favorites", "users"
   add_foreign_key "items", "users"
   add_foreign_key "posts", "users"
+  add_foreign_key "purchases", "items"
+  add_foreign_key "purchases", "users"
 end
