@@ -122,23 +122,6 @@
   position: relative;
 }
 
-.favorite-btn {
-  border-radius: 40px;
-  width: 15vw;
-  min-width: 200px;
-  color: rgb(243, 128, 79);
-  border: 2px solid #ffb340;
-  border-radius: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 20px;
-}
-
-.favorite-star-icon {
-  margin-right: 5px;
-}
-
 .report-btn {
   border-radius: 40px;
   width: 15vw;
@@ -324,4 +307,12 @@
 
 }
 
+.favorite-btn {
+  background-color: #ddd; /* 通常時の色 */
+  color: #333;
+}
 
+.favorite-btn.favorited {
+  background-color: #ff5c8e; /* お気に入り追加時の色 */
+  color: #fff;
+}

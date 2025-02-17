@@ -8,7 +8,7 @@
         <%= link_to "#{current_user.nickname} さん", user_path(current_user), class: :login__link %></h2>
       </div>
     <% end %>
-    
+
     <!-- 通常の投稿を上部にのみ表示 -->
     <div class="card__wrapper">
       <%= render partial: 'post', collection: @posts, as: :post %>

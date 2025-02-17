@@ -50,6 +50,9 @@ class ItemsController < ApplicationController
     render :index
   end
 
+  def favorite
+  end
+
   private
 
   def set_post

@@ -24,6 +24,7 @@ class User < ApplicationRecord
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :items, dependent: :destroy
+  has_many :favorites
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :region

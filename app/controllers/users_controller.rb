@@ -18,6 +18,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def favorites
+    @favorite_posts = current_user.favorite_posts
+    @favorite_items = current_user.favorite_items
+  end
+
   private
 
   def set_post

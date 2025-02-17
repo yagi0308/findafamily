@@ -1,7 +1,7 @@
 .profile-box-img {
-  width: 300px; /* 画像を少し小さめに */
+  width: 300px;
   height: 300px;
-  margin-left: 550px;
+  margin-left: 600px;
 }
 
 .page-heading {
@@ -11,6 +11,14 @@
   border-bottom: 10px solid #e35e5e;
   display: inline-block;
   margin-left: 400px;
+}
+
+.page-header{
+  text-align: center;
+  margin-bottom: 20px;
+  padding-bottom: 5px;
+  border-bottom: 10px solid #e35e5e;
+  display: inline-block;
 }
 
 .page-second-heading {
