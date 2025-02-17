@@ -12,7 +12,7 @@ class FavoritesController < ApplicationController
       logger.debug 'Favorite successfully saved'
       redirect_to path, notice: 'お気に入りに追加しました。'
     else
-      logger.debug 'Failed to save favorite'
+      logger.debug 'Failed to save favorite: ' + favorite.errors.full_messages.join(', ')
       redirect_to path, alert: 'お気に入り追加に失敗しました。'
     end
   end
@@ -26,12 +26,12 @@ class FavoritesController < ApplicationController
       path = item_path(params[:item_id])
     end
 
-    if favorite.save
-      logger.debug 'Favorite successfully saved'
-      redirect_to path, notice: 'お気に入りに追加しました。'
+    if favorite&.destroy
+      logger.debug 'Favorite successfully destroyed'
+      redirect_to path, notice: 'お気に入りを解除しました。'
     else
-      logger.debug 'Failed to save favorite'
-      redirect_to path, alert: 'お気に入り追加に失敗しました。'
+      logger.debug 'Failed to destroy favorite: ' + favorite.errors.full_messages.join(', ')
+      redirect_to path, alert: 'お気に入り解除に失敗しました。'
     end
   end
 end

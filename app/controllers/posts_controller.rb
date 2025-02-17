@@ -47,6 +47,8 @@ class PostsController < ApplicationController
     redirect_to root_path
   end
 
+  def favorite
+  end
 
   def search
     @q = Post.ransack(params[:q])

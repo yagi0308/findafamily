@@ -6,9 +6,7 @@
       <%= @post.title %>
     </h2>
 
-  <div id="favorite-btn<%= @post.id %>">
   <%= render partial: "posts/favorite", locals: { post: @post } %>
-  </div>
 
     <div class="post-img-content">
       <%= link_to image_tag @post.animal_image, class: "item-box-img" %>

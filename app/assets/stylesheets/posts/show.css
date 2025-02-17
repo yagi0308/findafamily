@@ -124,23 +124,6 @@
   position: relative;
 }
 
-.favorite-btn {
-  border-radius: 40px;
-  width: 15vw;
-  min-width: 200px;
-  color: rgb(243, 128, 79);
-  border: 2px solid #ffb340;
-  border-radius: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 20px;
-}
-
-.favorite-star-icon {
-  margin-right: 5px;
-}
-
 .report-btn {
   border-radius: 40px;
   width: 15vw;
@@ -326,19 +309,12 @@
 
 }
 
-/* お気に入りボタン */
 .favorite-btn {
-  display: inline-block;
-  padding: 5px 10px;
-  background-color: rgb(184, 209, 230);
-  color: white;
-  border-radius: 5px;
-  text-decoration: none;
-  margin-top: 20px;
-  font-size: 20px;
+  background-color: #ddd; /* 通常時の色 */
+  color: #333;
 }
 
-.favorite-btn.active {
-  background-color: rgb(234, 56, 86);
+.favorite-btn.favorited {
+  background-color: #ff5c8e; /* お気に入り追加時の色 */
+  color: #fff;
 }
-
