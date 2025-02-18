@@ -23,6 +23,14 @@ class Post < ApplicationRecord
   end
 
   validate :acceptable_image
+  belongs_to :user
+  has_many :comments, dependent: :destroy
+  has_many :favorites
+
+  def favorited_by?(user)
+    favorites.exists?(user_id: user.id)
+  end
+
 
   private
 

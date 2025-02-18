@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy, :update_adoption]
+  before_action :set_post, only: [:show, :edit, :update, :destroy, :update_adoption, :favorite]
 
   def index
     @q = Post.ransack(params[:q])
@@ -20,6 +20,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    @post = Post.find(params[:id])
     @comment = Comment.new
     @comments = @post.comments.includes(:user)
   end
@@ -44,6 +45,9 @@ class PostsController < ApplicationController
   def destroy
     @post.destroy
     redirect_to root_path
+  end
+
+  def favorite
   end
 
   def search

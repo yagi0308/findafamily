@@ -10,6 +10,7 @@
 
       <div class="post-img-content">
       <%= link_to image_tag @user.profile_image, class: "profile-box-img" %>
+          </div>
 
        <div class="user__wrapper">
       <table class="table">
@@ -26,11 +27,11 @@
             <th class="table__col1">自己紹介</th>
             <td class="table__col2"><%= @user.introduction %></td>
           </tr>
+
         </tbody>
       </table>
       </div>
       </div>
-    </div>
 
       <h2 class="page-second-heading">
         <%= "#{@user.nickname}さんの投稿"%>

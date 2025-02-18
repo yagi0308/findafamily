@@ -23,6 +23,11 @@ class Item < ApplicationRecord
 
   belongs_to :user
   has_many :purchases
+  has_many :favorites
+
+  def favorited_by?(user)
+    favorites.exists?(user_id: user.id)
+  end
 
   private
 

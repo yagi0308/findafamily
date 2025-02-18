@@ -1,0 +1,7 @@
+  <div id="favorite-btn<%= @item.id %>">
+<% if user_signed_in? && @item.favorited_by?(current_user) %>
+  <%= link_to "お気に入り解除", item_favorites_path(@item), data: { turbo_method: :delete }, class: "favorite-btn favorited" %>
+   <% else %>
+  <%= link_to "お気に入り追加", item_favorites_path(@item), data: { turbo_method: :post }, class: "favorite-btn" %>
+    <% end %>
+  </div>
