@@ -9,7 +9,7 @@
 
       <div class="card__body">
         <%= link_to post.title, post_path(post), class: :card__title %>
-        <%= link_to post.address, post_path(post), class: :card__address %>
+        <span class="card__address"><p>場所：<%= link_to post.address, post_path(post), class: :card__address %></p></span>
         <%= link_to " #{post.user.nickname}さん", post_path(post), class: :card__user %>
       </div>
     </div>
