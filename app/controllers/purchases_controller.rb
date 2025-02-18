@@ -10,10 +10,11 @@ class PurchasesController < ApplicationController
 
   def create
     @purchase_address = PurchaseAddress.new(purchase_params)
+    Rails.logger.debug("Purchase Params: #{purchase_params.inspect}")
     if @purchase_address.valid?
       Payjp.api_key = ENV['PAYJP_SECRET_KEY']
       Payjp::Charge.create(
-        amount: @item.item_price,
+        amount: @item.price,
         card: purchase_params[:token],
         currency: 'jpy'
       )
@@ -32,7 +33,7 @@ class PurchasesController < ApplicationController
   end
 
   def redirect_if_seller_or_sold
-    return unless @item.user_id == current_user.id || @item.purchase.present?
+    return unless @item.user_id == current_user.id || @item.purchases.present?
 
     redirect_to items_path
   end

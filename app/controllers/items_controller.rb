@@ -36,6 +36,8 @@ class ItemsController < ApplicationController
 
   def update_purchases
     @item = Item.find(params[:id])
+    @item.update(purchases: true)
+    redirect_to @item, notice: '準備中です'
   end
 
   def destroy

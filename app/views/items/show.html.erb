@@ -8,11 +8,11 @@
     <div class="post-img-content">
       <%= link_to image_tag @item.item_image, class: "item-box-img" %>
 
-          <%# if item.purchases.present? %>
+          <% if @item.purchases.present? %>
           <div class='sold-out'>
-            <span>完売しました</span>
+            <span>準備中です</span>
           </div>
-          <%# end %>
+          <% end %>
 
       <div class="post-explain-box">
       </div>
@@ -52,30 +52,28 @@
       </table>
 
 
-      <% if user_signed_in? %>
-        <%# unless @item.purchases.present? %>
-          <% if current_user == @item.user %>
-            <div class="edit-delete-buttons">
-
+<% if user_signed_in? %>
+  <% if current_user == @item.user %>
+    <!-- 出品者が自分の商品ページを見ている場合 -->
+    <div class="edit-delete-buttons">
       <%= link_to "投稿を編集する", edit_item_path(@item), class: "post-red-btn" %>
       <%= link_to "削除する", item_path(@item), data: { turbo_method: :delete }, class: "post-destroy" %>
       <%= link_to 'もどる', items_path, class:"back-second-btn" %>
     </div>
+  <% elsif @item.purchases.any? %>
+    <!-- 購入済みの商品ページの場合 -->
+    <div class="actions">
+      <%= link_to 'TOPにもどる', items_path, class:"comment-btn back-btn" %>
+    </div>
   <% else %>
-    <!-- 購入画面に進む・問い合わせるボタン -->
+    <!-- 出品者以外のユーザーがまだ購入していない商品ページを見ている場合 -->
     <div class="item-buy-buttons">
       <%= link_to "購入画面に進む", item_purchases_path(@item), data: { turbo: false }, class: "post-red-btn" %>
       <%= link_to "問い合わせる", root_path, class: "post-destroy" %>
       <%= link_to 'もどる', root_path, class:"back-second-btn" %>
     </div>
   <% end %>
-   <% end %>
-   <%# end %>
-
-      <div class="actions">
-        <%#=link_to 'TOPにもどる', root_path, class:"comment-btn back-btn" %>
-      <%# end %>
-      </div>
+  <% end %>
     </div>
 </div>
 </div>
