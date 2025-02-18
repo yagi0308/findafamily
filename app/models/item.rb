@@ -22,6 +22,7 @@ class Item < ApplicationRecord
   belongs_to_active_hash :shipping_days
 
   belongs_to :user
+  has_many :purchases
   has_many :favorites
 
   def favorited_by?(user)

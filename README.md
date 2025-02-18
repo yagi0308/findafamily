@@ -97,12 +97,12 @@ Things you may want to cover:
 
 
 ## addresses（発送先情報） table
-| Column             | Type       | Options                           |
-|--------------------|----------- |-----------------------------------|
-| postal_code        | string     | null: false                       |
-| prefecture_id      | integer    | null: false                       |
-| city               | string     | null: false                       |
-| street             | string     | null: false                       |
-| building           | string     |                                   |
-| phone_number       | string     | null: false                       |
-| user_id            | references | null: false, foreign_key: true    |
+| Column                 | Type       | Options                           |
+|--------------------    |----------- |-----------------------------------|
+| postal_code            | string     | null: false                       |
+| prefecture_id          | integer    | null: false                       |
+| city                   | string     | null: false                       |
+| street                 | string     | null: false                       |
+| building               | string     |                                   |
+| home_phone_number   　 | string     | null: false                       |
+| purchase_id            | references | null: false, foreign_key: true    |

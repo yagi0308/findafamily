@@ -19,6 +19,7 @@ Rails.application.routes.draw do
     end
     resources :comments, only: :create  
     resource :favorites, only: [:create, :destroy]
+    resources :purchases, only: [:index, :create]
   end
 
   resources :users, only: [:show]

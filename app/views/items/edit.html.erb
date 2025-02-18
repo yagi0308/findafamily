@@ -113,10 +113,10 @@
     </div>
       <% end %>
 
-         <%# if @item.purchases.present? %>
+         <% if @item.purchases.present? %>
           <%= link_to 'TOPページに戻る', root_path, class: "back-to-top-btn" %>
-          <%= link_to "削除する", root_path, data: { turbo_method: :delete }, class: "back-to-top-btn delete-btn" %>
-          <%# end %>
+          <%= link_to "削除する", item_path(@item), data: { turbo_method: :delete }, class: "back-to-top-btn delete-btn" %>
+          <% end %>
 
 
 </div>

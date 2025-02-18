@@ -15,7 +15,7 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save
-      redirect_to root_path
+      redirect_to items_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -27,8 +27,8 @@ class ItemsController < ApplicationController
 
   def update
     @item = Item.find(params[:id])
-    if @item.update(post_params)
-      redirect_to @item
+    if @item.update(item_params)
+      redirect_to items_path
     else
       render :edit, status: :unprocessable_entity
     end
@@ -36,6 +36,8 @@ class ItemsController < ApplicationController
 
   def update_purchases
     @item = Item.find(params[:id])
+    @item.update(purchases: true)
+    redirect_to @item, notice: '準備中です'
   end
 
   def destroy
