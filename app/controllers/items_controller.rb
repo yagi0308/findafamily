@@ -2,10 +2,12 @@ class ItemsController < ApplicationController
   def index
     @q = Item.ransack(params[:q])
     @items = @q.result(distinct: true)
+    @items = Item.includes(:user).all
   end
 
   def show
     @item = Item.find(params[:id])
+    @user = @item.user
   end
 
   def new
@@ -48,7 +50,8 @@ class ItemsController < ApplicationController
 
   def search
     @q = Item.ransack(params[:q])
-    @items = @q.result(distinct: true)
+    @search_results = @q.result(distinct: true) if params[:q].present?
+    @items = Item.all
     render :index
   end
 

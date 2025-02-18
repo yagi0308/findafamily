@@ -5,6 +5,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @favorite_posts = @user.favorites.where.not(post_id: nil).includes(:post)
+    @favorite_items = @user.favorites.where.not(item_id: nil).includes(:item)
   rescue ActiveRecord::RecordNotFound
     redirect_to root_path
   end

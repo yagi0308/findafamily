@@ -75,21 +75,44 @@
   padding: 0 10px;
 }
 
-.post-red-btn {
+.item-buy-buttons{
+  text-align: center; /* ボタンを中央揃え */
+  overflow: hidden;   /* float の影響を解消 */
+  width: 100%;     
+}
+
+.post-buy-btn,
+.go-back-btn {
+  width: 230px;
+  height: 80px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 18px;
+  border-radius: 100vh;
+  float: left;        /* 左に寄せて横並び */
+  margin-left: 70px;  /* ボタン間の隙間 */
+  margin-top: 50px;
+}
+
+.post-red-btn,
+.post-buy-btn {
   background-color: #ed4816;
-  border: 3px solid #8f4c11;
+  border: 10px solid #c690b9;
   color: #FFF;
 }
 
 .post-destroy {
   background-color: rgb(214, 158, 158);
-  border: 3px solid #8a4c15;
+  border: 10px solid #92ccd1;
   color: rgb(107, 30, 30);
 }
 
-.back-second-btn {
+.back-second-btn,
+.go-back-btn {
   background: #6ec47b;
-  border: 3px solid #e7b33a;
+  border: 10px solid #e7b33a;
   color: #fff;
 }
 
@@ -175,24 +198,48 @@
   margin-right: 30px;
 }
 
-.comment-btn {
+.comment-btn,
+.comment-back-btn {
   display: inline-block;
   line-height: 65px;
-  background-color: #60bfc2;
-  border: 3px solid #036265;
-  color: #fff;
-  width: 40%;
+  width: 35%;
   height: 70px;
-  min-width: 150px;
   font-size: 20px;
   border-radius: 100px;
   margin-bottom: 2vh;
 }
 
+.comment-btn {
+  background-color: #60bfc2;
+  border: 5px solid #148e93;
+  color: #fff;
+}
+
+.comment-back-btn {
+  background-color: #d1d273;
+  border: 5px solid #148e93;
+  color: #fff;
+  margin-right: 60px;
+}
+
+
 /* TOPにもどるボタン */
+
 .back-btn {
-  background-color: #d17660d4;  /* 異なる背景色 */
-  margin-left: 50px;
+  display: inline-block;
+  line-height: 65px;
+  background-color: #d17660d4;
+  border: 5px solid #036265;
+  color: #fff;
+  width: 40%;
+  height: 80px;
+  min-width: 150px;
+  font-size: 20px;
+  border-radius: 100px;
+  margin-bottom: 2vh;
+  text-align: center;
+  margin-left: 220px;
+  margin-top: 50px;
 }
 
 .form__btn{
@@ -203,7 +250,7 @@
   text-decoration: none;
   user-select: none;
   background: #95dce3;
-  border: 3px #c6d5a4 solid;
+  border: 10px #c6d5a4 solid;
   border-radius: 3px;
   box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 2px 0 rgba(0, 0, 0, 0.12);
   transition: 0.2s ease;
@@ -254,7 +301,8 @@
 .title_name {
   font-size: 30px;
   color: #000000;
-  border-bottom: 10px solid #f1501f;
+  margin-bottom: 50px;
+  border-bottom: 10px solid #e35e5e;
 }
 
 .comment_image {
@@ -289,30 +337,56 @@
 
 .back-to-top-btn,
 .delete-btn {
-  display: inline-block;
-  margin-top: 10px;
-  margin-left: 150px;
-  padding: 10px 20px;
-  font-size: 20px;
-  background-color: #3498db;
-  color: white;
-  text-decoration: none;
-  border-radius: 30px;
+  width: 200px;
+  height: 70px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 18px;
+  border-radius: 100vh;
+  float: left;        /* 左に寄せて横並び */
+  margin-left: 130px;  /* ボタン間の隙間 */
+  margin-top: 30px;
 }
 
-.back-to-top-btn.delete-btn {
+.back-to-top-btn {
+  background-color: #77acd8;
+  border: 10px #c6d5a4 solid;
+  color: #ffffff;
+}
+
+.delete-btn {
   background-color: #dfae4c;
+  border: 10px #c6d5a4 solid;
   padding: 10px 50px;
   margin-left: 65px;
+  color: #ffffff;
 
 }
 
+/* お気に入りボタン */
 .favorite-btn {
-  background-color: #ddd; /* 通常時の色 */
-  color: #333;
+  background-color: #a2d5f2; /* 淡い水色 */
+  color: white; /* 文字色 */
+  border: 2px solid #a2d5f2; /* 枠線も淡い水色 */
+  border-radius: 5px; /* 四角ボタン */
+  padding: 10px 20px; /* 内側の余白 */
+  font-size: 16px; /* 文字サイズ */
+  cursor: pointer; /* ホバー時にカーソルが手のひら型に */
+  transition: all 0.3s ease; /* 背景色と枠線の変化をスムーズに */
+  margin-bottom: 100px;
 }
 
-.favorite-btn.favorited {
-  background-color: #ff5c8e; /* お気に入り追加時の色 */
-  color: #fff;
+/* お気に入りされたとき（アクティブ状態）のスタイル */
+.favorite-btn-active {
+  background-color: #f4a8ee; /* 淡い水色 */
+  color: white; /* 文字色 */
+  border: 2px solid #f4a8ee; /* 枠線も淡い水色 */
+  border-radius: 5px; /* 四角ボタン */
+  padding: 10px 20px; /* 内側の余白 */
+  font-size: 16px; /* 文字サイズ */
+  cursor: pointer; /* ホバー時にカーソルが手のひら型に */
+  transition: all 0.3s ease; /* 背景色と枠線の変化をスムーズに */
+  margin-bottom: 100px;
 }

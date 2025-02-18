@@ -8,7 +8,11 @@ class Post < ApplicationRecord
   has_one_attached :animal_image
 
   def self.ransackable_attributes(auth_object = nil)
-    %w[title category_id animal_type gender_id address]
+    %w[title category_id animal_type gender_id address favorites]
+  end
+
+  def self.ransackable_associations(auth_object = nil)
+    %w[user category gender favorites]
   end
 
   with_options presence: true do
@@ -24,13 +28,13 @@ class Post < ApplicationRecord
 
   validate :acceptable_image
   belongs_to :user
+  has_many :users, through: :favorites
   has_many :comments, dependent: :destroy
-  has_many :favorites
+  has_many :favorites, dependent: :destroy
 
   def favorited_by?(user)
     favorites.exists?(user_id: user.id)
   end
-
 
   private
 

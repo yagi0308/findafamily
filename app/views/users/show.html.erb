@@ -38,4 +38,18 @@
       </h2>
       <div class="user__card">
         <%= render partial: 'posts/post', collection: @user.posts %>
-      </div>
+       </div>
+
+<h2 class="page-second-heading"><%= "『#{@user.nickname}さんのお気に入りした投稿』" %></h2>
+<div class="user__card">
+    <% @favorite_posts.each do |favorite| %>
+      <%= render partial: 'posts/post', object: favorite.post %>
+    <% end %>
+</div>
+
+<h2 class="page-second-heading"><%= "『#{@user.nickname}さんのお気に入りした商品』" %></h2>
+<div class="user__card">
+    <% @favorite_items.each do |favorite| %>
+      <%= render partial: 'items/item', object: favorite.item %>
+    <% end %>
+</div>

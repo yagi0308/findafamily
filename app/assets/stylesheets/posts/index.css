@@ -13,12 +13,14 @@
 
 /* 投稿表示 */
 .card {
-  width: calc((100% - 50px) / 4);
+  width: calc((100% - 70px) / 5);
   margin-bottom: 40px;
 }
+
 .card__img {
   margin-bottom: 16px;
 }
+
 .card__title {
   font-size: 16px;
   margin-bottom: 8px;
@@ -38,9 +40,9 @@
   text-decoration: underline;
 }
 
-/* 家族が見つかりました */
+/* 家族が見つかりました・準備中です */
 .found-home-second{
-  font-size: 18px;
+  font-size: 14px;
   font-weight: bold;
   background-color: rgb(250, 209, 135);
   color: #e65174; 

@@ -33,8 +33,7 @@
 .search-field input[type="submit"] {
   background: #ff9800;
   color: white;
-  border: none;
-  border-radius: 20px;
+  border-radius: 30px;
   height: 30px;
   width: 100px;
   font-size: 10x;
@@ -88,9 +87,9 @@ ul {
   margin-left: 90px;
 }
 
-.no-results {
-  font-size: 30px;
+.no-results-msg {
+  font-size: 20px;
   margin: 20px 0;
-  text-align: center;
   color: brown;
+  margin-left: 20px;
 }

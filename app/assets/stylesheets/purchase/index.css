@@ -147,11 +147,13 @@
 }
 
 .buy-red-btn {
-  width: 100%;
-  background: #ea352d;
-  border: 1px solid #ea352d;
+  width: 300px;
+  background: #e38989;
+  border: 10px solid #eec297;
   color: #fff;
   line-height: 48px;
-  font-size: 14px;
+  font-size: 20px;
   cursor: pointer;
+  border-radius: 100px;
+  margin-left: 20px;
 }

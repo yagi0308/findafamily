@@ -1,8 +1,5 @@
 
     <div class="card">
-      <%= link_to item.name, item_path(item), class: :card__title %>
-
-   <div class="card">
       <%= link_to (image_tag item.item_image, class: :card__img), item_path(item) %>
 
       <% if item.purchases.present? %>
@@ -10,13 +7,6 @@
           <span>準備中です</span>
         </div>
       <% end %>
-
-
-      <div class="card__body">
-        <%= link_to item.name, item_path(item), class: :card__title %>
-        <%= link_to item.item_category_id, item_path(item), class: :card__address %>
-      </div>
-    </div>
 
 <div class="card__body">
   <span class="card__title"><p>商品名：<%= link_to item.name, item_path(item)%></p></span>
