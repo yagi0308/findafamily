@@ -26,6 +26,8 @@ ja:
         item_category_id: "カテゴリー"
         shipping_fee_id: "配送料の負担"
         shipping_days_id: "発送までの日数"
+      comment:
+        content: "コメント"
   activemodel:
     attributes:
       purchase_address: 

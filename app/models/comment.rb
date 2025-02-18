@@ -4,6 +4,7 @@ class Comment < ApplicationRecord
   has_one_attached :comment_image
 
   before_destroy :purge_comment_image
+  validates :content, presence: true
 
   private
 

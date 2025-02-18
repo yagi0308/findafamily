@@ -12,7 +12,7 @@
       <%= link_to image_tag @item.item_image, class: "item-box-img" %>
 
           <% if @item.purchases.present? %>
-          <div class='sold-out'>
+          <div class='found-home'>
             <span>準備中です</span>
           </div>
           <% end %>
@@ -22,6 +22,13 @@
 
       <table class="detail-table">
         <tbody>
+
+            <tr>
+            <th class="detail-post">出品者</th>
+            <td class="detail-value"><%= @user.nickname %></td>
+          </tr>
+
+
           <tr>
             <th class="detail-post">商品名</th>
             <td class="detail-value"><%= @item.name %></td>
@@ -66,14 +73,13 @@
   <% elsif @item.purchases.any? %>
     <!-- 購入済みの商品ページの場合 -->
     <div class="actions">
-      <%= link_to 'TOPにもどる', items_path, class:"comment-btn back-btn" %>
+      <%= link_to 'TOPにもどる', items_path, class:"back-btn" %>
     </div>
   <% else %>
     <!-- 出品者以外のユーザーがまだ購入していない商品ページを見ている場合 -->
     <div class="item-buy-buttons">
-      <%= link_to "購入画面に進む", item_purchases_path(@item), data: { turbo: false }, class: "post-red-btn" %>
-      <%= link_to "問い合わせる", root_path, class: "post-destroy" %>
-      <%= link_to 'もどる', root_path, class:"back-second-btn" %>
+      <%= link_to "購入画面に進む", item_purchases_path(@item), data: { turbo: false }, class: "post-buy-btn" %>
+      <%= link_to 'もどる', items_path, class:"go-back-btn" %>
     </div>
   <% end %>
   <% end %>

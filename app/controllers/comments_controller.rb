@@ -1,12 +1,14 @@
 class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
+
     if @comment.save
       redirect_to post_path(@comment.post)
     else
       @post = @comment.post
-      @comments = @post.comments
-      render '/posts/show', status: :unprocessable_entity
+      @comments = @post.comments.includes(:user)
+      flash.now[:alert] = 'コメントを入力してください'
+      render 'posts/show', status: :unprocessable_entity
     end
   end
 

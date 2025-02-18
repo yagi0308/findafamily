@@ -4,6 +4,7 @@ class PostsController < ApplicationController
   def index
     @q = Post.ransack(params[:q])
     @posts = Post.all
+    @posts = Post.includes(:user).all
   end
 
   def new

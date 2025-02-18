@@ -13,7 +13,11 @@ class Item < ApplicationRecord
   end
 
   def self.ransackable_attributes(auth_object = nil)
-    %w[name item_category_id price shipping_days_id]
+    %w[name item_category_id price shipping_days_id favorites]
+  end
+
+  def self.ransackable_associations(auth_object = nil)
+    %w[user favorites item_category shipping_fee shipping_days]
   end
 
   extend ActiveHash::Associations::ActiveRecordExtensions
@@ -22,6 +26,7 @@ class Item < ApplicationRecord
   belongs_to_active_hash :shipping_days
 
   belongs_to :user
+  has_many :users, through: :favorites
   has_many :purchases
   has_many :favorites
 

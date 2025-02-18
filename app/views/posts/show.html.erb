@@ -88,6 +88,8 @@
     <% if user_signed_in? && current_user != @post.user && @post.adoption.blank? %> 
     <%= form_with model: [@post, @comment], local: true do |f| %>
 
+      <%= render 'shared/error_messages', model: @comment %>
+
       <div class="field">
         <%= f.label :content, "[ コメント ]", class: "comment-container" %><br />
         <div class="comments_lists">
@@ -113,7 +115,7 @@
       </div>
       <div class="actions">
         <%= f.submit "送信する", class: "comment-btn" %>
-        <%=link_to 'TOPにもどる', root_path, class:"comment-btn back-btn" %>
+        <%=link_to 'TOPにもどる', root_path, class:"comment-back-btn" %>
       </div>
     <% end %>
   <% end %>

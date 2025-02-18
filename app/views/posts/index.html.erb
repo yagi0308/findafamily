@@ -23,10 +23,6 @@
 
 <div class='item-contents' id="detailed-search-result-wrapper">
   <%= search_form_for @q, url: search_posts_path, html: { id: "detailed-search-form" } do |f| %>
-    <div class="search-field">
-      <%= f.label :title_cont, '【 キーワードから探す 】 ' %>
-      <%= f.text_field :title_cont, class: 'input-box', placeholder: 'キーワードから探す', value: params[:q]&.dig(:title_cont) %>
-    </div>
 
     <div class="search-field">
       <%= f.label :category_id_in, '【 カテゴリー 】' %><p>
@@ -60,17 +56,27 @@
     <h3>検索結果</h3>
   </div>
     <ul>
-      <% @search_results.each do |post| %>
+      <% @search_results.reject { |post| post.adoption.present? }.each do |post| %>
         <li class="list">
           <div class="posted-content">
-            <%= link_to (image_tag post.animal_image, class: :card__img), post_path(post) %>
-            <%= post.title %><p>
-            <span class="text-box">【<%= post.address %>】</span>
+      <%= link_to (image_tag post.animal_image, class: :card__img), post_path(post) %>
+
+      <% if post.adoption.present? %>
+        <div class="found-home-second">
+          <span>家族が見つかりました</span>
+        </div>
+      <% end %>
+
+      <div class="card__body">
+        <%= link_to post.title, post_path(post), class: :card__title %>
+        <span class="card__address"><p>場所：<%= link_to post.address, post_path(post), class: :card__address %></p></span>
+        <%= link_to " #{post.user.nickname}さん", post_path(post), class: :card__user %>
+      </div>
           </div>
         </li>
       <% end %>
       <% else %>
-        <p class="no-results">該当する投稿はありませんでした</p>
+        <p class="no-results-msg">該当する投稿はありませんでした</p>
     </ul>
 <% end %>
 

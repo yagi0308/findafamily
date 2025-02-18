@@ -10,11 +10,14 @@
         <p>お好みのアイテムをお選びください</p>
       </div>
     <% end %>
+
+     <!-- 通常の投稿を上部にのみ表示 -->
     <div class="card__wrapper">
       <%= render partial: 'item', collection: @items, as: :item %>
     </div>
     </div>
   </main>
+
 
    <div class="search-page">
   <h3> 🐈‍⬛ 検索ページ 🔍</h3>
@@ -22,16 +25,6 @@
 
    <div class='item-contents' id="detailed-search-result-wrapper">
    <%= search_form_for @q, url: search_items_path, html: { id: "detailed-search-form" } do |f| %>
-   <div class="search-field">
-   <%= f.label :title_cont, '【 キーワードから探す 】' %>
-   <%= f.text_field :title_cont, class: 'input-box', placeholder: 'キーワードから探す', value: params[:q]&.dig(:title_cont) %>
-   </div>
-
-
-   <div class="search-field">
-   <%= f.label :name_in, '【 商品名 】' %>
-   <%= f.text_field :name_cont, class: 'input-box', placeholder: '商品名', value: params[:q]&.dig(:name_cont) %>
-   </div>
 
    <div class="search-field">
    <%= f.label :item_category_cont, '【 カテゴリー 】' %><p>
@@ -57,20 +50,29 @@
    <% end %>
    </div>
 
-
- <ul>
-  <% if @items.any? %>
-    <% @items.each do |item| %>
+<ul>
+  <% filtered_items = @search_results.present? ? @search_results.reject { |item| item.purchases.present? } : [] %>
+  <% if filtered_items.any? %>
+    <% filtered_items.each do |item| %>
       <li class="list">
         <div class="posted-content">
           <%= link_to (image_tag item.item_image, class: :card__img), item_path(item) %>
-          <%= item.name %><br>
-          <%= item.price %>
+
+          <% if item.purchases.present? %>
+            <div class="found-home-second">
+              <span>準備中です</span>
+            </div>
+          <% end %>
+
+          <div class="card__body">
+            <span class="card__title"><p>商品名：<%= link_to item.name, item_path(item)%></p></span>
+            <span class="card__address"><p>カテゴリー：<%= link_to item.item_category.name, item_path(item) %></p></span>
+          </div>
         </div>
       </li>
     <% end %>
   <% else %>
-    <p>該当する商品はありませんでした。</p>
+    <p class="no-results-msg">該当する商品はありませんでした</p>
   <% end %>
 </ul>
 

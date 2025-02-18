@@ -1,7 +1,7 @@
 .profile-box-img {
   width: 300px;
   height: 300px;
-  margin-left: 600px;
+  margin-left: 550px;
 }
 
 .page-heading {
@@ -9,27 +9,24 @@
   margin-top: 50px;
   padding-bottom: 5px;
   border-bottom: 10px solid #e35e5e;
-  display: inline-block;
-  margin-left: 400px;
 }
 
 .page-header{
   text-align: center;
   margin-bottom: 20px;
   padding-bottom: 5px;
-  border-bottom: 10px solid #e35e5e;
-  display: inline-block;
 }
 
 .page-second-heading {
+  margin-left: 20px;
   text-align: center;
-  font-size: 30px;
+  font-size: 20px;
   margin-bottom: 100px;
-  border-bottom: 10px solid #e35e5e;
-  display: inline-block;
-  margin-left: 640px;
-
+  border-bottom: 10px solid #e35e5e; /* 文字の下に赤い線を引く */
+  width: fit-content; /* 文字の幅だけに合わせる */
+  padding-bottom: 5px; /* 線と文字の間に少し余白を追加 */
 }
+
 
 .user__wrapper{
   min-height: calc(100vh - 500px);
