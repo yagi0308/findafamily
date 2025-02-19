@@ -106,3 +106,25 @@ Things you may want to cover:
 | building               | string     |                                   |
 | home_phone_number   　 | string     | null: false                       |
 | purchase_id            | references | null: false, foreign_key: true    |
+
+
+## rooms テーブル
+| Column             | Type       | Options                            |
+| ------------------ | ------     | ---------------------------------  |
+| user_id            | references | null: false, foreign_key: true     |
+| post_id            | references |  null: false, foreign_key: true    |
+| message_image      | string     |                    |
+
+
+## entries テーブル
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| user   | references | null: false, foreign_key: true |
+| room   | references | null: false, foreign_key: true |
+
+## messages テーブル
+| Column  | Type       | Options                        |
+| ------- | ---------- | ------------------------------ |
+| message | string     |                                |
+| user    | references | null: false, foreign_key: true |
+| room    | references | null: false, foreign_key: true |

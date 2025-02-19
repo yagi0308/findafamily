@@ -25,7 +25,9 @@
         <tbody>
           <tr>
             <th class="detail-post">投稿者</th>
-            <td class="detail-value"><%= @post.user.nickname %></td>
+            <td class="detail-value">
+                <%= @post.user.nickname %>
+              </td>
           </tr>
           <tr>
             <th class="detail-post">タイトル</th>
@@ -69,7 +71,6 @@
       <% if @post.adoption.present? %>
           <%= link_to 'TOPページに戻る', root_path, class: "back-to-top-btn" %>
           <%= link_to "削除する", post_path(@post), data: { turbo_method: :delete }, class: "back-to-top-btn delete-btn" %>
-
           <% end %>
 
 
@@ -117,8 +118,8 @@
       <div class="actions">
         <%= f.submit "コメントを送信する", class: "comment-btn" %>
         <%=link_to 'TOPにもどる', root_path, class:"comment-back-btn" %>
+        <%= link_to "#{@post.user.nickname}さんへ連絡", room_path(@room), class: "dm-btn" %>
       </div>
     <% end %>
   <% end %>
 </div>
-    </div>

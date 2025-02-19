@@ -201,7 +201,7 @@
 .comment-back-btn {
   display: inline-block;
   line-height: 65px;
-  width: 230px;
+  width: 35%;
   height: 70px;
   font-size: 20px;
   border-radius: 100px;
@@ -346,6 +346,7 @@
   padding: 10px 50px;
   color: #ffffff;
 }
+
 
 /* お気に入りボタン */
 .favorite-btn {

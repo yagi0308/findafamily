@@ -1,0 +1,25 @@
+<% @room.messages.each do |message| %>
+  <div class="message">
+    <div class="message-user">
+      <p><strong><%= current_user.nickname %> さん:</strong> <%= message.message %></p>
+      <p><%= l message.created_at.present? ? message.created_at : Time.now, format: :short %></p>
+
+      <% if message.message_image.attached? %>
+        <%= image_tag message.message_image, class: "message-image" %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+
+  <%= form_with model: [@room, @message], local: true do |f| %>
+  <div class="form-input">
+    <label class="form-image">
+      <span class="image-file">画像</span>
+      <%= f.file_field :message_image, id:"message-image" %> 
+    </label>
+
+    <%= f.text_area :message, class: 'form-message', placeholder: "メッセージを入力してください" %>
+
+    <%= f.submit "送信", class: 'form-submit' %>
+  </div>
+<% end %>
