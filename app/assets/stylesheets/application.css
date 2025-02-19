@@ -13,3 +13,28 @@
  *= require_tree .
  *= require_self
  */
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.logo {
+  animation: fadeIn 1s ease-in-out;
+}
+
+.second-logo {
+  animation: fadeIn 1s ease-in-out;
+}
+
+.header_logo {
+  animation: fadeIn 1s ease-in-out;
+}
+
+.fourth-logo {
+  animation: fadeIn 1s ease-in-out;
+}
+
+.six-logo {
+  animation: fadeIn 1s ease-in-out;
+}

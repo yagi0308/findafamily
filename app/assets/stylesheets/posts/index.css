@@ -12,9 +12,11 @@
 }
 
 /* 投稿表示 */
+
 .card {
   width: calc((100% - 70px) / 5);
-  margin-bottom: 40px;
+  margin-right: 20px;
+   margin-bottom: 100px;
 }
 
 .card__img {
