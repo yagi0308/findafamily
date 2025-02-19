@@ -1,4 +1,5 @@
 
+<div class="user__container">
   <%= render "shared/second_header" %>
 
 <div class="main">
@@ -52,4 +53,5 @@
     <% @favorite_items.each do |favorite| %>
       <%= render partial: 'items/item', object: favorite.item %>
     <% end %>
+</div>
 </div>

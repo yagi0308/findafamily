@@ -1,5 +1,5 @@
 .post-show {
-  font-size: 14px;
+  font-size: 16px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -18,7 +18,7 @@
 .post-box>.name {
   text-align: center;
   font-weight: bold;
-  font-size: 25px;
+  font-size: 24px;
 }
 
 .post-box-img {
@@ -89,7 +89,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  font-size: 18px;
+  font-size: 16px;
   border-radius: 100vh;
   float: right;
   margin-top: 50px;
@@ -127,7 +127,7 @@
   width: 20%;
   background-color: #eee;
   border: 1px solid #dedede;
-  font-size: 14px;
+  font-size: 16px;
   text-align: center;
 }
 
@@ -135,7 +135,7 @@
   width: 80%;
   padding: 20px;
   border: 1px solid #dedede;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .option {
@@ -257,7 +257,7 @@
 }
 
 .change-item-btn {
-  font-size: 30px;
+  font-size: 32px;
   text-decoration: none;
   color: #75b0b2;
 }
@@ -268,7 +268,7 @@
   color: #3CCACE;
   text-decoration: none;
   font-weight: bold;
-  font-size: 23px;
+  font-size: 24px;
 }
 
 .item-box-img {
@@ -310,7 +310,7 @@
 }
 
 .found-home {
-  font-size: 30px;
+  font-size: 32px;
   font-weight: bold;
   background-color: rgb(250, 209, 135);
   color: #e65174; 
@@ -327,7 +327,7 @@
   text-align: center;
   justify-content: center;
   align-items: center;
-  font-size: 18px;
+  font-size: 16px;
   border-radius: 100vh;
   float: left;
   margin-top: 30px;

@@ -1,13 +1,13 @@
 /* こんにちは */
 .page-title {
-  font-size: 23px;
+  font-size: 24px;
   margin-bottom: 28px;
 }
 
 /* 〜さん */
 .login__link {
   margin-left: 15px;
-  font-size: 23px;
+  font-size: 24px;
   border-bottom: 5px solid #f1501f;
 }
 
@@ -30,13 +30,13 @@
 }
 
 .card__address {
-  font-size: 15px;
+  font-size: 16px;
   margin-bottom: 8px;
   font-weight: bold;
 }
 .card__user {
   display: block;
-  font-size: 15px;
+  font-size: 16px;
   color: #999;
   text-align: right;
   text-decoration: underline;
@@ -44,7 +44,7 @@
 
 /* 家族が見つかりました・準備中です */
 .found-home-second{
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
   background-color: rgb(250, 209, 135);
   color: #e65174; 
