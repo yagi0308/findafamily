@@ -39,6 +39,10 @@
   animation: fadeIn 1s ease-in-out;
 }
 
+.seven-logo {
+  animation: fadeIn 1s ease-in-out;
+}
+
 .card {
   width: calc((100% - 70px) / 5);
   margin-right: 20px;

@@ -12,6 +12,7 @@ class RoomsController < ApplicationController
     @room = Room.find(params[:id])
     @message = @room.messages.build
     @messages = @room.messages.includes(:user)
+    @post = Post.find_by(id: @room.post_id) if @room.present?
   end
 
   private

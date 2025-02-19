@@ -24,7 +24,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @comment = Comment.new
     @comments = @post.comments.includes(:user)
-    @room = Room.find_or_create_by(post_id: @post.id, user_id: current_user.id)
+    @room = (Room.find_or_create_by(post_id: @post.id, user_id: current_user.id) if user_signed_in?)
   end
 
   def edit
