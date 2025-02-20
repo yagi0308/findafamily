@@ -75,3 +75,41 @@
   color: #fff;
   font-size: 10px;
 }
+
+
+.tab-buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+
+.tab-btn,
+.back-tab-btn {
+  background: #d5e097;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 0 5px;
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+.tab-btn.active {
+  background: #59abe1;
+  color: white;
+}
+
+.back-tab-btn:hover{
+  color: #fff;
+  background: #d990aa;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}

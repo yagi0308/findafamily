@@ -9,10 +9,8 @@
  <div class="message-text">
     <div class="message-date">
       <%= message.message %> <!-- メッセージ本文 -->
-    </div>
+        </div>
 
-    <div class="message-user">
-    【 <%=  message.user&.nickname || "Unknown User"  %> 】 <!-- ユーザー名 -->
       <div class="message-time">
         <%= l (message.created_at || Time.now), format: :short %> <!-- メッセージ作成日時 -->
       </div>

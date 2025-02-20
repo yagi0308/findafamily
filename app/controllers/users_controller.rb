@@ -5,8 +5,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @favorite_posts = @user.favorites.where.not(post_id: nil).includes(:post)
-    @favorite_items = @user.favorites.where.not(item_id: nil).includes(:item)
+    @favorite_posts = @user.favorites.where(favoritable_type: 'Post').includes(:favoritable)
+    @favorite_items = @user.favorites.where(favoritable_type: 'Item').includes(:favoritable)
   rescue ActiveRecord::RecordNotFound
     redirect_to root_path
   end
@@ -23,13 +23,5 @@ class UsersController < ApplicationController
   def favorites
     @favorite_posts = current_user.favorite_posts
     @favorite_items = current_user.favorite_items
-  end
-
-  private
-
-  def set_post
-    @user = User.find(params[:id])
-  rescue ActiveRecord::RecordNotFound
-    redirect_to root_path
   end
 end

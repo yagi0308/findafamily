@@ -1,5 +1,13 @@
 
 /* メッセージ全体のスタイル */
+
+.messages {
+  max-height: 1000px;        /* メッセージエリアの最大高さ */
+  overflow-y: auto;         /* 縦方向にスクロールを有効にする */
+  padding-right: 10px;      /* スクロールバーのための余白 */
+  height: 1000px;            /* 必要に応じて高さを指定 */
+  }
+
 .message {
   display: flex;
   flex-direction: column;  /* 画像とメッセージを縦に並べる */

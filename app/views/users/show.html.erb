@@ -34,24 +34,38 @@
       </div>
       </div>
 
-      <h2 class="page-second-heading">
-        <%= "#{@user.nickname}さんの投稿"%>
-      </h2>
+      <div class="tab-container">
+  <!-- タブボタン -->
+  <div class="tab-buttons">
+<%= link_to "投稿", url_for(controller: "users", action: "show", id: @user.id, tab: "posts"), class: "tab-btn #{params[:tab] == 'posts' || params[:tab].blank? ? 'active' : ''}" %>
+  <%= link_to "お気に入り投稿", url_for(controller: "users", action: "show", id: @user.id, tab: "favorite-posts"), class: "tab-btn #{params[:tab] == 'favorite-posts' ? 'active' : ''}" %>
+  <%= link_to "お気に入り商品", url_for(controller: "users", action: "show", id: @user.id, tab: "favorite-items"), class: "tab-btn #{params[:tab] == 'favorite-items' ? 'active' : ''}" %>
+  <%=link_to 'もどる', root_path, class:"back-tab-btn" %>
+  </div>
+
+ <!-- 投稿一覧 -->
+ <% if params[:tab] == 'posts' || params[:tab].blank? %>
+  <div class="tab-content active">
       <div class="user__card">
         <%= render partial: 'posts/post', collection: @user.posts %>
        </div>
+  </div>
+  <% end %>
 
-<h2 class="page-second-heading"><%= "『#{@user.nickname}さんのお気に入りした投稿』" %></h2>
-<div class="user__card">
-    <% @favorite_posts.each do |favorite| %>
-      <%= render partial: 'posts/post', object: favorite.post %>
-    <% end %>
-</div>
+<!-- お気に入りした投稿 -->
+<% if params[:tab] == 'favorite-posts' %>
+  <div class="tab-content active">
+    <div class="user__card">
+      <%= render partial: 'posts/post', collection: @favorite_posts.map(&:favoritable) %>
+    </div>
+  </div>
+<% end %>
 
-<h2 class="page-second-heading"><%= "『#{@user.nickname}さんのお気に入りした商品』" %></h2>
-<div class="user__card">
-    <% @favorite_items.each do |favorite| %>
-      <%= render partial: 'items/item', object: favorite.item %>
-    <% end %>
-</div>
-</div>
+<!-- お気に入りした商品 -->
+<% if params[:tab] == 'favorite-items' %>
+  <div class="tab-content active">
+    <div class="user__card">
+      <%= render partial: 'items/item', collection: @favorite_items.map(&:favoritable) %>
+    </div>
+  </div>
+<% end %>
