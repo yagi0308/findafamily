@@ -117,7 +117,7 @@
       </div>
       <div class="actions">
         <%= f.submit "コメントを送信する", class: "comment-btn" %>
-        <%=link_to 'TOPにもどる', root_path, class:"comment-back-btn" %>
+        <%=link_to 'もどる', root_path, class:"comment-back-btn" %>
         <%= link_to "#{@post.user.nickname}さんへ連絡", room_path(@room), class: "dm-btn" %>
       </div>
     <% end %>

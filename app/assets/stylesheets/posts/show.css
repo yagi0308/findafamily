@@ -198,7 +198,8 @@
 }
 
 .comment-btn,
-.comment-back-btn {
+.comment-back-btn,
+.dm-btn {
   display: inline-block;
   line-height: 65px;
   width: 35%;
@@ -219,6 +220,11 @@
   border: 5px #c6d5a4 solid;
   color: #fff;
 }
+
+.dm-btn {
+  background-color: #e4928b;
+  border: 5px #a4d5c7 solid;
+  color: #fff; }
 
 
 /* TOPにもどるボタン */

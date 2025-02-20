@@ -1,0 +1,21 @@
+
+<div class="message">
+  <% if message.message_image.attached? %> <!-- message_imageが添付されているか確認 -->
+    <div class="message-image">
+      <%= image_tag message.message_image, class: "message-image" %>
+    </div>
+  <% end %>
+
+ <div class="message-text">
+    <div class="message-date">
+      <%= message.message %> <!-- メッセージ本文 -->
+    </div>
+
+    <div class="message-user">
+    【 <%=  message.user&.nickname || "Unknown User"  %> 】 <!-- ユーザー名 -->
+      <div class="message-time">
+        <%= l (message.created_at || Time.now), format: :short %> <!-- メッセージ作成日時 -->
+      </div>
+    </div>
+  </div>
+</div>

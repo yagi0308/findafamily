@@ -1,39 +1,17 @@
   <%= render "shared/seven_header" %>
 
-  <% @room.messages.each do |message| %>
-  <div class="message">
-
-      <div class="message-image">
-      <% if message.message_image.attached? %>
-        <%= image_tag message.message_image, class: "message-image" %>
-      <% end %>
+  <div class="messages">
+  <%= render partial: 'rooms/message', collection: @messages, as: :message %>
       </div>
-
-    <div class="message-position" >
-    <div class="message-user">
-      <%= current_user.nickname %> さん
-    </div>
-
-      <div class="message-date">
-       <%= message.message %>
-       </div>
-
-           <div class="message-time">
-      <%= l message.created_at.present? ? message.created_at : Time.now, format: :short %>
-      </div>
-    </div>
-  </div>
- <% end %>
- </div>
 
   <%= form_with model: [@room, @message], local: true do |f| %>
   <div class="form-input">
+        <%= f.text_area :message, class: 'form-message', placeholder: "メッセージを入力してください" %>
     <label class="form-image">
-      <span class="image-file">画像</span>
       <%= f.file_field :message_image, id:"message-image" %> 
     </label>
-    <%= f.text_area :message, class: 'form-message', placeholder: "メッセージを入力してください" %>
+    <div class="form-buttons">
     <%= f.submit "送信", class: 'form-submit' %>
-    <%= link_to 'もどる', post_path(@post), class:"navigate-back" %>
+     <%= link_to 'もどる', post_path(@post), class:"navigate-back" %>
   </div>
 <% end %>

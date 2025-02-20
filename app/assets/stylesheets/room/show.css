@@ -1,3 +1,145 @@
-.message-image{
-  width: 300px;
+
+/* メッセージ全体のスタイル */
+.message {
+  display: flex;
+  flex-direction: column;  /* 画像とメッセージを縦に並べる */
+  align-self: flex-end;  /* 右寄せに配置 */
+  margin-bottom: 10px;
+  border-radius: 8px;
+  background-color: #bfefc5;
+  max-width: 600px; /* メッセージの最大幅 */
+  padding: 10px;
+  width: fit-content; /* 内容の幅に自動調整 */
+  margin-left: auto; /* 左側の余白を自動調整 */
+  margin-right: 300px;   /* 右側の余白をゼロに */
+  margin-top: 20px;
+}
+
+/* 他のユーザーのメッセージを左側に配置 */
+.other-user-message {
+  align-self: flex-start;
+  background-color: #cbc9f9; /* 他のユーザーのメッセージ背景 */
+}
+
+/* メッセージの画像 */
+.message-image {
+  margin-bottom: 10px;  /* 画像とメッセージの間にスペース */
+  display: flex;
+  justify-content: center;  /* 画像を中央に表示 */
+}
+
+.message-image img {
+  max-width: 50%;   /* 画像の幅を調整 */
+  height: auto;
+  border-radius: 5px;
+}
+
+/* メッセージ本文 */
+.message-text {
+  display: block;
+  text-align: right;
+}
+
+/* メッセージ情報 */
+.message-position {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ユーザー名の左寄せ */
+.message-user {
+  font-weight: bold;
+  text-align: right;
+}
+
+/* 日付・時間 */
+.message-time {
+  font-size: 0.8rem;
+  color: gray;
+}
+
+.form-image {
+  margin-left: 750px;
+}
+
+/* フォーム全体を画面の下部に固定 */
+.form-input {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: white; /* 背景色を指定（デザインを保持） */
+  padding: 10px;
+  border-top: 1px solid #ccc;
+  display: flex;
+  flex-direction: column; /* 既存のデザインを保持 */
+  align-items: center;
+}
+
+.form-image input[type="file"]{
+  margin-right: 360px;
+}
+
+/* メッセージ入力欄 */
+.form-message {
+  max-width: 600px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 0 auto; /* 中央揃え */
+  display: block;
+  height: 100px;
+}
+
+/* ボタンを右に配置 */
+.form-buttons {
+  width: 100%;
+  display: flex;
+  gap: 10px; /* ボタン間の間隔 */
+  margin-right: 20px;
+  margin-left: 130%;
+}
+
+/* 送信ボタン */
+.form-submit {
+  padding: 0.4em 1.6em;
+  margin-top: 20px;
+  font-size: 1em;
+  color: #acac5e;
+  text-decoration: none;
+  user-select: none;
+  border: 5px #a4c3d2 solid;
+  border-radius: 100vh;
+  transition: 0.4s ease;
+  width: 120px;
+}
+
+/* 戻るボタン */
+.navigate-back {
+  padding: 0.4em 1.6em;
+  margin-top: 20px;
+  font-size: 1em;
+  color: #acac5e;
+  text-decoration: none;
+  user-select: none;
+  border: 5px #a4c3d2 solid;
+  border-radius: 100vh;
+  transition: 0.4s ease;
+}
+
+.navigate-back:hover {
+  color: #fff;
+  background: #90d9bd;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 600px) {
+  .chat-container {
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  .message {
+    max-width: 90%;
+  }
 }

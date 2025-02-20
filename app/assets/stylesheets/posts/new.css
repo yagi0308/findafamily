@@ -134,10 +134,10 @@
 }
 
 .return-btn {
-  background: #aaa;
-  border: 3px solid #5bb4b2;
-  border-radius: 100vh;
+  background-color: #77acd8;
+  border: 5px #c6d5a4 solid;
   color: #fff;
+  border-radius: 100vh;
   padding: 0;
   width: 48%;
 }
