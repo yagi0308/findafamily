@@ -40,7 +40,6 @@
 <%= link_to "投稿", url_for(controller: "users", action: "show", id: @user.id, tab: "posts"), class: "tab-btn #{params[:tab] == 'posts' || params[:tab].blank? ? 'active' : ''}" %>
   <%= link_to "お気に入り投稿", url_for(controller: "users", action: "show", id: @user.id, tab: "favorite-posts"), class: "tab-btn #{params[:tab] == 'favorite-posts' ? 'active' : ''}" %>
   <%= link_to "お気に入り商品", url_for(controller: "users", action: "show", id: @user.id, tab: "favorite-items"), class: "tab-btn #{params[:tab] == 'favorite-items' ? 'active' : ''}" %>
-  <%=link_to 'もどる', root_path, class:"back-tab-btn" %>
   </div>
 
  <!-- 投稿一覧 -->

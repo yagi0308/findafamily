@@ -1,5 +1,5 @@
 <div class="show__container">
-<%= render "shared/five_header" %>
+<%= render "shared/eight_header" %>
 
   <div class="post-show">
   <div class="post-box">
@@ -70,7 +70,6 @@
     <!-- 購入済みの商品ページの場合 -->
     <% elsif @item.purchases.present? && current_user == @item.user %>
     <div class="actions">
-      <%= link_to 'TOPページに戻る', items_path, class: "back-to-top-btn" %>
       <%= link_to "削除する", item_path(@item), data: { turbo_method: :delete }, class: "back-to-top-btn delete-btn" %>
     </div>
     <!-- 出品者が自分の商品ページを見ている場合 -->
@@ -78,13 +77,11 @@
     <div class="edit-delete-buttons">
       <%= link_to "投稿を編集する", edit_item_path(@item), class: "post-red-btn" %>
       <%= link_to "削除する", item_path(@item), data: { turbo_method: :delete }, class: "post-destroy" %>
-      <%= link_to 'もどる', items_path, class:"back-second-btn" %>
     </div>
   <% else %>
     <!-- 出品者以外のユーザーがまだ購入していない商品ページを見ている場合 -->
     <div class="item-buy-buttons">
       <%= link_to "購入画面に進む", item_purchases_path(@item), data: { turbo: false }, class: "post-buy-btn" %>
-      <%= link_to 'もどる', items_path, class:"go-back-btn" %>
     </div>
   <% end %>
 <% end %>

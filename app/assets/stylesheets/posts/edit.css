@@ -1,15 +1,5 @@
-.sell-btn-contents {
-  display: flex;
-  justify-content: flex-start !important; 
-  gap: 20px;
-  width: 80% !important;
-  padding-top: 50px;
-  margin-left: auto;
-  margin-right: 60px;
-  text-align: center;
-}
 
-.sell-btn,
+
 .adoption-btn {
   border-radius: 100vh;
   color: #ffffff;
@@ -19,13 +9,6 @@
   display: flex; 
   justify-content: center;
   align-items: center;
-}
-
-.sell-btn {
-  width: 48%;
-  background: #7fd6ba !important;
-  border: 3px solid #22ac06a3 !important;
-  font-size: 20px !important;
 }
 
 .adoption-btn {

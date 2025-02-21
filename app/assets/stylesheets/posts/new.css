@@ -105,32 +105,29 @@
 /* 投稿する・戻るボタン */
 .sell-btn-contents {
   display: flex;
-  justify-content: flex-start !important; 
+  justify-content: flex-start; 
   gap: 20px;
-  width: 80% !important;
   padding-top: 50px;
-  margin-left: auto; /* 右に寄せる */
-  margin-right: 70px; /* 右側の余白をゼロに */
   text-align: center;
 }
 
 .sell-btn,
 .return-btn {
-  background: #efa360;
-  border: 3px solid #ac4006a3;
+  background: #d4e380;
+  border: 6px solid #e771baa3;
   border-radius: 100vh;
   color: #ffffff;
   height: 70px;
   font-size: 20px;
-  margin-bottom: 4vh;
   text-align: center; 
   display: flex; 
   justify-content: center;
   align-items: center;
+  margin-left: 400px;
 }
 
 .sell-btn {
-  width: 48%;
+  width: 200px;
 }
 
 .return-btn {
