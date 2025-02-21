@@ -1,12 +1,13 @@
 class MessagesController < ApplicationController
   def create
     @room = Room.find(params[:room_id])
+    @post = @room.post # ✅ Room に紐づく Post オブジェクトを取得
+
     @message = @room.messages.new(message_params)
     @message.user = current_user
-    @post = @room.post_id if @room.present?
 
     if @message.save
-      redirect_to room_path(@room)
+      redirect_to post_room_path(@post, @room) # ✅ 正しいパスへリダイレクト
     else
       @messages = @room.messages.includes(:user)
       render 'rooms/show'

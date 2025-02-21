@@ -79,7 +79,7 @@
             <div class="edit-delete-buttons">
               <%= link_to "投稿を編集する", edit_post_path(@post), method: :get, class: "post-red-btn" %>
               <%= link_to "削除する", post_path(@post), data: { turbo_method: :delete }, class: "post-destroy" %>
-              <%=link_to 'チャットルームへ', room_path(@room), class:"back-second-btn" %>
+              <%=link_to 'チャットルームへ', post_room_path(@room.post, @room), class:"back-second-btn" %>
             </div>
           <% end %>
         <% end %>
@@ -116,7 +116,7 @@
       </div>
       <div class="actions">
         <%= f.submit "コメントを送信する", class: "comment-btn" %>
-        <%= link_to "#{@post.user.nickname}さんへ連絡", room_path(@room), class: "dm-btn" %>
+        <%= link_to "#{@post.user.nickname}さんへ連絡", post_room_path(@room.post, @room), class: "dm-btn" %>
       </div>
     <% end %>
   <% end %>
