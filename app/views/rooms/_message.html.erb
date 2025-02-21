@@ -1,5 +1,6 @@
 
-<div class="message">
+  <div class="messages">
+   <div class="message">
   <% if message.message_image.attached? %> <!-- message_imageが添付されているか確認 -->
     <div class="message-image">
       <%= image_tag message.message_image, class: "message-image" %>
@@ -16,4 +17,4 @@
       </div>
     </div>
   </div>
-</div>
+  </div>

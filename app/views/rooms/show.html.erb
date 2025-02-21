@@ -10,9 +10,7 @@
     <% end %>
   </ul>
     <% else %>
-  <div class="messages">
       <%= render partial: 'rooms/message', collection: @messages, as: :message %>
-  </div>
 
   <%= form_with(model: [@post, @room, @message], url: post_room_messages_path(@post, @room), local: true) do |f| %>
     <div class="form-input">
