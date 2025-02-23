@@ -37,3 +37,6 @@ ja:
         street: "番地"
         home_phone_number: "電話番号"
         token: "カード情報"
+  time:
+    formats:
+      default: "%Y/%m/%d %H:%M:%S"

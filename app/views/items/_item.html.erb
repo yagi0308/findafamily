@@ -1,10 +1,9 @@
-
-    <div class="card">
-      <%= link_to (image_tag item.item_image, class: :card__img), item_path(item) %>
+   <div class="card">
+   <%= link_to (image_tag item.item_image, class: :card__img), item_path(item) %>
 
       <% if item.purchases.present? %>
         <div class="found-home-second">
-          <span>準備中です</span>
+          <span>完売しました</span>
         </div>
       <% end %>
 
@@ -13,4 +12,3 @@
   <span class="card__address"><p>カテゴリー：<%= link_to item.item_category.name, item_path(item) %></p></span>
 </div>
 </div>
-

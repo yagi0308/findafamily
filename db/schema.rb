@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_02_17_000518) do
+ActiveRecord::Schema[7.1].define(version: 2025_02_20_074354) do
   create_table "active_storage_attachments", charset: "utf8mb3", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -62,12 +62,23 @@ ActiveRecord::Schema[7.1].define(version: 2025_02_17_000518) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
+  create_table "entries", charset: "utf8mb3", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "room_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["room_id"], name: "index_entries_on_room_id"
+    t.index ["user_id"], name: "index_entries_on_user_id"
+  end
+
   create_table "favorites", charset: "utf8mb3", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "post_id"
     t.bigint "item_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "favoritable_type"
+    t.integer "favoritable_id"
     t.index ["item_id"], name: "index_favorites_on_item_id"
     t.index ["post_id"], name: "index_favorites_on_post_id"
     t.index ["user_id"], name: "index_favorites_on_user_id"
@@ -85,6 +96,17 @@ ActiveRecord::Schema[7.1].define(version: 2025_02_17_000518) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_items_on_user_id"
+  end
+
+  create_table "messages", charset: "utf8mb3", force: :cascade do |t|
+    t.string "message", collation: "utf8mb4_0900_ai_ci"
+    t.bigint "user_id", null: false
+    t.bigint "room_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "message_image"
+    t.index ["room_id"], name: "index_messages_on_room_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "posts", charset: "utf8mb3", force: :cascade do |t|
@@ -111,6 +133,15 @@ ActiveRecord::Schema[7.1].define(version: 2025_02_17_000518) do
     t.datetime "updated_at", null: false
     t.index ["item_id"], name: "index_purchases_on_item_id"
     t.index ["user_id"], name: "index_purchases_on_user_id"
+  end
+
+  create_table "rooms", charset: "utf8mb3", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "post_id", null: false
+    t.index ["post_id"], name: "index_rooms_on_post_id"
+    t.index ["user_id"], name: "index_rooms_on_user_id"
   end
 
   create_table "users", charset: "utf8mb3", force: :cascade do |t|
@@ -140,11 +171,17 @@ ActiveRecord::Schema[7.1].define(version: 2025_02_17_000518) do
   add_foreign_key "addresses", "purchases"
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
+  add_foreign_key "entries", "rooms"
+  add_foreign_key "entries", "users"
   add_foreign_key "favorites", "items"
   add_foreign_key "favorites", "posts"
   add_foreign_key "favorites", "users"
   add_foreign_key "items", "users"
+  add_foreign_key "messages", "rooms", on_delete: :cascade
+  add_foreign_key "messages", "users"
   add_foreign_key "posts", "users"
   add_foreign_key "purchases", "items"
   add_foreign_key "purchases", "users"
+  add_foreign_key "rooms", "posts", on_delete: :cascade
+  add_foreign_key "rooms", "users"
 end

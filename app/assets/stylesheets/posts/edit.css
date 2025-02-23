@@ -1,15 +1,5 @@
-.sell-btn-contents {
-  display: flex;
-  justify-content: flex-start !important; 
-  gap: 20px;
-  width: 80% !important;
-  padding-top: 50px;
-  margin-left: auto;
-  margin-right: 60px;
-  text-align: center;
-}
 
-.sell-btn,
+
 .adoption-btn {
   border-radius: 100vh;
   color: #ffffff;
@@ -21,13 +11,6 @@
   align-items: center;
 }
 
-.sell-btn {
-  width: 48%;
-  background: #7fd6ba !important;
-  border: 3px solid #22ac06a3 !important;
-  font-size: 20px !important;
-}
-
 .adoption-btn {
   background: #e98d8d;
   border: 3px solid #83c9ff;
@@ -36,4 +19,42 @@
   padding: 0;
   width: 48%;
   font-size: 17px;
+}
+
+ /* タブレット表示時 */
+ @media (max-width: 1024px) {
+  .inner {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .page-heading {
+    font-size: 24px;
+  }
+  .card {
+    width: 48%;
+    margin-bottom: 40px;
+  }
+  .card__title {
+    font-size: 20px;
+  }
+  .card__summary {
+    font-size: 16px;
+  }
+}
+
+ /* スマホ表示時 */
+@media (max-width: 599px) {
+  .page-heading {
+    font-size: 20px;
+  }
+  .card {
+    width: 100%;
+    margin-bottom: 60px;
+  }
+  .card__title {
+    font-size: 18px;
+  }
+  .card__summary {
+    font-size: 14px;
+  }
 }

@@ -1,5 +1,5 @@
 .post-show {
-  font-size: 14px;
+  font-size: 16px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -18,7 +18,7 @@
 .post-box>.name {
   text-align: center;
   font-weight: bold;
-  font-size: 25px;
+  font-size: 24px;
 }
 
 .post-box-img {
@@ -83,36 +83,35 @@
 
 .post-buy-btn,
 .go-back-btn {
-  width: 230px;
-  height: 80px;
-  display: inline-flex;
+  width: 200px;
+  height: 70px;
+  display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  font-size: 18px;
+  font-size: 16px;
   border-radius: 100vh;
-  float: left;        /* 左に寄せて横並び */
-  margin-left: 70px;  /* ボタン間の隙間 */
+  float: right;
   margin-top: 50px;
 }
 
 .post-red-btn,
 .post-buy-btn {
-  background-color: #ed4816;
-  border: 10px solid #c690b9;
+  background-color: #f2653a;
+  border: 5px solid #dcafd1;
   color: #FFF;
 }
 
 .post-destroy {
   background-color: rgb(214, 158, 158);
-  border: 10px solid #92ccd1;
+  border: 5px solid #92ccd1;
   color: rgb(107, 30, 30);
 }
 
 .back-second-btn,
 .go-back-btn {
-  background: #6ec47b;
-  border: 10px solid #e7b33a;
+  background-color: #77acd8;
+  border: 5px #c6d5a4 solid;
   color: #fff;
 }
 
@@ -128,7 +127,7 @@
   width: 20%;
   background-color: #eee;
   border: 1px solid #dedede;
-  font-size: 14px;
+  font-size: 16px;
   text-align: center;
 }
 
@@ -136,7 +135,7 @@
   width: 80%;
   padding: 20px;
   border: 1px solid #dedede;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .option {
@@ -199,61 +198,52 @@
 }
 
 .comment-btn,
-.comment-back-btn {
+.comment-back-btn,
+.dm-btn {
   display: inline-block;
   line-height: 65px;
   width: 35%;
   height: 70px;
-  font-size: 20px;
+  font-size: 16px;
   border-radius: 100px;
   margin-bottom: 2vh;
 }
 
 .comment-btn {
-  background-color: #60bfc2;
-  border: 5px solid #148e93;
+  background-color: #e1d796;
+  border: 5px solid #74bcbe;
   color: #fff;
 }
 
 .comment-back-btn {
-  background-color: #d1d273;
-  border: 5px solid #148e93;
+  background-color: #77acd8;
+  border: 5px #c6d5a4 solid;
   color: #fff;
-  margin-right: 60px;
 }
+
+.dm-btn {
+  background-color: #e4928b;
+  border: 5px #a4d5c7 solid;
+  color: #fff; }
 
 
 /* TOPにもどるボタン */
 
 .back-btn {
-  display: inline-block;
+  display: block;
   line-height: 65px;
-  background-color: #d17660d4;
-  border: 5px solid #036265;
+  background-color: #77acd8;
+  border: 5px #c6d5a4 solid;
   color: #fff;
-  width: 40%;
+  width: 35%;
   height: 80px;
   min-width: 150px;
   font-size: 20px;
   border-radius: 100px;
   margin-bottom: 2vh;
   text-align: center;
-  margin-left: 220px;
   margin-top: 50px;
-}
-
-.form__btn{
-  display: inline-block;
-  padding: 0.4em 1.6em;
-  font-size: 1em;
-  color: #fff;
-  text-decoration: none;
-  user-select: none;
-  background: #95dce3;
-  border: 10px #c6d5a4 solid;
-  border-radius: 3px;
-  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 2px 0 rgba(0, 0, 0, 0.12);
-  transition: 0.2s ease;
+  float: right;
 }
 
 .comment-flag {
@@ -273,7 +263,7 @@
 }
 
 .change-item-btn {
-  font-size: 30px;
+  font-size: 32px;
   text-decoration: none;
   color: #75b0b2;
 }
@@ -284,7 +274,7 @@
   color: #3CCACE;
   text-decoration: none;
   font-weight: bold;
-  font-size: 23px;
+  font-size: 24px;
 }
 
 .item-box-img {
@@ -319,14 +309,14 @@
   margin-left: auto;
   margin-right: 70px;
   text-align: center;
-  background: #aaa;
-  border: 3px solid #5bb4b2;
+  background-color: #77acd8;
+  border: 5px #c6d5a4 solid;
   border-radius: 100vh; 
   color: #fff;
 }
 
 .found-home {
-  font-size: 30px;
+  font-size: 32px;
   font-weight: bold;
   background-color: rgb(250, 209, 135);
   color: #e65174; 
@@ -339,31 +329,30 @@
 .delete-btn {
   width: 200px;
   height: 70px;
-  display: inline-flex;
+  display: flex;
+  text-align: center;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  font-size: 18px;
+  font-size: 16px;
   border-radius: 100vh;
-  float: left;        /* 左に寄せて横並び */
-  margin-left: 130px;  /* ボタン間の隙間 */
+  float: left;
   margin-top: 30px;
+  float: right;
 }
 
 .back-to-top-btn {
   background-color: #77acd8;
-  border: 10px #c6d5a4 solid;
+  border: 5px #c6d5a4 solid;
   color: #ffffff;
 }
 
 .delete-btn {
   background-color: #dfae4c;
-  border: 10px #c6d5a4 solid;
+  border: 5px #c6d5a4 solid;
   padding: 10px 50px;
-  margin-left: 65px;
   color: #ffffff;
-
 }
+
 
 /* お気に入りボタン */
 .favorite-btn {
@@ -389,4 +378,42 @@
   cursor: pointer; /* ホバー時にカーソルが手のひら型に */
   transition: all 0.3s ease; /* 背景色と枠線の変化をスムーズに */
   margin-bottom: 100px;
+}
+
+ /* タブレット表示時 */
+ @media (max-width: 1024px) {
+  .inner {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .page-heading {
+    font-size: 24px;
+  }
+  .card {
+    width: 48%;
+    margin-bottom: 40px;
+  }
+  .card__title {
+    font-size: 20px;
+  }
+  .card__summary {
+    font-size: 16px;
+  }
+}
+
+ /* スマホ表示時 */
+@media (max-width: 599px) {
+  .page-heading {
+    font-size: 20px;
+  }
+  .card {
+    width: 100%;
+    margin-bottom: 60px;
+  }
+  .card__title {
+    font-size: 18px;
+  }
+  .card__summary {
+    font-size: 14px;
+  }
 }

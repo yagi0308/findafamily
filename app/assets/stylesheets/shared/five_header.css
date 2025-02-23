@@ -1,5 +1,5 @@
 .site-header {
-  background-color: #f6ebf0;
+  background-color: #f5f5f5;
   margin-bottom: 48px;
   padding: 20px 0;
 }
@@ -16,8 +16,7 @@
 .header_logo {
   width: 250px;
   height: 100px;
-  border: 4px #b7c3f4 solid;
-
+  border: 4px #d3bea2 solid;
 }
 
 .nav__link{
@@ -28,13 +27,13 @@
   color: #648740 ;
   text-decoration: none;
   user-select: none;
-  border: 5px #b7c3f4 solid;
+  border: 5px #d3bea2 solid;
   border-radius: 100vh;
   transition: 0.4s ease;
 }
 .nav__link:hover{
   color: #fff;
-  background: #eac569;
+  background: #d3a7a2;
 }
 
 .nav__auth{
@@ -45,7 +44,7 @@
   color: #648740 ;
   text-decoration: none;
   user-select: none;
-  border: 5px #b7c3f4 solid ;
+  border: 5px #d3bea2 solid ;
   border-radius: 100vh;
   transition: 0.4s ease;
 }
@@ -55,3 +54,40 @@
   background: #90d9bd;
 }
 
+ /* タブレット表示時 */
+ @media (max-width: 1024px) {
+  .inner {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .page-heading {
+    font-size: 24px;
+  }
+  .card {
+    width: 48%;
+    margin-bottom: 40px;
+  }
+  .card__title {
+    font-size: 20px;
+  }
+  .card__summary {
+    font-size: 16px;
+  }
+}
+
+ /* スマホ表示時 */
+@media (max-width: 599px) {
+  .page-heading {
+    font-size: 20px;
+  }
+  .card {
+    width: 100%;
+    margin-bottom: 60px;
+  }
+  .card__title {
+    font-size: 18px;
+  }
+  .card__summary {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,25 @@
+<div class="messages">
+    <% if message.user == current_user %>
+      <div class="message current-user-message">
+    <% elsif message.user == @post.user %>
+      <div class="message post-user-message">
+    <% else %>
+      <div class="message other-user-message">
+    <% end %>
+
+        <% if message.message_image.attached? %> 
+          <div class="message-image">
+            <%= image_tag message.message_image, class: "message-image" %>
+          </div>
+        <% end %>
+
+        <div class="message-text">
+          <div class="message-date">
+            <%= message.message %>
+          </div>
+          <div class="message-time">
+            <%= l (message.created_at || Time.now), format: :short %>
+          </div>
+        </div>
+      </div>
+      </div>

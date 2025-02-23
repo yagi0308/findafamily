@@ -5,6 +5,8 @@ class Post < ApplicationRecord
   belongs_to_active_hash :gender
   belongs_to :user
   has_many :comments, dependent: :destroy
+  has_many :users, through: :favorites
+  has_many :favorites, as: :favoritable, dependent: :destroy
   has_one_attached :animal_image
 
   def self.ransackable_attributes(auth_object = nil)
@@ -27,10 +29,6 @@ class Post < ApplicationRecord
   end
 
   validate :acceptable_image
-  belongs_to :user
-  has_many :users, through: :favorites
-  has_many :comments, dependent: :destroy
-  has_many :favorites, dependent: :destroy
 
   def favorited_by?(user)
     favorites.exists?(user_id: user.id)

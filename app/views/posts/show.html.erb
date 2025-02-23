@@ -1,3 +1,4 @@
+<div class="show__container">
  <%= render "shared/fourth_header" %>
 
   <div class="post-show">
@@ -24,7 +25,9 @@
         <tbody>
           <tr>
             <th class="detail-post">投稿者</th>
-            <td class="detail-value"><%= @post.user.nickname %></td>
+            <td class="detail-value">
+                <%= @post.user.nickname %>
+              </td>
           </tr>
           <tr>
             <th class="detail-post">タイトル</th>
@@ -66,9 +69,7 @@
       </table>
 
       <% if @post.adoption.present? %>
-          <%= link_to 'TOPページに戻る', root_path, class: "back-to-top-btn" %>
           <%= link_to "削除する", post_path(@post), data: { turbo_method: :delete }, class: "back-to-top-btn delete-btn" %>
-
           <% end %>
 
 
@@ -78,7 +79,7 @@
             <div class="edit-delete-buttons">
               <%= link_to "投稿を編集する", edit_post_path(@post), method: :get, class: "post-red-btn" %>
               <%= link_to "削除する", post_path(@post), data: { turbo_method: :delete }, class: "post-destroy" %>
-              <%=link_to 'もどる', root_path, class:"back-second-btn" %>
+              <%=link_to 'チャットルームへ', post_room_path(@room.post, @room), class:"back-second-btn" %>
             </div>
           <% end %>
         <% end %>
@@ -114,8 +115,8 @@
         <%= f.file_field :comment_image, id: "comment-image" %>
       </div>
       <div class="actions">
-        <%= f.submit "送信する", class: "comment-btn" %>
-        <%=link_to 'TOPにもどる', root_path, class:"comment-back-btn" %>
+        <%= f.submit "コメントを送信する", class: "comment-btn" %>
+        <%= link_to "#{@post.user.nickname}さんへ連絡", post_room_path(@room.post, @room), class: "dm-btn" %>
       </div>
     <% end %>
   <% end %>

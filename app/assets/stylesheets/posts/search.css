@@ -36,7 +36,7 @@
   border-radius: 30px;
   height: 30px;
   width: 100px;
-  font-size: 10x;
+  font-size: 8x;
   cursor: pointer;
   transition: 0.3s;
   margin-top: 20px;
@@ -69,7 +69,7 @@ ul {
 
 .search-results {
   margin-left: 20px;
-  font-size: 25px;
+  font-size: 24px;
 }
 
 .list {
@@ -88,8 +88,46 @@ ul {
 }
 
 .no-results-msg {
-  font-size: 20px;
+  font-size: 24px;
   margin: 20px 0;
   color: brown;
   margin-left: 20px;
+}
+
+ /* タブレット表示時 */
+ @media (max-width: 1024px) {
+  .inner {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .page-heading {
+    font-size: 24px;
+  }
+  .card {
+    width: 48%;
+    margin-bottom: 40px;
+  }
+  .card__title {
+    font-size: 20px;
+  }
+  .card__summary {
+    font-size: 16px;
+  }
+}
+
+ /* スマホ表示時 */
+@media (max-width: 599px) {
+  .page-heading {
+    font-size: 20px;
+  }
+  .card {
+    width: 100%;
+    margin-bottom: 60px;
+  }
+  .card__title {
+    font-size: 18px;
+  }
+  .card__summary {
+    font-size: 14px;
+  }
 }

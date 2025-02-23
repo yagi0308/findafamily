@@ -1,7 +1,7 @@
 .posts-sell-contents {
   background-color: #f5f5f5;
   font-family: "Source Sans Pro", Helvetica, Arial, "æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“", "YuGothic", "ãƒ¡ã‚¤ãƒªã‚ª", "Meiryo", sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -21,7 +21,7 @@
 }/* 変更なし */
 
 .posts-sell-title {
-  font-size: 25px;
+  font-size: 24px;
   border-bottom: 10px solid #f1501f;
   font-weight: bold;
   text-align: center;
@@ -105,39 +105,74 @@
 /* 投稿する・戻るボタン */
 .sell-btn-contents {
   display: flex;
-  justify-content: flex-start !important; 
+  justify-content: flex-start; 
   gap: 20px;
-  width: 80% !important;
   padding-top: 50px;
-  margin-left: auto; /* 右に寄せる */
-  margin-right: 70px; /* 右側の余白をゼロに */
   text-align: center;
 }
 
 .sell-btn,
 .return-btn {
-  background: #efa360;
-  border: 3px solid #ac4006a3;
+  background: #c7d292;
+  border: 6px solid #d783cab6;
   border-radius: 100vh;
   color: #ffffff;
   height: 70px;
   font-size: 20px;
-  margin-bottom: 4vh;
   text-align: center; 
   display: flex; 
   justify-content: center;
   align-items: center;
+  margin-left: 350px;
 }
 
 .sell-btn {
-  width: 48%;
+  width: 300px;
 }
 
 .return-btn {
-  background: #aaa;
-  border: 3px solid #5bb4b2;
-  border-radius: 100vh;
+  background-color: #77acd8;
+  border: 5px #c6d5a4 solid;
   color: #fff;
+  border-radius: 100vh;
   padding: 0;
   width: 48%;
+}
+
+ /* タブレット表示時 */
+ @media (max-width: 1024px) {
+  .inner {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .page-heading {
+    font-size: 24px;
+  }
+  .card {
+    width: 48%;
+    margin-bottom: 40px;
+  }
+  .card__title {
+    font-size: 20px;
+  }
+  .card__summary {
+    font-size: 16px;
+  }
+}
+
+ /* スマホ表示時 */
+@media (max-width: 599px) {
+  .page-heading {
+    font-size: 20px;
+  }
+  .card {
+    width: 100%;
+    margin-bottom: 60px;
+  }
+  .card__title {
+    font-size: 18px;
+  }
+  .card__summary {
+    font-size: 14px;
+  }
 }

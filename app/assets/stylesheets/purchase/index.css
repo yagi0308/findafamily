@@ -16,7 +16,7 @@
   text-align: center;
   border-bottom: 2px solid #f5f5f5;
   font-weight: bold;
-  font-size: 22px;
+  font-size: 24px;
 }
 
 /* 購入内容の表示 */
@@ -52,7 +52,7 @@
 }
 
 .item-price-text {
-  font-size: 15px;
+  font-size: 16px;
   margin-right: 20px;
 }
 
@@ -77,7 +77,7 @@
 }
 
 .item-payment-price {
-  font-size: 25px;
+  font-size: 24px;
 }
 
 /* /支払額の表示 */
@@ -156,4 +156,42 @@
   cursor: pointer;
   border-radius: 100px;
   margin-left: 20px;
+}
+
+ /* タブレット表示時 */
+ @media (max-width: 1024px) {
+  .inner {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .page-heading {
+    font-size: 24px;
+  }
+  .card {
+    width: 48%;
+    margin-bottom: 40px;
+  }
+  .card__title {
+    font-size: 20px;
+  }
+  .card__summary {
+    font-size: 16px;
+  }
+}
+
+ /* スマホ表示時 */
+@media (max-width: 599px) {
+  .page-heading {
+    font-size: 20px;
+  }
+  .card {
+    width: 100%;
+    margin-bottom: 60px;
+  }
+  .card__title {
+    font-size: 18px;
+  }
+  .card__summary {
+    font-size: 14px;
+  }
 }

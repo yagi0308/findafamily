@@ -76,8 +76,46 @@
   font-size: 10px;
 }
 
-/* タブレット対応 */
-@media (max-width: 1024px) {
+
+.tab-buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+
+.tab-btn,
+.back-tab-btn {
+  background: #d5e097;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 0 5px;
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+.tab-btn.active {
+  background: #59abe1;
+  color: white;
+}
+
+.back-tab-btn:hover{
+  color: #fff;
+  background: #d990aa;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+ /* タブレット表示時 */
+ @media (max-width: 1024px) {
   .inner {
     width: 90%;
     margin: 0 auto;
@@ -89,16 +127,16 @@
     width: 48%;
     margin-bottom: 40px;
   }
-  .prototype_image{
-    width: 60%;
+  .card__title {
+    font-size: 20px;
+  }
+  .card__summary {
+    font-size: 16px;
   }
 }
 
- /* スマホ表示 */
+ /* スマホ表示時 */
 @media (max-width: 599px) {
-  .logo {
-    width: 120px;
-  }
   .page-heading {
     font-size: 20px;
   }
@@ -111,11 +149,5 @@
   }
   .card__summary {
     font-size: 14px;
-  }
-  .prototype_image{
-    width: 100%;
-  }
-  .table{
-    width: 100%;
   }
 }

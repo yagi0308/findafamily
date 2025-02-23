@@ -13,3 +13,73 @@
  *= require_tree .
  *= require_self
  */
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.logo {
+  animation: fadeIn 1s ease-in-out;
+}
+
+.second-logo {
+  animation: fadeIn 1s ease-in-out;
+}
+
+.header_logo {
+  animation: fadeIn 1s ease-in-out;
+}
+
+.fourth-logo {
+  animation: fadeIn 1s ease-in-out;
+}
+
+.six-logo {
+  animation: fadeIn 1s ease-in-out;
+}
+
+.seven-logo {
+  animation: fadeIn 1s ease-in-out;
+}
+
+.card {
+  width: calc((100% - 70px) / 5);
+  margin-right: 20px;
+   margin-bottom: 100px;
+   animation: fadeIn 1s ease-in-out;
+}
+
+.card__img {
+  margin-bottom: 16px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.card__title {
+  font-size: 16px;
+  margin-bottom: 8px;
+  font-weight: bold;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.card__address {
+  font-size: 15px;
+  margin-bottom: 8px;
+  font-weight: bold;
+  animation: fadeIn 1s ease-in-out;
+}
+.card__user {
+  display: block;
+  font-size: 15px;
+  color: #999;
+  text-align: right;
+  text-decoration: underline;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.yusei-magic-regular {
+  font-family: "Yusei Magic", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
