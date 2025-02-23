@@ -114,7 +114,7 @@
 .sell-btn,
 .return-btn {
   background: #c7d292;
-  border: 6px solid #c6599ca3;
+  border: 6px solid #d783cab6;
   border-radius: 100vh;
   color: #ffffff;
   height: 70px;
@@ -123,11 +123,11 @@
   display: flex; 
   justify-content: center;
   align-items: center;
-  margin-left: 400px;
+  margin-left: 350px;
 }
 
 .sell-btn {
-  width: 200px;
+  width: 300px;
 }
 
 .return-btn {

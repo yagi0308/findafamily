@@ -1,25 +1,39 @@
 <%= render "shared/seven_header" %>
 
-<% if current_user == @post.user %>
-  <ul>
+<% if current_user == @post.user && params[:hide_list] != "true" %>
+  <ul class="chat-list">
     <% @chat_users.each do |chat_user| %>
-      <li>
-        <%= link_to "#{chat_user.nickname} さんとのチャット", post_room_path(@post, @rooms.find_by(user_id: chat_user.id)) %>
+      <% latest_message = @rooms.find_by(user_id: chat_user.id)&.messages&.order(created_at: :desc)&.first %>
+      <li class="chat-list-item">
+        <div class="chat-content">
+          <%= link_to "📬 #{chat_user.nickname} さんとのチャット", 
+                      post_room_path(@post, @rooms.find_by(user_id: chat_user.id), hide_list: true), 
+                      class: "chat-link" %>
+          <% if latest_message %>
+            <p class="latest-message">【最新メッセージ】 <%= truncate(latest_message.message, length: 40) %></p>
+          <% else %>
+            <p class="latest-message">【最新メッセージ】 なし</p>
+          <% end %>
+        </div>
       </li>
     <% end %>
   </ul>
-<% end %> 
+<% end %>
 
+<div id="messages" class="messages">
 <%= render partial: 'rooms/message', collection: @messages, as: :message %>
+</div>
 
-<%= form_with(model: [@post, @room, @message], url: post_room_messages_path(@post, @room), local: true) do |f| %>
-  <div class="form-input">
-    <%= f.text_area :message, class: 'form-message', placeholder: "メッセージを入力してください" %>
-    <label class="form-image">
-      <%= f.file_field :message_image, id:"message-image" %> 
-    </label>
-    <div class="form-buttons">
-      <%= f.submit "送信", class: 'form-submit' %>
+<% if params[:hide_list] == "true" || user_signed_in? %>
+  <%= form_with(model: [@post, @room, @message], url: post_room_messages_path(@post, @room), local: true, data: { turbo: false }) do |f| %>
+    <div class="form-input">
+      <%= f.text_area :message, class: 'form-message', placeholder: "メッセージを入力してください" %>
+      <label class="form-image">
+        <%= f.file_field :message_image, id:"message-image" %> 
+      </label>
+      <div class="form-buttons">
+        <%= f.submit "送信", class: 'form-submit' %>
+      </div>
     </div>
-  </div>
-<% end %> 
+  <% end %> 
+<% end %>

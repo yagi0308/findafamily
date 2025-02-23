@@ -15,7 +15,9 @@ body {
 }
 
 .messages {
-  flex: 1; /* メッセージエリアをフレックスアイテムにすることで余白を利用 */
+  display: flex;
+  flex-direction: column;
+  flex: 1;
   overflow-y: auto;
   padding-right: 10px;
 }
@@ -23,23 +25,30 @@ body {
 .message {
   display: flex;
   flex-direction: column;
-  align-self: flex-end;
-  margin-bottom: 10px;
   border-radius: 8px;
   background-color: #bfefc5;
-  max-width: 350px;
+  max-width: 35%; /* メッセージの最大幅を調整 */
   padding: 10px;
   width: fit-content;
-  margin-left: auto;
-  margin-right: 300px;
   margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.current-user-message {
+  align-self: flex-end; /* 右寄せ */
+  margin-right: 300px; /* 右の余白を確保（少し中央寄りに） */
 }
 
 .other-user-message {
-  align-self: flex-start;
+  align-self: flex-start; /* 左寄せ */
   background-color: #cbc9f9;
-  margin-left: 0;
-  margin-right: auto;
+  margin-left: 300px; /* 左の余白を確保（少し中央寄りに） */
+}
+
+.post-user-message {
+  align-self: flex-start; /* 左寄せ */
+  background-color: #cbc9f9;
+  margin-left: 300px; /* 左の余白を確保（少し中央寄りに） */
 }
 
 .message-image {
@@ -116,6 +125,41 @@ body {
   transition: 0.4s ease;
   width: 120px;
   gap: 10px;
+}
+
+.chat-list {
+  padding: 0;
+  list-style: none;
+}
+
+.chat-list-item {
+  display: block;
+  width: 100%;
+  padding: 0 10px;  /* 上下の padding を減らす */
+  border-bottom: 1px solid #ddd;
+}
+
+.chat-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-link {
+  margin: 0;  /* 余計な余白をなくす */
+  padding: 2px 0;  /* 上下の余白を少し調整 */
+}
+
+.latest-message {
+  margin: 0;  /* デフォルトの余白を削除 */
+  font-size: 14px;
+  color: #666;
+}
+
+.chat-link {
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #007bff;
 }
 
  /* タブレット表示時 */
