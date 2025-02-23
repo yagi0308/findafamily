@@ -7,7 +7,7 @@
 
           <% if user_signed_in? %>
             <div class="nav__right">
-              <%= link_to "投稿する", new_item_path, class: :nav__link %>
+              <%= link_to "出品する", new_item_path, class: :nav__link %>
              <%= link_to "もどる", root_path, class: :nav__link %>
               <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete }, class: :nav__auth %>
             </div>
