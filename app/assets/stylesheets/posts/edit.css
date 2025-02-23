@@ -1,5 +1,6 @@
 
 
+.btn-edit,
 .adoption-btn {
   border-radius: 100vh;
   color: #ffffff;
@@ -11,13 +12,24 @@
   align-items: center;
 }
 
+.btn-edit  {
+  background: #c7d292;
+  border: 6px solid #d783cab6;
+  border-radius: 100vh;
+  color: #ffffff;
+  padding: 0;
+  width: 40%;
+  font-size: 17px;
+  margin-left: 50px;
+}
+
 .adoption-btn {
   background: #e98d8d;
   border: 3px solid #83c9ff;
   border-radius: 100vh;
   color: #ffffff;
   padding: 0;
-  width: 48%;
+  width: 40%;
   font-size: 17px;
 }
 
