@@ -11,15 +11,6 @@ class RoomsController < ApplicationController
     return redirect_to post_path(@post), alert: 'チャットルームが見つかりません' unless @room
 
     @rooms = Room.where(post_id: @post.id)
-    @room = if current_user == @post.user
-              @rooms.find_by(id: params[:id])
-            else
-              @rooms.find_by(id: params[:id], user_id: current_user.id)
-            end
-    unless @room
-      redirect_to post_path(@post), alert: 'チャットルームが見つかりません'
-      return
-    end
 
     @chat_users = User.joins(:rooms).where(rooms: { post_id: @post.id }).where.not(id: @post.user_id).distinct
 

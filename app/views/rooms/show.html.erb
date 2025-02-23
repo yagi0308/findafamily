@@ -4,8 +4,8 @@
   <!-- 投稿者の場合: 他のユーザーからのメッセージを一覧表示 -->
   <ul>
     <% @chat_users.each do |chat_user| %>
-      <li>
-        <%= link_to "#{chat_user.nickname} さんとのチャット", post_room_path(@post, @rooms.find_by(user_id: chat_user.id)) %>
+      <li> <%= link_to "#{chat_user.nickname} さんとのチャット", post_room_path(@post, @rooms.find_by(user_id: chat_user.id)) %>
+       
       </li>
     <% end %>
   </ul>
