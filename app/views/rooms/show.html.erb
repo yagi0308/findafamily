@@ -1,26 +1,25 @@
 <%= render "shared/seven_header" %>
 
-  <% if current_user == @post.user %>
-  <!-- 投稿者の場合: 他のユーザーからのメッセージを一覧表示 -->
+<% if current_user == @post.user %>
   <ul>
     <% @chat_users.each do |chat_user| %>
-      <li> <%= link_to "#{chat_user.nickname} さんとのチャット", post_room_path(@post, @rooms.find_by(user_id: chat_user.id)) %>
-       
+      <li>
+        <%= link_to "#{chat_user.nickname} さんとのチャット", post_room_path(@post, @rooms.find_by(user_id: chat_user.id)) %>
       </li>
     <% end %>
   </ul>
-    <% else %>
-      <%= render partial: 'rooms/message', collection: @messages, as: :message %>
+<% end %> 
 
-  <%= form_with(model: [@post, @room, @message], url: post_room_messages_path(@post, @room), local: true) do |f| %>
-    <div class="form-input">
-      <%= f.text_area :message, class: 'form-message', placeholder: "メッセージを入力してください" %>
-      <label class="form-image">
-        <%= f.file_field :message_image, id:"message-image" %> 
-      </label>
-      <div class="form-buttons">
-        <%= f.submit "送信", class: 'form-submit' %>
-      </div>
+<%= render partial: 'rooms/message', collection: @messages, as: :message %>
+
+<%= form_with(model: [@post, @room, @message], url: post_room_messages_path(@post, @room), local: true) do |f| %>
+  <div class="form-input">
+    <%= f.text_area :message, class: 'form-message', placeholder: "メッセージを入力してください" %>
+    <label class="form-image">
+      <%= f.file_field :message_image, id:"message-image" %> 
+    </label>
+    <div class="form-buttons">
+      <%= f.submit "送信", class: 'form-submit' %>
     </div>
-  <% end %>
-  <% end %>
+  </div>
+<% end %> 
