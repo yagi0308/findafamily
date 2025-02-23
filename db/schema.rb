@@ -62,15 +62,6 @@ ActiveRecord::Schema[7.1].define(version: 2025_02_20_074354) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
-  create_table "entries", charset: "utf8mb3", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "room_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["room_id"], name: "index_entries_on_room_id"
-    t.index ["user_id"], name: "index_entries_on_user_id"
-  end
-
   create_table "favorites", charset: "utf8mb3", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "post_id"
@@ -171,8 +162,6 @@ ActiveRecord::Schema[7.1].define(version: 2025_02_20_074354) do
   add_foreign_key "addresses", "purchases"
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
-  add_foreign_key "entries", "rooms"
-  add_foreign_key "entries", "users"
   add_foreign_key "favorites", "items"
   add_foreign_key "favorites", "posts"
   add_foreign_key "favorites", "users"
