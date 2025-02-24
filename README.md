@@ -26,43 +26,43 @@ Things you may want to cover:
 * ...
 
 ## posts テーブル
-| Column             | Type       |  Options           |
-|--------------------|----------  |--------------------|
-| title	             | string	    |  null: false	      |  タイトル
-| animal_image    	 | string		  |  null: false        |  動物の写真（ActiveStorage）
-| category_id        | integer    |  null: false	      |  カテゴリー（迷子・保護・譲渡）
-| animal_type	       | string	    |  null: false	      |  動物の種類（犬・猫・鳥など）
-| age	               | string	    |	                    |  年齢（例: 3ヶ月、2歳など）
-| gender_id	         | integer    |	                    |  性別（オス・メス・不明）
-| personality	       | text		    |  null: false        |  性格（例: 人懐っこい、臆病など）
-| description	       | text	      |  null: false	      |  詳細情報
-|	address            | string	    |  null: false	      |  保護した場所や譲渡の場所
-| user_id	           | references |  foreign_key: true	|  投稿者（Userとの関連）
+| Column             | Type       |  Options            |
+|--------------------|----------  |-------------------- |
+| title	             | string	    |  null: false	      |
+| animal_image    	 | string		  |  null: false        |
+| category_id        | integer    |  null: false	      |
+| animal_type	       | string	    |  null: false	      |
+| age	               | string	    |	                    |
+| gender_id	         | integer    |	                    |
+| personality	       | text		    |  null: false        |
+| description	       | text	      |  null: false	      |
+|	address            | string	    |  null: false	      |
+| user_id	           | references |  foreign_key: true	|
 
 
 ## users table
 | Column             | Type      | Options              |
 |--------------------|--------- -|--------------------- |
-| first_name	       | string	   | null: false	        | ファーストネーム
-| last_name	         | string	   | null: false	        | ラストネーム
-| first_name_kana     | string	   | null: false        | ファーストネームカナ
-| last_name_kana    | string	   | null: false          | ラストネームカナ
-| nickname	         | string	   | null: false	        | ニックネーム（表示名）
-| email	             | string	   | null: false, unique	| メールアドレス（ユニーク制約）
-| phone_number	     | string	   | null: false,unique	  | 電話番号（ユニーク制約）
-| birthdate	         | date		   |                      | 生年月日
-| profile_image    	 | string		 |                      | プロフィール画像（ActiveStorage）
-| region	           | integer	 | null: false	        | 地域（enum: 都道府県）
-| introduction	     | text		   |                      | 自己紹介
+| first_name	       | string	   | null: false	        |
+| last_name	         | string	   | null: false	        |
+| first_name_kana    | string	   | null: false          |
+| last_name_kana     | string	   | null: false          |
+| nickname	         | string	   | null: false	        |
+| email	             | string	   | null: false, unique	|
+| phone_number	     | string	   | null: false,unique	  |
+| birthdate	         | date		   |                      |
+| profile_image    	 | string		 |                      |
+| region	           | integer	 | null: false	        |
+| introduction	     | text		   |                      |
 
 
 ## comments table
 | Column             | Type        | Options                        |
 |--------------------|-------------|------------------------------  |
-| user_id	           | references	 | null: false, foreign_key: true	| コメント投稿者（Usersテーブルと関連）
-| post_id	           | references	 | null: false, foreign_key: true	| 対象の投稿（Postsテーブルと関連）
-| content	           | text        | null: false	                  | コメント本文
-| comment_image    	 | string		   |                                | 画像（ActiveStorage）
+| user_id	           | references	 | null: false, foreign_key: true	|
+| post_id	           | references	 | null: false, foreign_key: true	|
+| content	           | text        | null: false	                  |
+| comment_image    	 | string		   |                                |
 
 
 ## follows table
@@ -78,7 +78,7 @@ Things you may want to cover:
 | post_id            | references |  null: false, foreign_key: true    |
 | item_id            | references |  null: false, foreign_key: true    |
 
-## items（商品情報） table
+## items table
 | Column             | Type      | Options                            |
 |--------------------|-----------|------------------------------------|
 | name               | string    | null: false                        |
@@ -91,14 +91,14 @@ Things you may want to cover:
 | user_id            | references| null: false, foreign_key: true     |
 
 
-## purchases（購入記録） table
+## purchases table
 | Column             | Type       | Options                            |
 |--------------------|----------- |------------------------------------|
 | user_id            | references | null: false, foreign_key: true     |
 | item_id            | references | null: false, foreign_key: true     |
 
 
-## addresses（発送先情報） table
+## addresses table
 | Column                 | Type       | Options                           |
 |--------------------    |----------- |-----------------------------------|
 | postal_code            | string     | null: false                       |
@@ -106,7 +106,7 @@ Things you may want to cover:
 | city                   | string     | null: false                       |
 | street                 | string     | null: false                       |
 | building               | string     |                                   |
-| home_phone_number   　 | string     | null: false                       |
+| home_phone_number      | string     | null: false                       |
 | purchase_id            | references | null: false, foreign_key: true    |
 
 
@@ -115,7 +115,7 @@ Things you may want to cover:
 | ------------------ | ------     | ---------------------------------  |
 | user_id            | references | null: false, foreign_key: true     |
 | post_id            | references |  null: false, foreign_key: true    |
-| message_image      | string     |                    |
+| message_image      | string     |                                    |
 
 
 ## entries テーブル
