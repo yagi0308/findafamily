@@ -68,3 +68,12 @@
     </div>
   </div>
 <% end %>
+
+
+<% if @user == current_user %>
+  <div class="user-delete-buttons">
+    <%= link_to "ユーザー情報を編集する", edit_user_path(@user), class: "user-edit-btn" %>
+    <%= link_to "削除する", user_path(@user), data: { turbo_method: :delete, confirm: "本当に削除しますか？" }, class: "user-destroy" %>
+  </div>
+<% end %>
+      </div>
