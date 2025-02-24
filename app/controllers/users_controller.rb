@@ -22,11 +22,14 @@ class UsersController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+  end
 
   def update
-    @user = User.find(params[:id])
+    @user = current_user
     if @user.update(update_params)
+      # パスワード変更後に再ログイン
+      sign_in(@user, bypass: true) # 手動で再ログイン
       redirect_to user_path(@user)
     else
       render :edit, status: :unprocessable_entity

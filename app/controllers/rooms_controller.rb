@@ -3,7 +3,6 @@ class RoomsController < ApplicationController
 
   def create
     @room = Room.find_or_create_by(post_id: @post.id, user_id: current_user.id)
-
     # 他のユーザーがこのRoomに参加する場合、Entryを作成する
     Entry.create(user_id: current_user.id, room_id: @room.id) unless Entry.exists?(user_id: current_user.id, room_id: @room.id)
 
