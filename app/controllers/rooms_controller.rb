@@ -3,6 +3,10 @@ class RoomsController < ApplicationController
 
   def create
     @room = Room.find_or_create_by(post_id: @post.id, user_id: current_user.id)
+
+    # 他のユーザーがこのRoomに参加する場合、Entryを作成する
+    Entry.create(user_id: current_user.id, room_id: @room.id) unless Entry.exists?(user_id: current_user.id, room_id: @room.id)
+
     redirect_to post_room_path(@post, @room)
   end
 
@@ -12,7 +16,8 @@ class RoomsController < ApplicationController
 
     @rooms = Room.where(post_id: @post.id)
 
-    @chat_users = User.joins(:rooms).where(rooms: { post_id: @post.id }).where.not(id: @post.user_id).distinct
+    # Roomに参加しているユーザーを取得
+    @chat_users = @room.users.where.not(id: @post.user_id)
 
     @messages = @room.messages.includes(:user)
     @message = @room.messages.build

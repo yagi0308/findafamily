@@ -1,13 +1,13 @@
 <div class="show__container">
 <%= render "shared/seven_header" %>
 
+<%= @room.inspect %>
 <% if current_user == @post.user && params[:hide_list] != "true" %>
   <ul class="chat-list">
     <% @chat_users.each do |chat_user| %>
-      <% latest_message = @rooms.find_by(user_id: chat_user.id)&.messages&.order(created_at: :desc)&.first %>
       <li class="chat-list-item">
         <div class="chat-content">
-          <%= link_to "📬 #{chat_user.nickname} さんとのチャット", 
+  <%= link_to "📬 #{chat_user.nickname} さんとのチャット", 
                       post_room_path(@post, @rooms.find_by(user_id: chat_user.id), hide_list: true), 
                       class: "chat-link" %>
           <% if latest_message %>
@@ -20,6 +20,7 @@
     <% end %>
   </ul>
 <% end %>
+
 
 <div id="messages" class="messages">
 <%= render partial: 'rooms/message', collection: @messages, as: :message %>
