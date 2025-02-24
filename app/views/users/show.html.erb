@@ -11,8 +11,8 @@
 
       <div class="post-img-content">
       <%= link_to image_tag @user.profile_image, class: "profile-box-img" %>
-          </div>
-
+        </div>
+          
        <div class="user__wrapper">
       <table class="table">
         <tbody>
@@ -55,6 +55,7 @@
       <div class="user__card">
         <%= render partial: 'posts/post', collection: @user.posts %>
        </div>
+  </div>
   </div>
   <% end %>
 
