@@ -17,17 +17,6 @@
   padding-bottom: 5px;
 }
 
-.page-second-heading {
-  margin-left: 20px;
-  text-align: center;
-  font-size: 20px;
-  margin-bottom: 100px;
-  border-bottom: 10px solid #e35e5e; /* 文字の下に赤い線を引く */
-  width: fit-content; /* 文字の幅だけに合わせる */
-  padding-bottom: 5px; /* 線と文字の間に少し余白を追加 */
-}
-
-
 .user__wrapper{
   min-height: calc(100vh - 500px);
   margin-left: 480px;
@@ -36,9 +25,9 @@
 
 .table{
   border-collapse: collapse;
-  margin-bottom: 32px;
   width: 50%;
 }
+
 .table__col1{
   text-align: center;
   font-weight: bold;
@@ -76,16 +65,42 @@
   font-size: 10px;
 }
 
-
 .tab-buttons {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
+  margin-top: 40px;
+  margin-left: 70px;
 }
 
+.tab-links {
+  margin-top: 40px;
+  margin-left: 40px;
+}
+
+.user-edit-btn {
+  background: #e08b97d0;
+  border: 4px #e08b97d0 solid;
+  color: #fff;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 0 5px;
+  border-radius: 50px;
+  transition: background 0.3s ease;
+}
+
+.user-destroy {
+  background: #9dcab1;
+  border: 5px #9dcab1 solid;
+  padding: 10px 20px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 0 5px;
+  border-radius: 50px;
+  transition: background 0.3s ease;
+}
 
 .tab-btn,
-.back-tab-btn {
+.back-tab-btn{
   background: #d5e097;
   border: none;
   padding: 10px 20px;

@@ -28,19 +28,26 @@
             <th class="table__col1">自己紹介</th>
             <td class="table__col2"><%= @user.introduction %></td>
           </tr>
-
         </tbody>
       </table>
-      </div>
-      </div>
 
-      <div class="tab-container">
+<div class="tab-buttons">
+  <!-- ユーザー編集 & 削除ボタン -->
+  <% if @user == current_user %>
+    <div class="user-actions">
+      <%= link_to "ユーザー情報を編集する", edit_user_path(@user), class: "user-edit-btn" %>
+      <%= link_to "削除する", user_path(@user), data: { turbo_method: :delete }, class: "user-destroy" %>
+    </div>
+  <% end %>
+    </div>
+
   <!-- タブボタン -->
-  <div class="tab-buttons">
-  <%= link_to "投稿", url_for(controller: "users", action: "show", id: @user.id, tab: "posts"), class: "tab-btn #{params[:tab] == 'posts' || params[:tab].blank? ? 'active' : ''}" %>
-  <%= link_to "お気に入り投稿", url_for(controller: "users", action: "show", id: @user.id, tab: "favorite-posts"), class: "tab-btn #{params[:tab] == 'favorite-posts' ? 'active' : ''}" %>
-  <%= link_to "お気に入り商品", url_for(controller: "users", action: "show", id: @user.id, tab: "favorite-items"), class: "tab-btn #{params[:tab] == 'favorite-items' ? 'active' : ''}" %>
-  </div>
+  <div class="tab-links">
+    <%= link_to "投稿", url_for(controller: "users", action: "show", id: @user.id, tab: "posts"), class: "tab-btn #{params[:tab] == 'posts' || params[:tab].blank? ? 'active' : ''}" %>
+    <%= link_to "お気に入り投稿", url_for(controller: "users", action: "show", id: @user.id, tab: "favorite-posts"), class: "tab-btn #{params[:tab] == 'favorite-posts' ? 'active' : ''}" %>
+    <%= link_to "お気に入り商品", url_for(controller: "users", action: "show", id: @user.id, tab: "favorite-items"), class: "tab-btn #{params[:tab] == 'favorite-items' ? 'active' : ''}" %>
+</div>
+
 
  <!-- 投稿一覧 -->
  <% if params[:tab] == 'posts' || params[:tab].blank? %>
@@ -68,12 +75,5 @@
     </div>
   </div>
 <% end %>
-
-
-<% if @user == current_user %>
-  <div class="user-delete-buttons">
-    <%= link_to "ユーザー情報を編集する", edit_user_path(@user), class: "user-edit-btn" %>
-    <%= link_to "削除する", user_path(@user), data: { turbo_method: :delete, confirm: "本当に削除しますか？" }, class: "user-destroy" %>
-  </div>
-<% end %>
       </div>
+            </div>
