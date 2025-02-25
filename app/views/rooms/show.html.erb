@@ -5,16 +5,25 @@
     <!-- 投稿者用: チャット一覧 -->
     <ul class="chat-list">
       <% @chat_users.each do |chat_user| %>
-      <% room = Room.joins(:entries).where(post_id: @post.id).where(entries: { user_id: chat_user.id }).first %>
+<% 
+        room = Room.joins(:entries)
+                   .where(post_id: @post.id)
+                   .where(entries: { user_id: [ chat_user.id] })
+                   .where(id: Room.joins(:entries)
+                           .where(entries: { user_id: current_user.id })
+                           .select(:id)) # current_user.id も含まれる Room を絞る
+                   .first 
 
+        Rails.logger.debug "Checking room for chat_user: #{chat_user.id}, Room ID: #{room&.id}"
+      %>
         <% if room.present? %> <!-- roomがnilでない場合のみ表示 -->
           <% latest_message = room.messages.order(created_at: :desc).first %>
 
           <li class="chat-list-item">
             <div class="chat-content">
-              <%= link_to "📬 #{chat_user.nickname} さんとのチャット", 
-                          post_room_path(@post, room, hide_list: true), 
-                          class: "chat-link" %>
+        <%= link_to "📬 #{chat_user.nickname} さんとのチャット", 
+            post_room_path(@post, room, hide_list: true, chat_user_id: chat_user.id), 
+            class: "chat-link" %>
               <% if latest_message %>
                 <p class="latest-message">【最新メッセージ】 <%= truncate(latest_message.message, length: 40) %></p>
               <% else %>
