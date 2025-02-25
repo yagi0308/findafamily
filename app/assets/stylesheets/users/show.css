@@ -1,7 +1,7 @@
 .profile-box-img {
   width: 300px;
   height: 300px;
-  margin-left: 550px;
+  margin-left: 600px;
 }
 
 .page-heading {
@@ -46,13 +46,16 @@
 }
 .user__card {
   display: flex;
+  width: 50%;
   flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  width: 80%;
-  max-width: 900px; 
-  margin: 0 auto;
+  margin-left: 80px;
 }
+
+.user__card > .card { /* 各カードに対して */
+  width: 35%; /* 1行に3枚表示（3×33.33%） */
+  box-sizing: border-box; /* パディングやボーダーを含めた幅計算 */
+}
+
 /* フッター */
 
 .footer {
@@ -67,19 +70,20 @@
 
 .tab-buttons {
   margin-top: 40px;
-  margin-left: 70px;
+  margin-left: 60px;
 }
 
 .tab-links {
-  margin-top: 40px;
-  margin-left: 40px;
+  margin-top: 60px;
+  margin-bottom: 50px;
+  margin-left: 20px;
 }
 
 .user-edit-btn {
   background: #e29f94d0;
   border: 5px #eabab2d0 solid;
   color: #fff;
-  padding: 10px 20px;
+  padding: 15px 30px;
   cursor: pointer;
   font-size: 16px;
   margin: 0 5px;
@@ -90,7 +94,7 @@
 .user-destroy {
   background: #9dcab1;
   border: 5px #9dcab1 solid;
-  padding: 10px 20px;
+  padding: 15px 30px;
   color: #fff;
   cursor: pointer;
   font-size: 16px;
@@ -103,12 +107,12 @@
 .back-tab-btn{
   background: #d5e097;
   border: none;
-  padding: 10px 20px;
   cursor: pointer;
   font-size: 16px;
   margin: 0 5px;
   border-radius: 10px;
   transition: background 0.3s ease;
+  padding: 20px 30px;
 }
 
 .tab-btn.active {
@@ -127,6 +131,12 @@
 
 .tab-content.active {
   display: block;
+}
+
+.no-profile-image {
+  text-align: center;
+  font-size: 20px;
+  color: #9d4866;
 }
 
  /* タブレット表示時 */

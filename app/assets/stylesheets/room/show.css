@@ -36,19 +36,19 @@ body {
 
 .current-user-message {
   align-self: flex-end; /* 右寄せ */
-  margin-right: 300px; /* 右の余白を確保（少し中央寄りに） */
+  margin-right: 350px; /* 右の余白を確保（少し中央寄りに） */
 }
 
 .other-user-message {
   align-self: flex-start; /* 左寄せ */
   background-color: #cbc9f9;
-  margin-left: 300px; /* 左の余白を確保（少し中央寄りに） */
+  margin-left: 350px; /* 左の余白を確保（少し中央寄りに） */
 }
 
 .post-user-message {
   align-self: flex-start; /* 左寄せ */
   background-color: #cbc9f9;
-  margin-left: 300px; /* 左の余白を確保（少し中央寄りに） */
+  margin-left: 350px; /* 左の余白を確保（少し中央寄りに） */
 }
 
 .message-image {

@@ -1,111 +1,79 @@
 
 
-# README
+## アプリケーション名
+Find a family
 
-#
+## アプリケーション概要
+このオリジナルアプリは、
+「迷子・保護動物の情報共有の遅れと、赤ちゃんペットの引き取り手探しの非効率性」を解決したいと思い「ペットの飼い主・引き取り希望者・迷子動物の飼い主・動物ボランティアさん」向けの、「動物の保護・里親探しを円滑にするマッチングプラットフォーム」です。
 
-## posts テーブル
-| Column             | Type       |  Options            |
-|--------------------|----------  |-------------------- |
-| title	             | string	    |  null: false	      |
-| animal_image    	 | string		  |  null: false        |
-| category_id        | integer    |  null: false	      |
-| animal_type	       | string	    |  null: false	      |
-| age	               | string	    |	                    |
-| gender_id	         | integer    |	                    |
-| personality	       | text		    |  null: false        |
-| description	       | text	      |  null: false	      |
-|	address            | string	    |  null: false	      |
-| user_id	           | references |  foreign_key: true	|
+## URL
+https://findafamily.onrender.com
 
+## テスト用アカウント
+▪️Basic認証ID：yagi
+▪️Basic認証パスワード: 0308
 
-## users table
-| Column             | Type      | Options              |
-|--------------------|--------- -|--------------------- |
-| first_name	       | string	   | null: false	        |
-| last_name	         | string	   | null: false	        |
-| first_name_kana    | string	   | null: false          |
-| last_name_kana     | string	   | null: false          |
-| nickname	         | string	   | null: false	        |
-| email	             | string	   | null: false, unique	|
-| phone_number	     | string	   | null: false,unique	  |
-| birthdate	         | date		   |                      |
-| profile_image    	 | string		 |                      |
-| region	           | integer	 | null: false	        |
-| introduction	     | text		   |                      |
+## 利用方法
+動物を保護した時、迷子と思われる動物に出会った時、赤ちゃん動物の譲渡先に迷っている時、ボランティアを募集している時などに画像や詳細を投稿し、ユーザーと連絡を取ることができます。
 
+## アプリケーションを作成した背景
+ペットが赤ちゃんを産んだ際、引き取り手を探すのに苦労している様子や、
+ペットが脱走し、XやInstagramなどで迷子の情報を発信しているのを、よく目にしていた為、力になれればと思い開発に挑みました。
 
-## comments table
-| Column             | Type        | Options                        |
-|--------------------|-------------|------------------------------  |
-| user_id	           | references	 | null: false, foreign_key: true	|
-| post_id	           | references	 | null: false, foreign_key: true	|
-| content	           | text        | null: false	                  |
-| comment_image    	 | string		   |                                |
+## 実装機能
+▪️ユーザー登録/ログイン/編集/削除機能
+▪️投稿機能/編集/削除機能
+・迷子・保護・赤ちゃん動物・一時預かり・ボランティア募集の情報
+・動物に関するアイテムの投稿
+▪️商品購入機能
+▪️検索&フィルタ機能
+▪️お気に入り機能
+▪️コメント機能
+▪️チャット機能
+▪️ステータス管理
+・引き取りが決まった場合、「家族が決まりました」にステータス変更可能
+・商品が売れた場合、「完売しました」にステータス変更可能
 
+## データベース設計
+[![Image from Gyazo](https://i.gyazo.com/b3403395b60277b29f94617d5eb85f31.png)](https://gyazo.com/b3403395b60277b29f94617d5eb85f31)
 
-## follows table
-| Column             | Type       | Options                        |
-|--------------------|----------- |--------------------------------|
-| follower_id        | references | null: false, foreign_key: true |
-| followee_id        | references | null: false, foreign_key: true |
+## 画面遷移図
+[![Image from Gyazo](https://i.gyazo.com/e6981b22d31bec2743d9d315a9408720.png)](https://gyazo.com/e6981b22d31bec2743d9d315a9408720)
 
-## favorites table
-| Column             | Type       | Options                            |
-|--------------------|----------- |------------------------------------|
-| user_id            | references |  null: false, foreign_key: true    |
-| post_id            | references |  null: false, foreign_key: true    |
-| item_id            | references |  null: false, foreign_key: true    |
+## 開発環境
+▪️本番アップロード先 （Render）
+▪️タスク管理 （GitHub）
+▪️テキストエディタ （VS Code）
+▪️本番環境データベース（PostgreSQL）
+▪️開発環境データベース（MySQL）
+▪️プログラミング言語 （JavaScript・Ruby3.2.0・SQL系）
+▪️マークアップ・スタイル言語 （HTML・CSS・ERB）
+____________________________________
 
-## items table
-| Column             | Type      | Options                            |
-|--------------------|-----------|------------------------------------|
-| name               | string    | null: false                        |
-| description        | text      | null: false                        |
-| price              | integer   | null: false                        |
-| category_id        | integer   | null: false, foreign_key: true     |
-| shipping_fee_id    | integer   | null: false                        |
-| shipping_days_id   | integer   | null: false                        |
-| items_image        | string    | null: false                        |
-| user_id            | references| null: false, foreign_key: true     |
+▪️フロントエンド: HTML/CSS/JavaScript
+▪️バックエンド: Ruby3.2 / Ruby on Rails 7.1
+▪️インフラ （MySQL・Redis）
+▪️リアルタイム通信: ActionCable
+▪️データベース: 開発環境（MySQL）/デプロイ環境（PostgreSQL）
+▪️テスト: RSpec・Rubocop・FactoryBot・Capybara）
 
+## ローカルでの動作方法
+% git clone https://findafamily.onrender.com
+% cd findafamily
+% bundle install
+% rails db:create
+% rails db:migrate
 
-## purchases table
-| Column             | Type       | Options                            |
-|--------------------|----------- |------------------------------------|
-| user_id            | references | null: false, foreign_key: true     |
-| item_id            | references | null: false, foreign_key: true     |
+## 工夫したポイント
+▪️動物の情報が詳しくわかるよう、投稿時にできるだけ多くの情報を入力できるように設定しました。
+▪️商品投稿機能はおすすめのペット商品が投稿できたら、体験談を発信できて、ユーザーの参考になるかと思い、実装しました。
+▪️特に大切なのは投稿者と連絡がスムーズに取れることだと思い、チャット機能を独学で実装しました。
+▪️迷子の投稿などはユーザーの気持ちも落ち込んでしまっているかと思い、明るい淡い色をメインに使い実装しました。
 
+## 改善点
+▪️1つの投稿に対して画像が何枚も添付できるようにしたかったのですが、経験と勉強不足で上手くいかず断念してしまった為、引き続き勉強し、改良していきたいです。
+▪購入した商品が確認できる商品購入記録ページも実装していきたいです。
 
-## addresses table
-| Column                 | Type       | Options                           |
-|--------------------    |----------- |-----------------------------------|
-| postal_code            | string     | null: false                       |
-| prefecture_id          | integer    | null: false                       |
-| city                   | string     | null: false                       |
-| street                 | string     | null: false                       |
-| building               | string     |                                   |
-| home_phone_number      | string     | null: false                       |
-| purchase_id            | references | null: false, foreign_key: true    |
-
-
-## rooms テーブル
-| Column             | Type       | Options                            |
-| ------------------ | ------     | ---------------------------------  |
-| user_id            | references | null: false, foreign_key: true     |
-| post_id            | references |  null: false, foreign_key: true    |
-| message_image      | string     |                                    |
-
-
-## entries テーブル
-| Column | Type       | Options                        |
-| ------ | ---------- | ------------------------------ |
-| user   | references | null: false, foreign_key: true |
-| room   | references | null: false, foreign_key: true |
-
-## messages テーブル
-| Column  | Type       | Options                        |
-| ------- | ---------- | ------------------------------ |
-| message | string     |                                |
-| user    | references | null: false, foreign_key: true |
-| room    | references | null: false, foreign_key: true |
+## 制作時間
+約20日間

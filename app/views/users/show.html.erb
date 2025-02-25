@@ -9,10 +9,15 @@
       </h2>
        </div>
 
-      <div class="post-img-content">
-      <%= link_to image_tag @user.profile_image, class: "profile-box-img" %>
-          </div>
-
+    <div class="post-img-content">
+  <% if @user.profile_image.attached? %>
+    <%= link_to image_tag(@user.profile_image, class: "profile-box-img") %>
+  <% else %>
+    <!-- 画像がない場合の処理 -->
+    <p class="no-profile-image">プロフィール画像は設定されていません</p>
+     <% end %>
+     </div>
+          
        <div class="user__wrapper">
       <table class="table">
         <tbody>
@@ -55,6 +60,7 @@
       <div class="user__card">
         <%= render partial: 'posts/post', collection: @user.posts %>
        </div>
+  </div>
   </div>
   <% end %>
 
