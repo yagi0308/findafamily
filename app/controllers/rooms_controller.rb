@@ -1,6 +1,6 @@
 class RoomsController < ApplicationController
-  before_action :set_post, only: [:show, :create]
-  before_action :set_or_create_room, only: :show
+  before_action :set_post, only: [:show, :create, :destroy]
+  before_action :set_or_create_room, only: [:show, :destroy]
 
   def create
     redirect_to post_room_path(@post, @room)
@@ -25,6 +25,12 @@ class RoomsController < ApplicationController
 
     @messages = @room.messages.includes(:user)
     @message = @room.messages.build
+  end
+
+  def destroy
+    @room = Room.find(params[:id])
+    @room.destroy
+    redirect_to root_path, notice: 'チャットルームが削除されました。'
   end
 
   private

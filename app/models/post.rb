@@ -4,6 +4,7 @@ class Post < ApplicationRecord
   belongs_to_active_hash :category
   belongs_to_active_hash :gender
   belongs_to :user
+  # has_many :rooms, dependent: :nullify
   has_many :comments, dependent: :destroy
   has_many :users, through: :favorites
   has_many :favorites, as: :favoritable, dependent: :destroy

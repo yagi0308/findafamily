@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     resources :comments, only: :create
     resource :favorites, only: [:create, :destroy]
     
-    resources :rooms, only: [:create, :show] do
+    resources :rooms, only: [:create, :show, :destroy] do
       resources :messages, only: [:create]
     end
   end
