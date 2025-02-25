@@ -30,14 +30,16 @@ class RoomsController < ApplicationController
   end
 
   def set_or_create_room
-    @room = Room.find_or_create_by(post_id: @post.id, user_id: current_user.id)
+    # まず既存のルームを取得する
+    @room = Room.joins(:entries).where(post_id: @post.id, entries: { user_id: current_user.id }).first
+
+    # もしルームがなければ、新しく作成
+    @room ||= Room.create!(post_id: @post.id, user_id: current_user.id)
 
     # Entry（ログインユーザー）
-    entry1 = Entry.find_by(user_id: current_user.id, room_id: @room.id)
-    entry1 ||= Entry.create!(user_id: current_user.id, room_id: @room.id)
+    Entry.find_or_create_by!(user_id: current_user.id, room_id: @room.id)
 
     # Entry（投稿者）
-    entry2 = Entry.find_by(user_id: @post.user_id, room_id: @room.id)
-    entry2 ||= Entry.create!(user_id: @post.user_id, room_id: @room.id)
+    Entry.find_or_create_by!(user_id: @post.user_id, room_id: @room.id)
   end
 end
