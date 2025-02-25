@@ -133,6 +133,12 @@
   display: block;
 }
 
+.no-profile-image {
+  text-align: center;
+  font-size: 20px;
+  color: #9d4866;
+}
+
  /* タブレット表示時 */
  @media (max-width: 1024px) {
   .inner {
