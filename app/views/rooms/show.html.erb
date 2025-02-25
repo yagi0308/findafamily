@@ -5,8 +5,7 @@
     <!-- 投稿者用: チャット一覧 -->
     <ul class="chat-list">
       <% @chat_users.each do |chat_user| %>
-        <% entry = Entry.find_by(user_id: chat_user.id, room_id: @rooms.pluck(:id)) %>
-        <% room = entry&.room %>
+     <% room = Room.joins(:entries).find_by(entries: { user_id: chat_user.id, room_id: @rooms.pluck(:id) }) %>
 
         <% if room.present? %> <!-- roomがnilでない場合のみ表示 -->
           <% latest_message = room.messages.order(created_at: :desc).first %>
