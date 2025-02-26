@@ -7,12 +7,6 @@ class RoomsController < ApplicationController
   end
 
   def show
-    # @room = Room.find(params[:id]) # URLのルームIDを直接取得
-    # unless @room.entries.exists?(user_id: current_user.id)
-    # redirect_to root_path, alert: 'このチャットにはアクセスできません。'
-    # return
-    # end
-
     @rooms = Room.where(post_id: @post.id) # 投稿に紐づく全てのルームを取得
 
     # メッセージを送信したことのあるユーザー一覧を取得（投稿者を除外）
@@ -30,8 +24,6 @@ class RoomsController < ApplicationController
 
   def set_post
     @post = Post.find_by(id: params[:post_id])
-    # return unless @post.nil?
-    # redirect_to root_path, alert: '投稿が見つかりません'
   end
 
   def set_or_create_room
