@@ -4,7 +4,7 @@ class Item < ApplicationRecord
 
   with_options presence: true do
     validates :name, length: { maximum: 99 }
-    validates :description, length: { maximum: 99 }
+    validates :description, length: { maximum: 999 }
     validates :price
     validates :item_category_id, numericality: { only_integer: true, greater_than: 1, message: 'を入力してください' }
     validates :shipping_fee_id, numericality: { only_integer: true, greater_than: 1, message: 'を入力してください' }
