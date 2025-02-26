@@ -101,7 +101,7 @@
     <div class="sell-btn-contents">
       <%= f.submit "変更する" , class:"btn-edit" %>
       <% if user_signed_in? && current_user == @post.user && @post.adoption.nil? %>
-      <%=link_to '家族が見つかりました！', update_adoption_post_path(@post), method: :get, class:"adoption-btn" %>
+      <%=link_to '見つかりました！', update_adoption_post_path(@post), method: :get, class:"adoption-btn" %>
       <% end %>
     </div>
     <%# 下部ボタン %>
