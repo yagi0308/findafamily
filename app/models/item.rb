@@ -27,7 +27,7 @@ class Item < ApplicationRecord
 
   belongs_to :user
   has_many :users, through: :favorites
-  has_many :purchases
+  has_many :purchases, dependent: :destroy
   has_many :favorites, as: :favoritable, dependent: :destroy
 
   def favorited_by?(user)
