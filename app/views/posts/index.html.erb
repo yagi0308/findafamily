@@ -16,6 +16,8 @@
     </div>
   </div>
 </main>
+
+<% if user_signed_in? %>
 <!-- 検索フォームの表示 -->
 <div class="search-page">
   <h3> 🐈‍⬛ 検索ページ 🔍</h3>
@@ -78,6 +80,7 @@
       <% else %>
         <p class="no-results-msg">該当する投稿はありませんでした</p>
     </ul>
+<% end %>
 <% end %>
 
 <footer class="footer">
