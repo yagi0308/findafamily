@@ -51,6 +51,9 @@ https://gyazo.com/1f6c14e3df5a597c9a7f7771ae2c50dc
 https://gyazo.com/b792e2c470d72a351a0d8ed7b003a703
 
 ▪️商品購入機能
+https://gyazo.com/a6c4056a1d8b29b090a8613c4a34fdcf
+
+https://gyazo.com/7994b7e72a0a7e5aea013633f26dc1d8
 
 ▪️お気に入り機能
 https://gyazo.com/a0cb6e64f9edacf9bd91f4cada67ac6a
