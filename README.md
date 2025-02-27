@@ -42,6 +42,7 @@ https://gyazo.com/9c8f9460b92b3c98abcdc14d141b414f
 https://gyazo.com/79e42dfd87afd69e45ef8b63d3423191
 
 【編集】
+https://gyazo.com/1f6c14e3df5a597c9a7f7771ae2c50dc
 
 【削除】
 
