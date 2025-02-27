@@ -38,6 +38,7 @@ https://gyazo.com/9c8f9460b92b3c98abcdc14d141b414f
 【削除】
 
 ▪️投稿機能/編集/削除機能
+
 ・迷子・保護・赤ちゃん動物・一時預かり・ボランティア募集の情報
 
 ・動物に関するアイテムの投稿
@@ -57,6 +58,7 @@ https://gyazo.com/b792e2c470d72a351a0d8ed7b003a703
 https://gyazo.com/a0cb6e64f9edacf9bd91f4cada67ac6a
 
 ▪️検索&フィルタ機能
+
 【検索】
 
 https://gyazo.com/8be492723012f4ad09de72bb1fbd8247
