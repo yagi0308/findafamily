@@ -37,6 +37,8 @@ https://gyazo.com/9c8f9460b92b3c98abcdc14d141b414f
 
 【削除】
 
+
+
 ▪️投稿機能/編集/削除機能（迷子・保護・赤ちゃん動物・一時預かり・ボランティア募集の情報/動物に関するアイテムの投稿）
 
 ※動物ページも商品ページも同じ使用となっています。
@@ -50,13 +52,20 @@ https://gyazo.com/1f6c14e3df5a597c9a7f7771ae2c50dc
 【削除】
 https://gyazo.com/b792e2c470d72a351a0d8ed7b003a703
 
+
+
 ▪️商品購入機能
+
 https://gyazo.com/a6c4056a1d8b29b090a8613c4a34fdcf
 
 https://gyazo.com/7994b7e72a0a7e5aea013633f26dc1d8
 
+
+
 ▪️お気に入り機能
 https://gyazo.com/a0cb6e64f9edacf9bd91f4cada67ac6a
+
+
 
 ▪️検索&フィルタ機能
 
@@ -66,8 +75,12 @@ https://gyazo.com/8be492723012f4ad09de72bb1fbd8247
 【フィルタ】
 https://gyazo.com/c43fc13d00da048c965da176fe1d311a
 
+
+
 ▪️コメント機能
 https://gyazo.com/32f85b426b0be76a9a247a1073a7563d
+
+
 
 ▪️チャット機能
 https://gyazo.com/3ec4ccaf8518bddce3ff9582eb630902
@@ -82,6 +95,8 @@ https://gyazo.com/8f270f425476f5c2a1c0bcea2aec4037
 
 ③画像投稿
 https://gyazo.com/72929270cccc18885692de60bfb9e692
+
+
 
 ▪️ステータス管理
 
