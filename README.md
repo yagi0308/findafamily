@@ -30,8 +30,10 @@ https://gyazo.com/07e2214b216a209e63026d8e5cf42b64
 【ログイン】
 https://gyazo.com/7e6e1581bbaa072ee416362ce3ca989a
 
-【編集】
+【編集】自己紹介を『よろしくお願いします』から『よろしくお願いします！猫が大好きです！』に編集しました。
 https://gyazo.com/d15c9707445c0d92b9fa5ba6b7181d7c
+https://gyazo.com/9c8f9460b92b3c98abcdc14d141b414f
+
 【削除】
 
 ▪️投稿機能/編集/削除機能
