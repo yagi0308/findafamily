@@ -25,15 +25,12 @@ https://findafamily.onrender.com
 ▪️ユーザー登録/ログイン/編集/削除機能
 
 【ユーザー登録】
-
 https://gyazo.com/07e2214b216a209e63026d8e5cf42b64
 
 【ログイン】
-
 https://gyazo.com/7e6e1581bbaa072ee416362ce3ca989a
 
 【編集】自己紹介を『よろしくお願いします』から『よろしくお願いします！猫が大好きです！』に編集しました。
-
 https://gyazo.com/d15c9707445c0d92b9fa5ba6b7181d7c
 
 https://gyazo.com/9c8f9460b92b3c98abcdc14d141b414f
@@ -46,25 +43,20 @@ https://gyazo.com/9c8f9460b92b3c98abcdc14d141b414f
 ・動物に関するアイテムの投稿
 
 【投稿】
-
 https://gyazo.com/79e42dfd87afd69e45ef8b63d3423191
 
 【編集】
-
 https://gyazo.com/1f6c14e3df5a597c9a7f7771ae2c50dc
 
 【削除】
-
 https://gyazo.com/b792e2c470d72a351a0d8ed7b003a703
 
 ▪️商品購入機能
 
 ▪️お気に入り機能
-
 https://gyazo.com/a0cb6e64f9edacf9bd91f4cada67ac6a
 
 ▪️検索&フィルタ機能
-
 【検索】
 
 https://gyazo.com/8be492723012f4ad09de72bb1fbd8247
