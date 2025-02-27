@@ -64,6 +64,7 @@ https://gyazo.com/8be492723012f4ad09de72bb1fbd8247
 https://gyazo.com/c43fc13d00da048c965da176fe1d311a
 
 ▪️コメント機能
+https://gyazo.com/32f85b426b0be76a9a247a1073a7563d
 
 ▪️チャット機能
 
