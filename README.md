@@ -31,6 +31,7 @@ https://gyazo.com/07e2214b216a209e63026d8e5cf42b64
 https://gyazo.com/7e6e1581bbaa072ee416362ce3ca989a
 
 【編集】
+https://gyazo.com/d15c9707445c0d92b9fa5ba6b7181d7c
 【削除】
 
 ▪️投稿機能/編集/削除機能
