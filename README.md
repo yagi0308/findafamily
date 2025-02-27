@@ -65,6 +65,15 @@ https://gyazo.com/c43fc13d00da048c965da176fe1d311a
 https://gyazo.com/32f85b426b0be76a9a247a1073a7563d
 
 ▪️チャット機能
+https://gyazo.com/3ec4ccaf8518bddce3ff9582eb630902
+
+※投稿者から見たチャット画面
+①チャット一覧
+https://gyazo.com/75f74275f87256c59cf86cedb5eb8aa8
+②メッセージ投稿
+https://gyazo.com/8f270f425476f5c2a1c0bcea2aec4037
+③画像投稿
+https://gyazo.com/72929270cccc18885692de60bfb9e692
 
 ▪️ステータス管理
 
