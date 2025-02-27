@@ -95,7 +95,7 @@ https://gyazo.com/22045a93046486d00c6b00ebf5bfd0fc
 https://gyazo.com/2c0700ab680337aee9151772c5b358a9
 
 
-※動物ページも商品ページも同じ使用となっています。
+▪️動物ページも商品ページも同じ使用となっています。
 商品ページの一覧は下記URLのようになっています。
 
 https://gyazo.com/f1e08df401443c340bd010e9de2f3c54
