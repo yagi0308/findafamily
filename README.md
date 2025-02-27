@@ -56,11 +56,9 @@ https://gyazo.com/a0cb6e64f9edacf9bd91f4cada67ac6a
 ▪️検索&フィルタ機能
 
 【検索】
-
 https://gyazo.com/8be492723012f4ad09de72bb1fbd8247
 
 【フィルタ】
-
 https://gyazo.com/c43fc13d00da048c965da176fe1d311a
 
 ▪️コメント機能
